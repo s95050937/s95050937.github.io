@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>HTTP的長連接與短連接</title>
+      <link href="/2020/07/29/HTTP-post04/"/>
+      <url>/2020/07/29/HTTP-post04/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP的長連接與短連接"><a href="#HTTP的長連接與短連接" class="headerlink" title="HTTP的長連接與短連接"></a>HTTP的長連接與短連接</h1><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><blockquote><p>其實HTTP的長連接與短連接是在講TCP的長連接與短連接</p></blockquote><h2 id="實際案例"><a href="#實際案例" class="headerlink" title="實際案例"></a>實際案例</h2><p>打開台大的網站按F12，可以發現有一個Connection: Keep-Alive，那個就是長連結</p><p><img src="/images/HTTP04/1.png" alt=""></p><a id="more"></a><h2 id="差別"><a href="#差別" class="headerlink" title="差別"></a>差別</h2><p>短連接 </p><blockquote><p>建立連結 =&gt; 數據傳輸 =&gt; 關閉連結 =&gt; ….  =&gt; 建立連結 =&gt; 數據傳輸 =&gt; 關閉連結 =&gt;</p></blockquote><p>長連結(可以省去TCP連接與關閉的時間)</p><p>​    通常關閉連結會是服務端，因為隨著連結的客戶端越來越多，服務端會有撐不下去的時候</p><blockquote><p>建立連結 =&gt; 數據傳輸 =&gt; …. (保持連結) …. =&gt;  數據傳輸 =&gt; 關閉連結</p></blockquote><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>具體誰好誰壞沒有一定，當然還是要視情況而定</p><blockquote><p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP之身分認證</title>
+      <link href="/2020/07/29/HTTP-post03/"/>
+      <url>/2020/07/29/HTTP-post03/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP之身分認證"><a href="#HTTP之身分認證" class="headerlink" title="HTTP之身分認證"></a>HTTP之身分認證</h1><p>有以下四種認證</p><ol><li>BASIC認證 (基本認證)</li><li>DIGEST認證 (摘要認證)</li><li>SSL客戶端認證</li><li>FormBase認證 (基於表單驗證)</li></ol><a id="more"></a><h2 id="BASIC認證"><a href="#BASIC認證" class="headerlink" title="BASIC認證"></a>BASIC認證</h2><p>HTTP 1.0 即存在</p><h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/1.png" alt=""></p><h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><p>因為沒有加密，如果不小心被其他有心人士獲取，則帳號密碼經Base64解碼即獲得相當不安全，因此又有了DIGEST認證</p><h2 id="DIGEST-認證"><a href="#DIGEST-認證" class="headerlink" title="DIGEST 認證"></a>DIGEST 認證</h2><p>HTTP1.1存在</p><h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/2.png" alt=""></p><p>這種方法雖然解決加密，但沒有解決用戶可能被冒充的問題(只要用戶名與密碼正確就認為你是本人)</p><h2 id="SSL-客戶端認證"><a href="#SSL-客戶端認證" class="headerlink" title="SSL 客戶端認證"></a>SSL 客戶端認證</h2><p>藉由HTTPS 客戶端憑證，服務器可確認訪問是否來自已登入瘩客戶端</p><h2 id="基於表單驗證明"><a href="#基於表單驗證明" class="headerlink" title="基於表單驗證明"></a>基於表單驗證明</h2><ol><li>不是在HTTP協議定義的</li><li>使用web各自實現表單認證方式</li><li>通過cookie與session</li></ol><blockquote><p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTTP協議編碼與解碼</title>
       <link href="/2020/07/29/HTTP-post02/"/>
       <url>/2020/07/29/HTTP-post02/</url>
