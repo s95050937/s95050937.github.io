@@ -83,24 +83,18 @@
 
 
 
-<meta name="description" content="JavaScript之類數組完全攻略今天幫大家整理偽數組的概念，我們先來從題目開始分析 先來打造一個很酷的對象如下 1234567var obj &#x3D; &amp;#123;    &#39;0&#39;: &#39;a&#39;,    &#39;1&#39;: &#39;b&#39;,    &#39;2&#39;: &#39;c&#39;,    &#39;length&#39;: 3,    &#39;push&#39;: Array.prototype.push&amp;#125;  這時候來打印obj看會長怎樣">
+<meta name="description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript偽數組">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/27/JS_post1/index.html">
+<meta property="og:title" content="JS靜態與動態作用域">
+<meta property="og:url" content="https://s95050937.github.io/2020/07/29/JS-post02/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JavaScript之類數組完全攻略今天幫大家整理偽數組的概念，我們先來從題目開始分析 先來打造一個很酷的對象如下 1234567var obj &#x3D; &amp;#123;    &#39;0&#39;: &#39;a&#39;,    &#39;1&#39;: &#39;b&#39;,    &#39;2&#39;: &#39;c&#39;,    &#39;length&#39;: 3,    &#39;push&#39;: Array.prototype.push&amp;#125;  這時候來打印obj看會長怎樣">
+<meta property="og:description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/1.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/2.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/3.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/4.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/5.jpeg">
-<meta property="article:published_time" content="2020-07-27T15:56:57.000Z">
-<meta property="article:modified_time" content="2020-07-27T16:51:32.034Z">
+<meta property="article:published_time" content="2020-07-29T14:27:49.000Z">
+<meta property="article:modified_time" content="2020-07-29T14:30:49.851Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/JS01/1.jpeg">
 
 
 
@@ -130,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/27/JS_post1/"/>
+  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/JS-post02/"/>
 
 
 
 
 
-  <title>JavaScript偽數組 | 前端技術紀錄</title>
+  <title>JS靜態與動態作用域 | 前端技術紀錄</title>
   
 
 
@@ -263,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/27/JS_post1/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/JS-post02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -280,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript偽數組</h1>
+          <h1 class="post-title" itemprop="name headline">JS靜態與動態作用域</h1>
         
 
         <div class="post-meta">
@@ -292,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-27T23:56:57+08:00">
-                2020-07-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:49+08:00">
+                2020-07-29
               </time>
             
 
@@ -333,9 +327,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/27/JS_post1/#comments" itemprop="discussionUrl">
+                <a href="/2020/07/29/JS-post02/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/27/JS_post1/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/07/29/JS-post02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -368,46 +362,37 @@
       
 
       
-        <h2 id="JavaScript之類數組完全攻略"><a href="#JavaScript之類數組完全攻略" class="headerlink" title="JavaScript之類數組完全攻略"></a>JavaScript之類數組完全攻略</h2><p>今天幫大家整理偽數組的概念，我們先來從題目開始分析</p>
-<p>先來打造一個很酷的對象如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'push'</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這時候來打印obj看會長怎樣</p>
+        <h2 id="JS靜態與動態作用域"><a href="#JS靜態與動態作用域" class="headerlink" title="JS靜態與動態作用域"></a>JS靜態與動態作用域</h2><p>JavaScript使用的是靜態作用域，非動態這件事要先提前知道</p>
+<h3 id="靜態作用域"><a href="#靜態作用域" class="headerlink" title="靜態作用域"></a>靜態作用域</h3><ol>
+<li><p>懶人包 : </p>
+<blockquote>
+<p>會主動去尋找函數與變量定義時的狀況</p>
+</blockquote>
+</li>
+<li><p>例子:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '靜態作用域'</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p><img src="/images/JS01/1.jpeg" alt=""></p>
-<p>乍看之下他還只是一個平常的對象，但其實這個對象這時候已經變成一個類數組了! 我們來對他做以下操作可以更明白</p>
-<p><img src="/images/JS01/2.jpeg" alt=""></p>
-<p>可以發現到這時候他多了一個 3: “d” ，對象原本是不能這樣做的，但是在這邊卻可以實現，因此才對他取名叫做類數組。</p>
-<h3 id="如何打造一個類數組對象"><a href="#如何打造一個類數組對象" class="headerlink" title="如何打造一個類數組對象:"></a>如何打造一個類數組對象:</h3><p>要打造出一個類數組有要打造出一個類數組有幾個條件</p>
-<ol>
-<li>他必須要是一個對象</li>
-<li>屬性要為索引(數字)值</li>
-<li>一定要有length存在</li>
-<li>最好可以加push</li>
-<li>附註: 如果想讓它變得更像數組可以加上splice，如下圖</li>
+
+<p>分析 :</p>
+<p>如果沒有作用域鏈的概念可以參考下面思維</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a <span class="comment">// 此時所在是第四行</span></span><br><span class="line"><span class="number">6.</span> 因為foo作用域裡面沒有聲明變量a，因此又跑到全局作用域</span><br><span class="line"><span class="number">7.</span> 找到a(靜態作用域)並打印出來</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<p><img src="/images/JS01/3.jpeg" alt=""></p>
-<h3 id="出問題考考大家"><a href="#出問題考考大家" class="headerlink" title="出問題考考大家"></a>出問題考考大家</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"2"</span>: <span class="string">"c"</span>,</span><br><span class="line">    <span class="string">"3"</span>: <span class="string">"d"</span>,</span><br><span class="line">    <span class="string">"length"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"push"</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.push(<span class="string">"f"</span>)</span><br><span class="line">obj.push(<span class="string">"g"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
+<h3 id="動態作用域"><a href="#動態作用域" class="headerlink" title="動態作用域"></a>動態作用域</h3><ol>
+<li><p>懶人包: </p>
+<blockquote>
+<p>會到執行時的環境尋找</p>
+</blockquote>
+</li>
+<li><p>例子(跟靜態相同): </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '動態作用域'</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="答案"><a href="#答案" class="headerlink" title="答案:"></a>答案:</h3><p><img src="/images/JS01/4.jpeg" alt=""></p>
-<p>3的 “d” 居然被 “f” 覆蓋掉了，而且多了一個4 : “g” ，我們來講解一下實現原理!!</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h3><ol>
-<li>在講這個之前我們要先觀察Array.prototype.push的實現方法</li>
+<p>分析: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">前面五點都一模一樣直到第六點</span><br><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a </span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 這時候找不到a並不會跑到上一層作用域鏈查找，而是回到執行時的環境也就是第八行所在的作用域查找</span><br><span class="line"><span class="number">7.</span> 這時候就會發現a是動態作用域並打印出</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下是push的偽代碼</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ArrayPush</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n = TO_UNIT32(<span class="keyword">this</span>.length) <span class="comment">// 被push的數組長度(類數組採用的length就是這個)</span></span><br><span class="line">  <span class="keyword">var</span> m = %_AraumentsLength() <span class="comment">// push的總長度</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">this</span>[i + n] = %_Arauments(i)  <span class="comment">// 複製給原數組</span></span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">this</span>.length = n + m <span class="comment">// 修正最終數組長度</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.length </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>從第18行可以得知為甚麼Obj一定要有length，再來第20到22行就能知道他push的觀點全是在length上，也就是說在obj對象最該觀察的不是其他元素而是length!</p>
-<ol start="2">
-<li>原題目: </li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"2"</span>: <span class="string">"c"</span>,</span><br><span class="line">    <span class="string">"3"</span>: <span class="string">"d"</span>,</span><br><span class="line">    <span class="string">"length"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"push"</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.push(<span class="string">"f"</span>)</span><br><span class="line">obj.push(<span class="string">"g"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/JS01/5.jpeg" alt=""></p>
-<p>到這邊就能很明瞭，為甚麼 3會變f ，4會變 g</p>
-<h3 id="關鍵代碼"><a href="#關鍵代碼" class="headerlink" title="關鍵代碼"></a>關鍵代碼</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">  <span class="keyword">this</span>[i + n] = %_Arauments(i)  <span class="comment">// 複製給原數組</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>大家可以想一下i = 0 的情況下會發生甚麼事，是不是this[0 + n]會被push的第一個元素取代，那這裡他的n代表的不就是Obj的 length，那就表示說Obj [3] 會被 f 取代，並且length變4 ，然後Obj[4]再被 g取代，length變5!!這就是這題的實現原理。</p>
-<h3 id="感謝觀看-歡迎分享"><a href="#感謝觀看-歡迎分享" class="headerlink" title="感謝觀看~歡迎分享"></a><strong>感謝觀看<del>~</del>歡迎分享</strong></h3>
       
     </div>
     
@@ -437,15 +422,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/07/29/HTTP-post04/" rel="next" title="HTTP的長連接與短連接">
+                <i class="fa fa-chevron-left"></i> HTTP的長連接與短連接
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/28/HTTP-post01/" rel="prev" title="HTTP_詳解Cookie與Session">
-                HTTP_詳解Cookie與Session <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -536,7 +521,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -614,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript之類數組完全攻略"><span class="nav-number">1.</span> <span class="nav-text">JavaScript之類數組完全攻略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打造一個類數組對象"><span class="nav-number">1.1.</span> <span class="nav-text">如何打造一個類數組對象:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出問題考考大家"><span class="nav-number">1.2.</span> <span class="nav-text">出問題考考大家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案"><span class="nav-number">1.3.</span> <span class="nav-text">答案:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.4.</span> <span class="nav-text">原理:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵代碼"><span class="nav-number">1.5.</span> <span class="nav-text">關鍵代碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感謝觀看-歡迎分享"><span class="nav-number">1.6.</span> <span class="nav-text">感謝觀看~歡迎分享</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS靜態與動態作用域"><span class="nav-number">1.</span> <span class="nav-text">JS靜態與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#靜態作用域"><span class="nav-number">1.1.</span> <span class="nav-text">靜態作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動態作用域"><span class="nav-number">1.2.</span> <span class="nav-text">動態作用域</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -811,9 +796,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/27/JS_post1/';
-          this.page.identifier = '2020/07/27/JS_post1/';
-          this.page.title = 'JavaScript偽數組';
+          this.page.url = 'https://s95050937.github.io/2020/07/29/JS-post02/';
+          this.page.identifier = '2020/07/29/JS-post02/';
+          this.page.title = 'JS靜態與動態作用域';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -921,13 +906,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JavaScript偽數組'.length > 0
+      var isPost = 'JS靜態與動態作用域'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JavaScript偽數組'
+        var title = 'JS靜態與動態作用域'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
