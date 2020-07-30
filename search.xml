@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HTTP代理</title>
+      <link href="/2020/07/30/HTTP-post05/"/>
+      <url>/2020/07/30/HTTP-post05/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP-代理"><a href="#HTTP-代理" class="headerlink" title="HTTP 代理"></a>HTTP 代理</h1><p>像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端</p><h2 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h2><p><img src="/images/HTTP05/1.png" alt=""></p><a id="more"></a><h2 id="為何需要代理"><a href="#為何需要代理" class="headerlink" title="為何需要代理"></a>為何需要代理</h2><h3 id="1-抓包"><a href="#1-抓包" class="headerlink" title="1. 抓包"></a>1. 抓包</h3><p>能更好分析請求與安全測試</p><h3 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h3><p>俗稱的翻牆</p><p><img src="/images/HTTP05/2.png" alt=""></p><h3 id="3-匿名訪問"><a href="#3-匿名訪問" class="headerlink" title="3. 匿名訪問"></a>3. 匿名訪問</h3><p>刪除客戶端HTTP報文中的私人資料，比方說Cookie或是IP地址，</p><h3 id="4-過濾器"><a href="#4-過濾器" class="headerlink" title="4. 過濾器"></a>4. 過濾器</h3><p>比方說不希望孩童從網路上看到非該年齡層的內容，因此可以透過代理過慮服務端回傳的內容</p><p><img src="/images/HTTP05/3.png" alt=""></p><h2 id="補充-網關"><a href="#補充-網關" class="headerlink" title="補充(網關)"></a>補充(網關)</h2><p>又稱作協議轉換器，為資源與應用程序的黏合器</p><h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP05/4.png" alt=""></p><h3 id="講解"><a href="#講解" class="headerlink" title="講解"></a>講解</h3><p>從上圖可以發現和代理很類似，最關鍵的一點就是我們可以透過網關轉換協議，比方說上圖客戶端向網關發起HTTP協議，而後經過網觀象服務器端發起POP。</p><h3 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h3><p>Web在一端使用HTTP，另一端採用另一種協議可以這樣標示</p><ol><li><p>(/HTTP) 客戶端網關: 與客戶端採用其他協議，與服務端採用HTTP</p><p>記憶點: 叫客戶端網關可想像成他是幫客戶端轉換成HTTP協議的方式</p></li><li><p>(HTTP/) 服務端網關: 與服務端端採用其他協議，與客戶端採用HTTP</p><p>記憶點: 與客戶端相反</p></li></ol><h3 id="常見網關"><a href="#常見網關" class="headerlink" title="常見網關"></a>常見網關</h3><ol><li><p>(HTTP/ *) 服務器端Web網關</p></li><li><p>(HTTP/HTTPS) 服務器端安全網關</p><p> (將客戶端傳來的HTTP協議加密成HTTPS)</p></li><li><p>(HTTPS/HTTP) 客戶端安全網關 </p></li></ol><blockquote><p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS靜態與動態作用域</title>
       <link href="/2020/07/29/JS-post02/"/>
       <url>/2020/07/29/JS-post02/</url>
