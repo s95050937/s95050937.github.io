@@ -83,18 +83,28 @@
 
 
 
-<meta name="description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta name="description" content="JS之變量如何賦值變量有甚麼類型 基本類型  Undefine，String，Boolean，Null，Number   引用類型  Object包括它的延伸    探討的問題 當我們給變量賦值另一個變量，會發生發生甚麼  注意:  ​    在JS裡面，一個變量的值絕對不會指向另一個變量，而是指向內存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS靜態與動態作用域">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/29/JS-post02/index.html">
+<meta property="og:title" content="JS之變量如何賦值">
+<meta property="og:url" content="https://s95050937.github.io/2020/08/02/JS-post03/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta property="og:description" content="JS之變量如何賦值變量有甚麼類型 基本類型  Undefine，String，Boolean，Null，Number   引用類型  Object包括它的延伸    探討的問題 當我們給變量賦值另一個變量，會發生發生甚麼  注意:  ​    在JS裡面，一個變量的值絕對不會指向另一個變量，而是指向內存">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-07-29T14:27:49.000Z">
-<meta property="article:modified_time" content="2020-07-29T14:30:49.851Z">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/3.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/4.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/5.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/6.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/7.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/8.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS03/9.png">
+<meta property="article:published_time" content="2020-08-02T07:48:25.000Z">
+<meta property="article:modified_time" content="2020-08-02T07:51:41.538Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s95050937.github.io/images/JS03/1.png">
 
 
 
@@ -124,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/JS-post02/"/>
+  <link rel="canonical" href="https://s95050937.github.io/2020/08/02/JS-post03/"/>
 
 
 
 
 
-  <title>JS靜態與動態作用域 | 前端技術紀錄</title>
+  <title>JS之變量如何賦值 | 前端技術紀錄</title>
   
 
 
@@ -257,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/JS-post02/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/08/02/JS-post03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -274,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS靜態與動態作用域</h1>
+          <h1 class="post-title" itemprop="name headline">JS之變量如何賦值</h1>
         
 
         <div class="post-meta">
@@ -286,8 +296,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:49+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-02T15:48:25+08:00">
+                2020-08-02
               </time>
             
 
@@ -327,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/29/JS-post02/#comments" itemprop="discussionUrl">
+                <a href="/2020/08/02/JS-post03/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/29/JS-post02/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/08/02/JS-post03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,34 +372,65 @@
       
 
       
-        <h2 id="JS靜態與動態作用域"><a href="#JS靜態與動態作用域" class="headerlink" title="JS靜態與動態作用域"></a>JS靜態與動態作用域</h2><p>JavaScript使用的是靜態作用域，非動態這件事要先提前知道</p>
-<h3 id="靜態作用域"><a href="#靜態作用域" class="headerlink" title="靜態作用域"></a>靜態作用域</h3><ol>
-<li><p>懶人包 : </p>
+        <h1 id="JS之變量如何賦值"><a href="#JS之變量如何賦值" class="headerlink" title="JS之變量如何賦值"></a>JS之變量如何賦值</h1><h2 id="變量有甚麼類型"><a href="#變量有甚麼類型" class="headerlink" title="變量有甚麼類型"></a>變量有甚麼類型</h2><ol>
+<li><p>基本類型</p>
 <blockquote>
-<p>會主動去尋找函數與變量定義時的狀況</p>
+<p>Undefine，String，Boolean，Null，Number</p>
 </blockquote>
 </li>
-<li><p>例子:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '靜態作用域'</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-<p>分析 :</p>
-<p>如果沒有作用域鏈的概念可以參考下面思維</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a <span class="comment">// 此時所在是第四行</span></span><br><span class="line"><span class="number">6.</span> 因為foo作用域裡面沒有聲明變量a，因此又跑到全局作用域</span><br><span class="line"><span class="number">7.</span> 找到a(靜態作用域)並打印出來</span><br></pre></td></tr></table></figure>
-
+<li><p>引用類型</p>
+<blockquote>
+<p>Object包括它的延伸</p>
+</blockquote>
 </li>
 </ol>
-<h3 id="動態作用域"><a href="#動態作用域" class="headerlink" title="動態作用域"></a>動態作用域</h3><ol>
-<li><p>懶人包: </p>
-<blockquote>
-<p>會到執行時的環境尋找</p>
+<h2 id="探討的問題"><a href="#探討的問題" class="headerlink" title="探討的問題"></a>探討的問題</h2><blockquote>
+<p>當我們給變量賦值另一個變量，會發生發生甚麼</p>
 </blockquote>
-</li>
-<li><p>例子(跟靜態相同): </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '動態作用域'</span></span><br></pre></td></tr></table></figure>
+<p>注意: </p>
+<p>​    在JS裡面，一個變量的值絕對不會指向另一個變量，而是指向內存</p>
+<a id="more"></a>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><h3 id="情況一-基本類型"><a href="#情況一-基本類型" class="headerlink" title="情況一: 基本類型"></a>情況一: 基本類型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="number">5</span></span><br><span class="line"><span class="keyword">let</span> num2 = num1</span><br></pre></td></tr></table></figure>
 
-<p>分析: </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">前面五點都一模一樣直到第六點</span><br><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a </span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 這時候找不到a並不會跑到上一層作用域鏈查找，而是回到執行時的環境也就是第八行所在的作用域查找</span><br><span class="line"><span class="number">7.</span> 這時候就會發現a是動態作用域並打印出</span><br></pre></td></tr></table></figure>
+<p>我們用num1這個變量初始化了num2，技術上來說會指向同一個內存地址</p>
+<p><img src="/images/JS03/1.png" alt=""></p>
+<p>如果今天對num2 進行操作，num1會因此改變嗎? </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="string">'foo'</span></span><br><span class="line"><span class="keyword">let</span> num2 = num1</span><br><span class="line">num2 + <span class="string">'bar'</span></span><br></pre></td></tr></table></figure>
+
+<p>答案是不會的，因為基本類型是不可變的，所以num2會自行指向自身的內存地址</p>
+<p><img src="/images/JS03/2.png" alt=""></p>
+<p>這時候可以打印看看num1是否真的不會變</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="string">'foo'</span></span><br><span class="line"><span class="keyword">let</span> num2 = num1</span><br><span class="line">num2 + <span class="string">'bar'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'num1:'</span>,num1)</span><br></pre></td></tr></table></figure>
+
+<p>結果: </p>
+<p><img src="/images/JS03/3.png" alt=""></p>
+<h3 id="情況二-引用類型"><a href="#情況二-引用類型" class="headerlink" title="情況二: 引用類型"></a>情況二: 引用類型</h3><h4 id="預先知識"><a href="#預先知識" class="headerlink" title="預先知識"></a>預先知識</h4><p>引用類型賦值時的情況比較特別，會先引用到stack的某一個地址，再透過那個地址的值(heap的地址)查找到heap的值，比方說下面這樣</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">  foo: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">  foo: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// false</span></span><br><span class="line">obj1.bar = <span class="number">2</span> <span class="comment">// 為了證明那兩個是不同(相同的話obj2會被obj1影響)</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2); <span class="comment">// &#123;foo: 1&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>示意圖: </p>
+<p><img src="/images/JS03/4.png" alt=""></p>
+<h4 id="正題"><a href="#正題" class="headerlink" title="正題"></a>正題</h4><p>假如把一個變量用另一個變量賦值會怎麼樣?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">  foo: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = obj1 <span class="comment">// 把obj1的內存地址給了他</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// 這個就變成true</span></span><br><span class="line">obj1.bar = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2); <span class="comment">// 這個也會受到obj1的操作影響</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h4><p><img src="/images/JS03/5.png" alt=""></p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h4><p>上面之所以沒變，是因為我們都是對heap進行操作，所以obj2當然會被影響，假設我對下面對象這樣操作結果就會不一樣!!!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">  foo: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = obj1 <span class="comment">// 內存複製</span></span><br><span class="line"></span><br><span class="line">obj1.bar = <span class="number">2</span> <span class="comment">// 將heap內的值改變(因為obj2指向的stack部變所以也會受到影響)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 這裡非常關鍵，obj2在stack裡指向的地址發生改變，所以之後假設對這個對象操作，已經不是obj1指向的那個對象，obj1理所當然不會改變</span></span><br><span class="line">obj2 = &#123;  </span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line">obj2.baz = <span class="number">3</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1); <span class="comment">//&#123;foo: 1, bar: 2&#125; 沒有baz!!</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h4><ol>
+<li><p>內存賦值完成(  let obj2 = obj1  )</p>
+<p><img src="/images/JS03/6.png" alt=""></p>
+</li>
+<li><p>將heap內的值改變(  obj1.bar = 2  )</p>
+<p><img src="/images/JS03/7.png" alt=""></p>
+</li>
+<li><p>obj2被賦予新的值(  obj2= {foo: 1,bar: 2}  )</p>
+<p><img src="/images/JS03/8.png" alt=""></p>
+</li>
+<li><p>操作obj2對應的對象(  obj2.baz = 3  )</p>
+<p><img src="/images/JS03/9.png" alt=""></p>
+</li>
+<li><p>結論</p>
+<p>所以最後打印obj1的時候跑出來的是{foo:1, bar: 2} !!!!!</p>
 </li>
 </ol>
 
@@ -422,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/HTTP-post04/" rel="next" title="HTTP的長連接與短連接">
-                <i class="fa fa-chevron-left"></i> HTTP的長連接與短連接
+              <a href="/2020/07/30/HTTP-post06/" rel="next" title="HTTP緩存">
+                <i class="fa fa-chevron-left"></i> HTTP緩存
               </a>
             
           </div>
@@ -431,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/30/HTTP-post05/" rel="prev" title="HTTP代理">
-                HTTP代理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -603,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS靜態與動態作用域"><span class="nav-number">1.</span> <span class="nav-text">JS靜態與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#靜態作用域"><span class="nav-number">1.1.</span> <span class="nav-text">靜態作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動態作用域"><span class="nav-number">1.2.</span> <span class="nav-text">動態作用域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS之變量如何賦值"><span class="nav-number">1.</span> <span class="nav-text">JS之變量如何賦值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#變量有甚麼類型"><span class="nav-number">1.1.</span> <span class="nav-text">變量有甚麼類型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探討的問題"><span class="nav-number">1.2.</span> <span class="nav-text">探討的問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.3.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#情況一-基本類型"><span class="nav-number">1.3.1.</span> <span class="nav-text">情況一: 基本類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情況二-引用類型"><span class="nav-number">1.3.2.</span> <span class="nav-text">情況二: 引用類型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#預先知識"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">預先知識</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正題"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">正題</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示意圖"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">注意:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示意圖-1"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">示意圖</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -800,9 +837,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/29/JS-post02/';
-          this.page.identifier = '2020/07/29/JS-post02/';
-          this.page.title = 'JS靜態與動態作用域';
+          this.page.url = 'https://s95050937.github.io/2020/08/02/JS-post03/';
+          this.page.identifier = '2020/08/02/JS-post03/';
+          this.page.title = 'JS之變量如何賦值';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -910,13 +947,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JS靜態與動態作用域'.length > 0
+      var isPost = 'JS之變量如何賦值'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JS靜態與動態作用域'
+        var title = 'JS之變量如何賦值'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

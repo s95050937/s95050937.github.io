@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="HTTP," />
 
 
 
@@ -83,18 +83,22 @@
 
 
 
-<meta name="description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta name="description" content="HTTP緩存 原因:   頻繁請求非常類費流量，且一直刷新使用者體驗相當不佳   緩存內容  主要是一些靜態資源(比如CSS，JS)    HTTP緩存頭部(後面會詳談)Cache-Control請求&#x2F;響應頭，緩存控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS靜態與動態作用域">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/29/JS-post02/index.html">
+<meta property="og:title" content="HTTP緩存">
+<meta property="og:url" content="https://s95050937.github.io/2020/07/30/HTTP-post06/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta property="og:description" content="HTTP緩存 原因:   頻繁請求非常類費流量，且一直刷新使用者體驗相當不佳   緩存內容  主要是一些靜態資源(比如CSS，JS)    HTTP緩存頭部(後面會詳談)Cache-Control請求&#x2F;響應頭，緩存控制">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-07-29T14:27:49.000Z">
-<meta property="article:modified_time" content="2020-07-29T14:30:49.851Z">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP06/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP06/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP06/3.png">
+<meta property="article:published_time" content="2020-07-30T12:48:18.000Z">
+<meta property="article:modified_time" content="2020-07-30T12:53:55.877Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP06/1.png">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/JS-post02/"/>
+  <link rel="canonical" href="https://s95050937.github.io/2020/07/30/HTTP-post06/"/>
 
 
 
 
 
-  <title>JS靜態與動態作用域 | 前端技術紀錄</title>
+  <title>HTTP緩存 | 前端技術紀錄</title>
   
 
 
@@ -257,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/JS-post02/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/30/HTTP-post06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -274,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS靜態與動態作用域</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP緩存</h1>
         
 
         <div class="post-meta">
@@ -286,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:49+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-30T20:48:18+08:00">
+                2020-07-30
               </time>
             
 
@@ -309,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
                   </a>
                 </span>
 
@@ -327,9 +331,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/29/JS-post02/#comments" itemprop="discussionUrl">
+                <a href="/2020/07/30/HTTP-post06/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/29/JS-post02/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/07/30/HTTP-post06/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,36 +366,99 @@
       
 
       
-        <h2 id="JS靜態與動態作用域"><a href="#JS靜態與動態作用域" class="headerlink" title="JS靜態與動態作用域"></a>JS靜態與動態作用域</h2><p>JavaScript使用的是靜態作用域，非動態這件事要先提前知道</p>
-<h3 id="靜態作用域"><a href="#靜態作用域" class="headerlink" title="靜態作用域"></a>靜態作用域</h3><ol>
-<li><p>懶人包 : </p>
+        <h1 id="HTTP緩存"><a href="#HTTP緩存" class="headerlink" title="HTTP緩存"></a>HTTP緩存</h1><ol>
+<li><p>原因: </p>
 <blockquote>
-<p>會主動去尋找函數與變量定義時的狀況</p>
+<p>頻繁請求非常類費流量，且一直刷新使用者體驗相當不佳</p>
 </blockquote>
 </li>
-<li><p>例子:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '靜態作用域'</span></span><br></pre></td></tr></table></figure>
+<li><p>緩存內容</p>
+<blockquote>
+<p>主要是一些靜態資源(比如CSS，JS)</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="HTTP緩存頭部-後面會詳談"><a href="#HTTP緩存頭部-後面會詳談" class="headerlink" title="HTTP緩存頭部(後面會詳談)"></a>HTTP緩存頭部(後面會詳談)</h2><h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>請求/響應頭，緩存控制<br><img src="/images/HTTP06/1.png" alt=""></p>
 <a id="more"></a>
 
-<p>分析 :</p>
-<p>如果沒有作用域鏈的概念可以參考下面思維</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a <span class="comment">// 此時所在是第四行</span></span><br><span class="line"><span class="number">6.</span> 因為foo作用域裡面沒有聲明變量a，因此又跑到全局作用域</span><br><span class="line"><span class="number">7.</span> 找到a(靜態作用域)並打印出來</span><br></pre></td></tr></table></figure>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p>表資源過期時間，與max-age共存情況下優先級較低</p>
+<h3 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h3><p>資源最新修改時間，由服務器響應給瀏覽器</p>
+<h3 id="if-Modified-Since"><a href="#if-Modified-Since" class="headerlink" title="if-Modified-Since"></a>if-Modified-Since</h3><p>與Last-Modified一組，瀏覽器請求服務器協帶，服務器會比對這個確認版本是否更新</p>
+<h3 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h3><p>資源標籤，服務器響應給瀏覽器</p>
+<h3 id="if-None-Match"><a href="#if-None-Match" class="headerlink" title="if-None-Match"></a>if-None-Match</h3><p>與Etag一組，瀏覽器請求服務器協帶，服務器會比對這個確認版本是否更新</p>
+<h2 id="HTTP-緩存工作方式"><a href="#HTTP-緩存工作方式" class="headerlink" title="HTTP 緩存工作方式"></a>HTTP 緩存工作方式</h2><p>現在開始假設服務器在跟瀏覽器對話</p>
+<h2 id="情境一-服務器與瀏覽器約定一個文件過期時間-Expires"><a href="#情境一-服務器與瀏覽器約定一個文件過期時間-Expires" class="headerlink" title="情境一 服務器與瀏覽器約定一個文件過期時間(Expires)"></a>情境一 服務器與瀏覽器約定一個文件過期時間(Expires)</h2><ul>
+<li><p>瀏覽器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ㄟㄟ，服務器，你的文件找一下有沒有一個叫做main.js的文件，找到後再給我</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服務器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OKOK，可是我怕你跟一直跟我要，所以給你一個Expires，等過了這個時間你再跟我要吧!</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol>
-<h3 id="動態作用域"><a href="#動態作用域" class="headerlink" title="動態作用域"></a>動態作用域</h3><ol>
-<li><p>懶人包: </p>
-<blockquote>
-<p>會到執行時的環境尋找</p>
+</ul>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><blockquote>
+<p>Expires(透過響應頭)主要是約定一個過期時間，在過期時間前客戶端不會向服務器要資源</p>
 </blockquote>
+<h3 id="延伸情況二"><a href="#延伸情況二" class="headerlink" title="延伸情況二"></a>延伸情況二</h3><blockquote>
+<p>上面情況，假如文件過期後，該文件在服務器端沒有更新，就代表客戶端請求道的文件不就一模一樣，因此出了情境二</p>
+</blockquote>
+<h2 id="情境二-在Expires基礎上再加上Last-Modified以及if-Modified-Since"><a href="#情境二-在Expires基礎上再加上Last-Modified以及if-Modified-Since" class="headerlink" title="情境二 在Expires基礎上再加上Last-Modified以及if-Modified-Since"></a>情境二 在Expires基礎上再加上Last-Modified以及if-Modified-Since</h2><ul>
+<li><p>瀏覽器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ㄟㄟ，服務器，你的文件找一下有沒有一個叫做main.js的文件，找到後再給我</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>例子(跟靜態相同): </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '動態作用域'</span></span><br></pre></td></tr></table></figure>
+<li><p>服務器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OKOK，可是我怕你跟一直跟我要，所以給你一個Expires，等過了這個時間你再跟我要吧! 啊還有我怕到時候文件沒更新你又要我找給你，所以我回傳一個Last-Modified喔</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>瀏覽器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">好，那等文件過期後我再回傳if-Modified-Since給你喔，方便你核對版本</span><br></pre></td></tr></table></figure>
 
-<p>分析: </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">前面五點都一模一樣直到第六點</span><br><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a </span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 這時候找不到a並不會跑到上一層作用域鏈查找，而是回到執行時的環境也就是第八行所在的作用域查找</span><br><span class="line"><span class="number">7.</span> 這時候就會發現a是動態作用域並打印出</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<h3 id="總結-1"><a href="#總結-1" class="headerlink" title="總結:"></a>總結:</h3><p>if-Modified-Since與Last-Modified回傳樣子是</p>
+<p><img src="/images/HTTP06/2.png" alt=""></p>
+<blockquote>
+<ol>
+<li>如果Expires還沒過期，則瀏覽器聰明的使用緩存</li>
+<li>過期了之後，瀏覽器請求時附上if-Modified-Since， 假如文件在服務器端有更新，服務器回傳304 Not Modified</li>
 </ol>
+</blockquote>
+<h3 id="延伸情況三"><a href="#延伸情況三" class="headerlink" title="延伸情況三"></a>延伸情況三</h3><blockquote>
+<p>情況二可以發現，if-Modified-Since與Last-Modified這兩個最小單位是秒，如果今天更新的時間與那兩個相差不到1秒文件就不會更新。假如今天我服務器的平台過大，比方說FB，總是會有這個情況發生</p>
+</blockquote>
+<h2 id="情況三-在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match-然後在加入max-age"><a href="#情況三-在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match-然後在加入max-age" class="headerlink" title="情況三 在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match, 然後在加入max-age"></a>情況三 在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match, 然後在加入max-age</h2><ol>
+<li>max-age優先度比Expires高，因此這裡expires會被取代，單位是秒，表幾秒後緩存過期</li>
+<li>Etag與if-None_Match的關係就像是Last-Modified以及if-Modified-Since</li>
+<li>所以在這個情況Expires與Last-Modified其實沒啥用</li>
+</ol>
+<ul>
+<li><p>瀏覽器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ㄟㄟ，服務器，你的文件找一下有沒有一個叫做main.js的文件，找到後再給我</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服務器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OKOK，可是我怕你跟一直跟我要，所以給你一個Expires，等過了這個時間你再跟我要吧! 啊還有我怕到時候文件沒更新你又要我找給你，所以我回傳一個Last-Modified喔，但好像不夠精準，算了我再傳一個Etag以及max-age給你好了</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>瀏覽器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">好，既然有更精準的Etag以及max-age那我當然看這個囉，那我之後再回傳if-None-Match給你做核對版本</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="總結-2"><a href="#總結-2" class="headerlink" title="總結:"></a>總結:</h3><blockquote>
+<p>到這裡瀏覽器已經可以精準確定緩存時間以及緩存文件是否相同</p>
+</blockquote>
+<h2 id="CDN緩存"><a href="#CDN緩存" class="headerlink" title="CDN緩存"></a>CDN緩存</h2><p>CDN自己也有緩存，並將緩存的靜態資源傳給瀏覽器，跟瀏覽器的行為也很像</p>
+<ul>
+<li><p>瀏覽器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ㄟㄟ，服務器，你的文件找一下有沒有一個叫做main.js的文件，找到後再給我</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服務器: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">別找我，找我老弟CDN吧</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="瀏覽器對緩存的影響"><a href="#瀏覽器對緩存的影響" class="headerlink" title="瀏覽器對緩存的影響"></a>瀏覽器對緩存的影響</h2><p><img src="/images/HTTP06/3.png" alt=""></p>
+<blockquote>
+<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
+</blockquote>
 
       
     </div>
@@ -409,7 +476,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
           
         </div>
       
@@ -422,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/HTTP-post04/" rel="next" title="HTTP的長連接與短連接">
-                <i class="fa fa-chevron-left"></i> HTTP的長連接與短連接
+              <a href="/2020/07/30/HTTP-post05/" rel="next" title="HTTP代理">
+                <i class="fa fa-chevron-left"></i> HTTP代理
               </a>
             
           </div>
@@ -432,8 +499,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/30/HTTP-post05/" rel="prev" title="HTTP代理">
-                HTTP代理 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/02/JS-post03/" rel="prev" title="JS之變量如何賦值">
+                JS之變量如何賦值 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS靜態與動態作用域"><span class="nav-number">1.</span> <span class="nav-text">JS靜態與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#靜態作用域"><span class="nav-number">1.1.</span> <span class="nav-text">靜態作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動態作用域"><span class="nav-number">1.2.</span> <span class="nav-text">動態作用域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP緩存"><span class="nav-number">1.</span> <span class="nav-text">HTTP緩存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP緩存頭部-後面會詳談"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP緩存頭部(後面會詳談)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cache-Control"><span class="nav-number">1.1.1.</span> <span class="nav-text">Cache-Control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expires"><span class="nav-number">1.1.2.</span> <span class="nav-text">Expires</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Last-Modified"><span class="nav-number">1.1.3.</span> <span class="nav-text">Last-Modified</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-Modified-Since"><span class="nav-number">1.1.4.</span> <span class="nav-text">if-Modified-Since</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Etag"><span class="nav-number">1.1.5.</span> <span class="nav-text">Etag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-None-Match"><span class="nav-number">1.1.6.</span> <span class="nav-text">if-None-Match</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-緩存工作方式"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP 緩存工作方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情境一-服務器與瀏覽器約定一個文件過期時間-Expires"><span class="nav-number">1.3.</span> <span class="nav-text">情境一 服務器與瀏覽器約定一個文件過期時間(Expires)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#總結"><span class="nav-number">1.3.1.</span> <span class="nav-text">總結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸情況二"><span class="nav-number">1.3.2.</span> <span class="nav-text">延伸情況二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情境二-在Expires基礎上再加上Last-Modified以及if-Modified-Since"><span class="nav-number">1.4.</span> <span class="nav-text">情境二 在Expires基礎上再加上Last-Modified以及if-Modified-Since</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#總結-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">總結:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸情況三"><span class="nav-number">1.4.2.</span> <span class="nav-text">延伸情況三</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情況三-在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match-然後在加入max-age"><span class="nav-number">1.5.</span> <span class="nav-text">情況三 在情況二的基礎上，增加一個文件內容唯一標示Etag與if-None-Match, 然後在加入max-age</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#總結-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">總結:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN緩存"><span class="nav-number">1.6.</span> <span class="nav-text">CDN緩存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瀏覽器對緩存的影響"><span class="nav-number">1.7.</span> <span class="nav-text">瀏覽器對緩存的影響</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -800,9 +867,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/29/JS-post02/';
-          this.page.identifier = '2020/07/29/JS-post02/';
-          this.page.title = 'JS靜態與動態作用域';
+          this.page.url = 'https://s95050937.github.io/2020/07/30/HTTP-post06/';
+          this.page.identifier = '2020/07/30/HTTP-post06/';
+          this.page.title = 'HTTP緩存';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -910,13 +977,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JS靜態與動態作用域'.length > 0
+      var isPost = 'HTTP緩存'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JS靜態與動態作用域'
+        var title = 'HTTP緩存'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
