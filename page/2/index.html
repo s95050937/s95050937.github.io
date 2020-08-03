@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -83,17 +83,14 @@
 
 
 
-<meta name="description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS靜態與動態作用域">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/29/JS-post02/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端技術紀錄">
+<meta property="og:url" content="https://s95050937.github.io/page/2/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-07-29T14:27:49.000Z">
-<meta property="article:modified_time" content="2020-07-29T14:30:49.851Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="前端筆記">
+<meta property="article:tag" content=" 前端技術">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/JS-post02/"/>
+  <link rel="canonical" href="https://s95050937.github.io/page/2/"/>
 
 
 
 
 
-  <title>JS靜態與動態作用域 | 前端技術紀錄</title>
+  <title>前端技術紀錄</title>
   
 
 
@@ -149,7 +146,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,9 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -257,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/JS-post02/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/27/JS_post01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -274,7 +272,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS靜態與動態作用域</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/27/JS_post01/" itemprop="url">JavaScript偽數組</a></h1>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:49+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-27T23:56:57+08:00">
+                2020-07-27
               </time>
             
 
@@ -327,9 +327,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/29/JS-post02/#comments" itemprop="discussionUrl">
+                <a href="/2020/07/27/JS_post01/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/29/JS-post02/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/07/27/JS_post01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -338,11 +338,6 @@
           
           
 
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
           
 
           
@@ -362,37 +357,20 @@
       
 
       
-        <h2 id="JS靜態與動態作用域"><a href="#JS靜態與動態作用域" class="headerlink" title="JS靜態與動態作用域"></a>JS靜態與動態作用域</h2><p>JavaScript使用的是靜態作用域，非動態這件事要先提前知道</p>
-<h3 id="靜態作用域"><a href="#靜態作用域" class="headerlink" title="靜態作用域"></a>靜態作用域</h3><ol>
-<li><p>懶人包 : </p>
-<blockquote>
-<p>會主動去尋找函數與變量定義時的狀況</p>
-</blockquote>
-</li>
-<li><p>例子:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '靜態作用域'</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+        
+          <h2 id="JavaScript之類數組完全攻略"><a href="#JavaScript之類數組完全攻略" class="headerlink" title="JavaScript之類數組完全攻略"></a>JavaScript之類數組完全攻略</h2><p>今天幫大家整理偽數組的概念，我們先來從題目開始分析</p>
+<p>先來打造一個很酷的對象如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'push'</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>分析 :</p>
-<p>如果沒有作用域鏈的概念可以參考下面思維</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a <span class="comment">// 此時所在是第四行</span></span><br><span class="line"><span class="number">6.</span> 因為foo作用域裡面沒有聲明變量a，因此又跑到全局作用域</span><br><span class="line"><span class="number">7.</span> 找到a(靜態作用域)並打印出來</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="動態作用域"><a href="#動態作用域" class="headerlink" title="動態作用域"></a>動態作用域</h3><ol>
-<li><p>懶人包: </p>
-<blockquote>
-<p>會到執行時的環境尋找</p>
-</blockquote>
-</li>
-<li><p>例子(跟靜態相同): </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '動態作用域'</span></span><br></pre></td></tr></table></figure>
-
-<p>分析: </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">前面五點都一模一樣直到第六點</span><br><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a </span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 這時候找不到a並不會跑到上一層作用域鏈查找，而是回到執行時的環境也就是第八行所在的作用域查找</span><br><span class="line"><span class="number">7.</span> 這時候就會發現a是動態作用域並打印出</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+<p>這時候來打印obj看會長怎樣</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/27/JS_post01/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -407,40 +385,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/07/29/HTTP-post04/" rel="next" title="HTTP的長連接與短連接">
-                <i class="fa fa-chevron-left"></i> HTTP的長連接與短連接
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/30/HTTP-post05/" rel="prev" title="HTTP代理">
-                HTTP代理 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -450,11 +402,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -462,20 +417,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -496,17 +437,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -593,22 +525,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS靜態與動態作用域"><span class="nav-number">1.</span> <span class="nav-text">JS靜態與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#靜態作用域"><span class="nav-number">1.1.</span> <span class="nav-text">靜態作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動態作用域"><span class="nav-number">1.2.</span> <span class="nav-text">動態作用域</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -776,10 +692,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -797,18 +709,6 @@
       <script id="dsq-count-scr" src="https://s95050937.disqus.com/count.js" async></script>
     
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/29/JS-post02/';
-          this.page.identifier = '2020/07/29/JS-post02/';
-          this.page.title = 'JS靜態與動態作用域';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://s95050937.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
     
 
   
@@ -910,13 +810,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JS靜態與動態作用域'.length > 0
+      var isPost = ''.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JS靜態與動態作用域'
+        var title = ''
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -924,7 +824,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("JavaScript偽數組");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

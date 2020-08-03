@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>CSS01</title>
+      <title>HTTP內容協商機制</title>
+      <link href="/2020/08/03/HTTP-post07/"/>
+      <url>/2020/08/03/HTTP-post07/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP內容協商機制"><a href="#HTTP內容協商機制" class="headerlink" title="HTTP內容協商機制"></a>HTTP內容協商機制</h1><h2 id="懶人包"><a href="#懶人包" class="headerlink" title="懶人包"></a>懶人包</h2><blockquote><p>比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制</p></blockquote><h2 id="內容協商方式"><a href="#內容協商方式" class="headerlink" title="內容協商方式"></a>內容協商方式</h2><h3 id="客戶端驅動"><a href="#客戶端驅動" class="headerlink" title="客戶端驅動"></a>客戶端驅動</h3><blockquote><p>客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求</p></blockquote><p>優點: 容易實現，且較精準</p><p>缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次</p><a id="more"></a><h3 id="服務器驅動-最廣泛"><a href="#服務器驅動-最廣泛" class="headerlink" title="服務器驅動(最廣泛)"></a>服務器驅動(最廣泛)</h3><blockquote><p>服務器檢查客戶端請求頭來決定提供甚麼資源</p></blockquote><p>優點: 可以直接查看內容， 具有近似匹配</p><p>缺點: 請求投如果沒有協代可能得用猜的提供資源</p><h3 id="透明協商"><a href="#透明協商" class="headerlink" title="透明協商"></a>透明協商</h3><blockquote><p>中間設備(通常為緩存代理)代表客戶端進行協商</p></blockquote><p>優點: 請求快速</p><p>缺點: 因為非標準HTTP方式，因此沒有標準規範</p><h2 id="服務器驅動"><a href="#服務器驅動" class="headerlink" title="服務器驅動"></a>服務器驅動</h2><h3 id="請求頭"><a href="#請求頭" class="headerlink" title="請求頭"></a>請求頭</h3><ol><li>Accept: 告知服務器發送何種媒體類型(mp3)</li><li>Accept-Language: 告知服務器發送何種語言</li><li>Accept-Charset: 告知服務器發送何種字符集(Unicode)</li><li>Accept-Encoding: 告知服務器發送何種編碼(UTF-8)</li></ol><h3 id="響應頭"><a href="#響應頭" class="headerlink" title="響應頭"></a>響應頭</h3><p>跟請求頭一一對應(跟上面索引一一對應)</p><ol><li>Content-Type</li><li>Content-Language</li><li>Content-Type</li><li>Content-Encoding</li></ol><h3 id="近似匹配-Q值"><a href="#近似匹配-Q值" class="headerlink" title="近似匹配(Q值)"></a>近似匹配(Q值)</h3><p>拿Accept-Language(所有都一樣)當例子</p><blockquote><p>Accept-Language: en;q=0.5,fr ;q=0.0, nl;q=1.0,tr;q=0.0</p></blockquote><p>​    註: nl:荷蘭語，en: 英語， fr: 法語, tr: 土耳其語</p><p>看q值大小(從0到1)，不是加起來等於1，只是代表優先級</p><p>比方說上面那個例子按照降冪排列會變下面</p><blockquote><p>Accept-Language: nl;q=1.0, en;q=0.5, fr ;q=0.0, tr;q=0.0</p></blockquote><p>假如客戶端請求西班牙語，但服務器端沒有西班牙語，因此服務器會找Q值最大，在此例優先優先發送荷蘭語(q=1.0)，假如服務器也沒有荷蘭語，則回傳英語(q=0.5) 。</p><p>假如服務器既沒有nl也沒有en會產生問題，所以服務器通常會設置默認回傳，即便沒有沒有上傳任何編號也會給默認的語言</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS文字波浪特效</title>
       <link href="/2020/08/02/CSS01/"/>
       <url>/2020/08/02/CSS01/</url>
       
