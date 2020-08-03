@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://s95050937.github.io/"/>
-  <updated>2020-08-03T06:32:01.442Z</updated>
+  <updated>2020-08-03T16:03:57.355Z</updated>
   <id>https://s95050937.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP與HTTPS</title>
+    <link href="https://s95050937.github.io/2020/08/03/HTTP-post08/"/>
+    <id>https://s95050937.github.io/2020/08/03/HTTP-post08/</id>
+    <published>2020-08-03T15:57:32.000Z</published>
+    <updated>2020-08-03T16:03:57.355Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTTP與HTTPS"><a href="#HTTP與HTTPS" class="headerlink" title="HTTP與HTTPS"></a>HTTP與HTTPS</h1><h2 id="HTTPS較安全"><a href="#HTTPS較安全" class="headerlink" title="HTTPS較安全"></a>HTTPS較安全</h2><p>因為HTTP並未進行加密，在網路上形同裸體，有人心懷不軌很容易被竊取或竄改</p><h3 id="情況一"><a href="#情況一" class="headerlink" title="情況一"></a>情況一</h3><p>假如今天小明以及小美在聊天，假如甚麼密碼都不設的話，訊息可能會被竄改</p><p><img src="/images/HTTP08/1.png" alt=""></p><a id="more"></a><h3 id="情況二"><a href="#情況二" class="headerlink" title="情況二"></a>情況二</h3><p>這次小名跟小美學聰明了，他們學會加密，討論出一個加密方式(比方說AES)並有一個密鑰可以解密，所以現在他們聊天變成這樣(對稱加密)</p><p><img src="/images/HTTP08/2.png" alt=""></p><p>但駭客當然也不是省油的燈，但是假如第一次通信就被攔截，則壞分子還是可以獲得密鑰</p><p><img src="/images/HTTP08/4.png" alt=""></p><h3 id="情況三"><a href="#情況三" class="headerlink" title="情況三"></a>情況三</h3><p>小美跟小明又變更聰明了，選擇了不對稱加密(有公鑰有私鑰，私鑰可以解開公鑰)</p><ol><li><p>小美先把公鑰傳遞給小明</p><p><img src="/images/HTTP08/5.png" alt=""></p></li><li><p>將之後進行對稱加密的keyB用公鑰keyA加密傳給小美，小美再通過自己的私鑰解密獲得key2，接下來就能和上次一樣用key2加密聊天</p><p><img src="/images/HTTP08/6.png" alt=""></p></li><li><p>結論: </p><blockquote><p>這樣假如壞分子獲得公鑰也沒有私鑰解密獲得key2</p></blockquote></li><li><p>但壞分子也不是省油的燈他想到下面這個方法</p><ol><li><p>獲得公鑰之後把它掉包成自己的公鑰<br><img src="/images/HTTP08/7.png" alt=""></p></li><li><p>之後小明利用key1加密keyB傳給小美val4，被壞分子攔截用key1的私鑰解密獲取keyB再用第一從小美獲取的公鑰keyA加密回傳給小美<br><img src="/images/HTTP08/8.png" alt=""></p></li></ol></li></ol><h3 id="開大招"><a href="#開大招" class="headerlink" title="開大招"></a>開大招</h3><p>透過權威機構獲得認證</p><ol><li><p>小美(服務端)先向權威機構申請證書<br><img src="/images/HTTP08/9.png" alt=""></p></li><li><p>小明之後想像小美聊天，小美就會給他證書並他會交給權威機構解密獲得證書<br><img src="/images/HTTP08/10.png" alt=""></p></li><li><p>獲得公鑰A的小明跟情況三一樣(第二點: 將之後進行對稱加密的keyB用公鑰keyA加密傳給小美，小美再通過自己的私鑰解密獲得key2，接下來就能和上次一樣用key2加密聊天)<br><img src="/images/HTTP08/11.png" alt=""></p></li><li><p>就算今天壞分子自行向權威機構獲取證，然後把證書掉包成自己的傳給小明，然而小明再向權威機構驗證證書的時候會發現，請求證書時的人並非小美(權威機構會自行認證)，理所當然不會通過</p><p>附註: 申請人並不能改寫，在申請時就會附上</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HTTP與HTTPS&quot;&gt;&lt;a href=&quot;#HTTP與HTTPS&quot; class=&quot;headerlink&quot; title=&quot;HTTP與HTTPS&quot;&gt;&lt;/a&gt;HTTP與HTTPS&lt;/h1&gt;&lt;h2 id=&quot;HTTPS較安全&quot;&gt;&lt;a href=&quot;#HTTPS較安全&quot; class=&quot;headerlink&quot; title=&quot;HTTPS較安全&quot;&gt;&lt;/a&gt;HTTPS較安全&lt;/h2&gt;&lt;p&gt;因為HTTP並未進行加密，在網路上形同裸體，有人心懷不軌很容易被竊取或竄改&lt;/p&gt;
+&lt;h3 id=&quot;情況一&quot;&gt;&lt;a href=&quot;#情況一&quot; class=&quot;headerlink&quot; title=&quot;情況一&quot;&gt;&lt;/a&gt;情況一&lt;/h3&gt;&lt;p&gt;假如今天小明以及小美在聊天，假如甚麼密碼都不設的話，訊息可能會被竄改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/HTTP08/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="HTTP" scheme="https://s95050937.github.io/categories/HTTP/"/>
+    
+    
+      <category term="HTTP" scheme="https://s95050937.github.io/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP內容協商機制</title>
