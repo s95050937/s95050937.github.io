@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="webpack," />
 
 
 
@@ -83,23 +83,18 @@
 
 
 
-<meta name="description" content="HTTP 代理像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端 示意圖">
+<meta name="description" content="webapck 打包出的文件解析原始程式碼12345&#x2F;&#x2F; a.js的內容module.exports &#x3D; &#39;HAHAHA&#39;&#x2F;&#x2F; index.js的內容let aExports  &#x3D; require(&#39;.&#x2F;a&#39;);console.log(&quot;Hello&quot; + aExports);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP代理">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/30/HTTP-post05/index.html">
+<meta property="og:title" content="webapck 打包文件解析">
+<meta property="og:url" content="https://s95050937.github.io/2020/08/05/webpack01/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP 代理像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端 示意圖">
+<meta property="og:description" content="webapck 打包出的文件解析原始程式碼12345&#x2F;&#x2F; a.js的內容module.exports &#x3D; &#39;HAHAHA&#39;&#x2F;&#x2F; index.js的內容let aExports  &#x3D; require(&#39;.&#x2F;a&#39;);console.log(&quot;Hello&quot; + aExports);">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/1.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/2.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/3.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/4.png">
-<meta property="article:published_time" content="2020-07-30T10:51:45.000Z">
-<meta property="article:modified_time" content="2020-07-30T10:54:46.789Z">
+<meta property="article:published_time" content="2020-08-05T15:45:53.000Z">
+<meta property="article:modified_time" content="2020-08-05T15:47:16.170Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP05/1.png">
 
 
 
@@ -129,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/30/HTTP-post05/"/>
+  <link rel="canonical" href="https://s95050937.github.io/2020/08/05/webpack01/"/>
 
 
 
 
 
-  <title>HTTP代理 | 前端技術紀錄</title>
+  <title>webapck 打包文件解析 | 前端技術紀錄</title>
   
 
 
@@ -262,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/30/HTTP-post05/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/08/05/webpack01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -279,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP代理</h1>
+          <h1 class="post-title" itemprop="name headline">webapck 打包文件解析</h1>
         
 
         <div class="post-meta">
@@ -291,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-30T18:51:45+08:00">
-                2020-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T23:45:53+08:00">
+                2020-08-05
               </time>
             
 
@@ -314,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
                   </a>
                 </span>
 
@@ -332,9 +327,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/30/HTTP-post05/#comments" itemprop="discussionUrl">
+                <a href="/2020/08/05/webpack01/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/30/HTTP-post05/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/08/05/webpack01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,40 +362,12 @@
       
 
       
-        <h1 id="HTTP-代理"><a href="#HTTP-代理" class="headerlink" title="HTTP 代理"></a>HTTP 代理</h1><p>像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端</p>
-<h2 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h2><p><img src="/images/HTTP05/1.png" alt=""></p>
-<a id="more"></a>
-<h2 id="為何需要代理"><a href="#為何需要代理" class="headerlink" title="為何需要代理"></a>為何需要代理</h2><h3 id="1-抓包"><a href="#1-抓包" class="headerlink" title="1. 抓包"></a>1. 抓包</h3><p>能更好分析請求與安全測試</p>
-<h3 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h3><p>俗稱的翻牆</p>
-<p><img src="/images/HTTP05/2.png" alt=""></p>
-<h3 id="3-匿名訪問"><a href="#3-匿名訪問" class="headerlink" title="3. 匿名訪問"></a>3. 匿名訪問</h3><p>刪除客戶端HTTP報文中的私人資料，比方說Cookie或是IP地址，</p>
-<h3 id="4-過濾器"><a href="#4-過濾器" class="headerlink" title="4. 過濾器"></a>4. 過濾器</h3><p>比方說不希望孩童從網路上看到非該年齡層的內容，因此可以透過代理過慮服務端回傳的內容</p>
-<p><img src="/images/HTTP05/3.png" alt=""></p>
-<h2 id="補充-網關"><a href="#補充-網關" class="headerlink" title="補充(網關)"></a>補充(網關)</h2><p>又稱作協議轉換器，為資源與應用程序的黏合器</p>
-<h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP05/4.png" alt=""></p>
-<h3 id="講解"><a href="#講解" class="headerlink" title="講解"></a>講解</h3><p>從上圖可以發現和代理很類似，最關鍵的一點就是我們可以透過網關轉換協議，比方說上圖客戶端向網關發起HTTP協議，而後經過網觀象服務器端發起POP。</p>
-<h3 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h3><p>Web在一端使用HTTP，另一端採用另一種協議可以這樣標示</p>
-<ol>
-<li><p>(/HTTP) 客戶端網關: 與客戶端採用其他協議，與服務端採用HTTP</p>
-<p>記憶點: 叫客戶端網關可想像成他是幫客戶端轉換成HTTP協議的方式</p>
-</li>
-<li><p>(HTTP/) 服務端網關: 與服務端端採用其他協議，與客戶端採用HTTP</p>
-<p>記憶點: 與客戶端相反</p>
-</li>
-</ol>
-<h3 id="常見網關"><a href="#常見網關" class="headerlink" title="常見網關"></a>常見網關</h3><ol>
-<li><p>(HTTP/ *) 服務器端Web網關</p>
-</li>
-<li><p>(HTTP/HTTPS) 服務器端安全網關</p>
-<p> (將客戶端傳來的HTTP協議加密成HTTPS)</p>
-</li>
-<li><p>(HTTPS/HTTP) 客戶端安全網關 </p>
-</li>
-</ol>
-<blockquote>
-<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
-</blockquote>
+        <h2 id="webapck-打包出的文件解析"><a href="#webapck-打包出的文件解析" class="headerlink" title="webapck 打包出的文件解析"></a>webapck 打包出的文件解析</h2><h3 id="原始程式碼"><a href="#原始程式碼" class="headerlink" title="原始程式碼"></a>原始程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js的內容</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="string">'HAHAHA'</span></span><br><span class="line"><span class="comment">// index.js的內容</span></span><br><span class="line"><span class="keyword">let</span> aExports  = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span> + aExports);</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+<h3 id="打包後程式碼"><a href="#打包後程式碼" class="headerlink" title="打包後程式碼"></a>打包後程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></span><br><span class="line">  <span class="comment">// 2.The module cache (定義了一個緩存)</span></span><br><span class="line">  <span class="keyword">var</span> installedModules = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3.the require function 配置了一個require方法(因為瀏覽器不能運行require)</span></span><br><span class="line">  <span class="comment">// 甚麼時候調用呢(27行會return)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123; <span class="comment">// 5."./src/index.js"傳入</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check if module is in cache (6.不在緩存中)</span></span><br><span class="line">    <span class="keyword">if</span> (installedModules[moduleId]) &#123;</span><br><span class="line">      <span class="keyword">return</span> installedModules[moduleId].exports;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Create a new module (and put it into the cache)</span></span><br><span class="line">    <span class="comment">// 7.定義了一個新的module把入口模塊傳進來</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</span><br><span class="line">      i: moduleId,</span><br><span class="line">      l: <span class="literal">false</span>,</span><br><span class="line">      exports: &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// Execute the module function</span></span><br><span class="line">    <span class="comment">// 執行(call)並把下面這些傳入(跑到第39行)</span></span><br><span class="line">    modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</span><br><span class="line">    <span class="comment">// Flag the module as loaded</span></span><br><span class="line">    <span class="built_in">module</span>.l = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// Return the exports of the module</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Load entry module and return exports</span></span><br><span class="line">  <span class="comment">// 4.把index傳進來了</span></span><br><span class="line">  <span class="keyword">return</span> __webpack_require__(__webpack_require__.s = <span class="string">"./src/index.js"</span>); <span class="comment">//入口模塊</span></span><br><span class="line">&#125;)</span><br><span class="line">(&#123;   <span class="comment">// 1. 傳入一個對象給modules</span></span><br><span class="line">  <span class="string">"./src/a.js"</span>:  <span class="comment">// key </span></span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports</span>) </span>&#123;   <span class="comment">//value</span></span><br><span class="line">      <span class="built_in">eval</span>(<span class="string">"module.exports = 'HAHAHA'\r\n\n\n//# sourceURL=webpack:///./src/a.js?"</span>);</span><br><span class="line">      <span class="comment">// 9.最後跑到這的時候發現我們把module.exports 定義成了'HAHAHA'，因此回到第30行回傳了一個module.exports給aExports然後回到8.aExports  = module.exports 就是HAHAHA並執行console.log(\"Hello\" + aExports);n所以生成出HelloHAHAHA</span></span><br><span class="line">    &#125;),</span><br><span class="line">  <span class="string">"./src/index.js"</span>:</span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports, __webpack_require__</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">eval</span>(<span class="string">"let aExports  = __webpack_require__(/*! ./a */ \"./src/a.js\");\r\nconsole.log(\"Hello\" + aExports);\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?"</span>); </span><br><span class="line">      <span class="comment">// 8. __webpack_require__(/*! ./a */ \"./src/a.js\") </span></span><br><span class="line">        <span class="comment">//執行了 __webpack_require__("./src/a.js\")，因為遞歸原因所以又跑了上面跑過的流程</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="自"><a href="#自" class="headerlink" title="自"></a>自</h3>
       
     </div>
     
@@ -417,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
           
         </div>
       
@@ -430,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/JS-post02/" rel="next" title="JS靜態與動態作用域">
-                <i class="fa fa-chevron-left"></i> JS靜態與動態作用域
+              <a href="/2020/08/05/JS04/" rel="next" title="JS作用域&值類型與引用類型">
+                <i class="fa fa-chevron-left"></i> JS作用域&值類型與引用類型
               </a>
             
           </div>
@@ -439,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/30/HTTP-post06/" rel="prev" title="HTTP緩存">
-                HTTP緩存 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-代理"><span class="nav-number">1.</span> <span class="nav-text">HTTP 代理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為何需要代理"><span class="nav-number">1.2.</span> <span class="nav-text">為何需要代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-抓包"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 抓包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-FQ"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. FQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-匿名訪問"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 匿名訪問</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-過濾器"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 過濾器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充-網關"><span class="nav-number">1.3.</span> <span class="nav-text">補充(網關)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#講解"><span class="nav-number">1.3.2.</span> <span class="nav-text">講解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分類"><span class="nav-number">1.3.3.</span> <span class="nav-text">分類</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常見網關"><span class="nav-number">1.3.4.</span> <span class="nav-text">常見網關</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webapck-打包出的文件解析"><span class="nav-number">1.</span> <span class="nav-text">webapck 打包出的文件解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始程式碼"><span class="nav-number">1.1.</span> <span class="nav-text">原始程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包後程式碼"><span class="nav-number">1.2.</span> <span class="nav-text">打包後程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自"><span class="nav-number">1.3.</span> <span class="nav-text">自</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -808,9 +771,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/30/HTTP-post05/';
-          this.page.identifier = '2020/07/30/HTTP-post05/';
-          this.page.title = 'HTTP代理';
+          this.page.url = 'https://s95050937.github.io/2020/08/05/webpack01/';
+          this.page.identifier = '2020/08/05/webpack01/';
+          this.page.title = 'webapck 打包文件解析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -918,13 +881,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP代理'.length > 0
+      var isPost = 'webapck 打包文件解析'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP代理'
+        var title = 'webapck 打包文件解析'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

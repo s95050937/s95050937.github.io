@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="JavaScript,JavaScript面試," />
 
 
 
@@ -83,23 +83,26 @@
 
 
 
-<meta name="description" content="HTTP 代理像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端 示意圖">
+<meta name="description" content="01作用域以及值類型與引用類型主題目(一)123456789101112131415var foo &#x3D; 55var bar &#x3D; 66function baz(num, foo) &amp;#123;  num &#x3D; 100  foo &#x3D; 100  bar &#x3D; 100  console.log(num);  console.log(foo);  console.log(bar);&amp;#125;baz(foo,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP代理">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/30/HTTP-post05/index.html">
+<meta property="og:title" content="JS作用域&amp;值類型與引用類型">
+<meta property="og:url" content="https://s95050937.github.io/2020/08/05/JS04/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP 代理像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端 示意圖">
+<meta property="og:description" content="01作用域以及值類型與引用類型主題目(一)123456789101112131415var foo &#x3D; 55var bar &#x3D; 66function baz(num, foo) &amp;#123;  num &#x3D; 100  foo &#x3D; 100  bar &#x3D; 100  console.log(num);  console.log(foo);  console.log(bar);&amp;#125;baz(foo,">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/1.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/2.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/3.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP05/4.png">
-<meta property="article:published_time" content="2020-07-30T10:51:45.000Z">
-<meta property="article:modified_time" content="2020-07-30T10:54:46.789Z">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/3.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/4.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/5.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS04/6.png">
+<meta property="article:published_time" content="2020-08-05T15:40:22.000Z">
+<meta property="article:modified_time" content="2020-08-05T15:43:30.490Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript面試">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP05/1.png">
+<meta name="twitter:image" content="https://s95050937.github.io/images/JS04/1.png">
 
 
 
@@ -129,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/30/HTTP-post05/"/>
+  <link rel="canonical" href="https://s95050937.github.io/2020/08/05/JS04/"/>
 
 
 
 
 
-  <title>HTTP代理 | 前端技術紀錄</title>
+  <title>JS作用域&值類型與引用類型 | 前端技術紀錄</title>
   
 
 
@@ -262,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/30/HTTP-post05/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/08/05/JS04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -279,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP代理</h1>
+          <h1 class="post-title" itemprop="name headline">JS作用域&值類型與引用類型</h1>
         
 
         <div class="post-meta">
@@ -291,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-30T18:51:45+08:00">
-                2020-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T23:40:22+08:00">
+                2020-08-05
               </time>
             
 
@@ -314,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -332,9 +335,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/30/HTTP-post05/#comments" itemprop="discussionUrl">
+                <a href="/2020/08/05/JS04/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/30/HTTP-post05/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/08/05/JS04/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,39 +370,44 @@
       
 
       
-        <h1 id="HTTP-代理"><a href="#HTTP-代理" class="headerlink" title="HTTP 代理"></a>HTTP 代理</h1><p>像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端</p>
-<h2 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h2><p><img src="/images/HTTP05/1.png" alt=""></p>
+        <h1 id="01作用域以及值類型與引用類型"><a href="#01作用域以及值類型與引用類型" class="headerlink" title="01作用域以及值類型與引用類型"></a>01作用域以及值類型與引用類型</h1><h2 id="主題目-一"><a href="#主題目-一" class="headerlink" title="主題目(一)"></a>主題目(一)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="number">55</span></span><br><span class="line"><span class="keyword">var</span> bar = <span class="number">66</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params">num, foo</span>) </span>&#123;</span><br><span class="line">  num = <span class="number">100</span></span><br><span class="line">  foo = <span class="number">100</span></span><br><span class="line">  bar = <span class="number">100</span></span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  <span class="built_in">console</span>.log(foo);</span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">baz(foo, bar)</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="built_in">console</span>.log(bar);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="為何需要代理"><a href="#為何需要代理" class="headerlink" title="為何需要代理"></a>為何需要代理</h2><h3 id="1-抓包"><a href="#1-抓包" class="headerlink" title="1. 抓包"></a>1. 抓包</h3><p>能更好分析請求與安全測試</p>
-<h3 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h3><p>俗稱的翻牆</p>
-<p><img src="/images/HTTP05/2.png" alt=""></p>
-<h3 id="3-匿名訪問"><a href="#3-匿名訪問" class="headerlink" title="3. 匿名訪問"></a>3. 匿名訪問</h3><p>刪除客戶端HTTP報文中的私人資料，比方說Cookie或是IP地址，</p>
-<h3 id="4-過濾器"><a href="#4-過濾器" class="headerlink" title="4. 過濾器"></a>4. 過濾器</h3><p>比方說不希望孩童從網路上看到非該年齡層的內容，因此可以透過代理過慮服務端回傳的內容</p>
-<p><img src="/images/HTTP05/3.png" alt=""></p>
-<h2 id="補充-網關"><a href="#補充-網關" class="headerlink" title="補充(網關)"></a>補充(網關)</h2><p>又稱作協議轉換器，為資源與應用程序的黏合器</p>
-<h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP05/4.png" alt=""></p>
-<h3 id="講解"><a href="#講解" class="headerlink" title="講解"></a>講解</h3><p>從上圖可以發現和代理很類似，最關鍵的一點就是我們可以透過網關轉換協議，比方說上圖客戶端向網關發起HTTP協議，而後經過網觀象服務器端發起POP。</p>
-<h3 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h3><p>Web在一端使用HTTP，另一端採用另一種協議可以這樣標示</p>
-<ol>
-<li><p>(/HTTP) 客戶端網關: 與客戶端採用其他協議，與服務端採用HTTP</p>
-<p>記憶點: 叫客戶端網關可想像成他是幫客戶端轉換成HTTP協議的方式</p>
-</li>
-<li><p>(HTTP/) 服務端網關: 與服務端端採用其他協議，與客戶端採用HTTP</p>
-<p>記憶點: 與客戶端相反</p>
-</li>
-</ol>
-<h3 id="常見網關"><a href="#常見網關" class="headerlink" title="常見網關"></a>常見網關</h3><ol>
-<li><p>(HTTP/ *) 服務器端Web網關</p>
-</li>
-<li><p>(HTTP/HTTPS) 服務器端安全網關</p>
-<p> (將客戶端傳來的HTTP協議加密成HTTPS)</p>
-</li>
-<li><p>(HTTPS/HTTP) 客戶端安全網關 </p>
-</li>
-</ol>
+<h3 id="詳解"><a href="#詳解" class="headerlink" title="詳解"></a>詳解</h3><p>上面那幾行都只是在聲明變量以及函數，直到第13行。</p>
+<p>在執行時，開始在全局作用域查找，找到之後把foo以及bar傳入參數內部，相當於</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params">num = foo = <span class="number">55</span> , foo = bar = <span class="number">66</span></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果對值引用不懂得可以看我這篇文章</p>
 <blockquote>
-<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
+<p><a href="https://s95050937.github.io/2020/08/02/JS-post03/">https://s95050937.github.io/2020/08/02/JS-post03/</a></p>
 </blockquote>
+<p>從那篇文章可以知道絕對沒有一個變量指向另一個變量的情況發生，因此其實接下來對基本類型來說基本上不管怎麼改變引用的東西對外部也沒什麼改變，(當然引用對象會把指針賦值給他有可能藉由參數改變影響外部)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params">num, foo</span>) </span>&#123;</span><br><span class="line">  num = <span class="number">100</span>  <span class="comment">// 因為已經有參數num當然改變的是num</span></span><br><span class="line">  foo = <span class="number">100</span>  <span class="comment">// 因為已經有參數foo當然改變的是foo</span></span><br><span class="line">  bar = <span class="number">100</span> <span class="comment">// 這裡可以發現在函數作用域裡面沒有bar因此到外部查找變量bar並改變他</span></span><br><span class="line">  <span class="built_in">console</span>.log(num); <span class="comment">// 100</span></span><br><span class="line">  <span class="built_in">console</span>.log(foo); <span class="comment">// 100</span></span><br><span class="line">  <span class="built_in">console</span>.log(bar); <span class="comment">// 100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>從上面第四行的註解可想而知外部已經發生改變</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 55</span></span><br><span class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+
+<p>可以發現若是函數沒有在自己的作用域定義自身的變量，很容易發生意想不到的結果</p>
+<h2 id="主題目二"><a href="#主題目二" class="headerlink" title="主題目二"></a>主題目二</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, height</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name </span><br><span class="line">  <span class="keyword">this</span>.age = age </span><br><span class="line">  <span class="keyword">this</span>.height  = height</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.name = <span class="string">'foo'</span></span><br><span class="line">  person = <span class="keyword">new</span> Person(<span class="string">'Mike'</span>, <span class="number">15</span>, <span class="number">1.85</span>)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> Student1 = <span class="keyword">new</span> Person(<span class="string">'Banny'</span>, <span class="number">25</span>, <span class="number">1.75</span>)</span><br><span class="line"><span class="built_in">console</span>.log(Student1.name);</span><br><span class="line">baz(Student1)</span><br><span class="line"><span class="built_in">console</span>.log(Student1.name);</span><br></pre></td></tr></table></figure>
+
+<h3 id="詳解-1"><a href="#詳解-1" class="headerlink" title="詳解"></a>詳解</h3><p>基本上如果有看過上面我寫的那篇文章這題也是秒解</p>
+<p>當第12行對象創建，接下來打印Student1.name 可以很直觀的知道會打印出Banny，也與事實相符<br><img src="/images/JS04/1.png" alt=""></p>
+<h4 id="第14行"><a href="#第14行" class="headerlink" title="第14行"></a>第14行</h4><p>調用函數並把該對象轉給了baz裡面的參數baz(注意這時候傳入的是引用對象)</p>
+<p>到這裡先看一下是內部的值是怎麼引用的</p>
+<p><img src="/images/JS04/2.png" alt=""></p>
+<h4 id="第八行"><a href="#第八行" class="headerlink" title="第八行"></a>第八行</h4><p>改寫name</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.name = <span class="string">'foo'</span></span><br></pre></td></tr></table></figure>
+
+<p>可以發現下圖的Banny已經被改寫了，所以最後打印student.name才會變foo<br><img src="/images/JS04/3.png" alt=""></p>
+<h4 id="第九行"><a href="#第九行" class="headerlink" title="第九行"></a>第九行</h4><p>改寫 person</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person = <span class="keyword">new</span> Person(<span class="string">'Mike'</span>, <span class="number">15</span>, <span class="number">1.85</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS04/4.png" alt=""></p>
+<h2 id="題外話-基本上開發也不會這樣搞"><a href="#題外話-基本上開發也不會這樣搞" class="headerlink" title="題外話(基本上開發也不會這樣搞)"></a>題外話(基本上開發也不會這樣搞)</h2><h3 id="函數若定義變量跟自身一樣情況"><a href="#函數若定義變量跟自身一樣情況" class="headerlink" title="函數若定義變量跟自身一樣情況"></a>函數若定義變量跟自身一樣情況</h3><p>例子: </p>
+<p>如果用let的話會報錯: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> bar = <span class="string">'haha'</span></span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS04/5.png" alt=""></p>
+<p>但假如用var則不會，甚至會改變參數</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bar = <span class="string">'haha'</span></span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS04/6.png" alt=""></p>
 
       
     </div>
@@ -417,7 +425,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript%E9%9D%A2%E8%A9%A6/" rel="tag"># JavaScript面試</a>
           
         </div>
       
@@ -430,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/JS-post02/" rel="next" title="JS靜態與動態作用域">
-                <i class="fa fa-chevron-left"></i> JS靜態與動態作用域
+              <a href="/2020/08/04/CSS02/" rel="next" title="CSS文字懸停">
+                <i class="fa fa-chevron-left"></i> CSS文字懸停
               </a>
             
           </div>
@@ -440,8 +450,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/30/HTTP-post06/" rel="prev" title="HTTP緩存">
-                HTTP緩存 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/05/webpack01/" rel="prev" title="webapck 打包文件解析">
+                webapck 打包文件解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-代理"><span class="nav-number">1.</span> <span class="nav-text">HTTP 代理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為何需要代理"><span class="nav-number">1.2.</span> <span class="nav-text">為何需要代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-抓包"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 抓包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-FQ"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. FQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-匿名訪問"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 匿名訪問</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-過濾器"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 過濾器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充-網關"><span class="nav-number">1.3.</span> <span class="nav-text">補充(網關)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#講解"><span class="nav-number">1.3.2.</span> <span class="nav-text">講解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分類"><span class="nav-number">1.3.3.</span> <span class="nav-text">分類</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常見網關"><span class="nav-number">1.3.4.</span> <span class="nav-text">常見網關</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01作用域以及值類型與引用類型"><span class="nav-number">1.</span> <span class="nav-text">01作用域以及值類型與引用類型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主題目-一"><span class="nav-number">1.1.</span> <span class="nav-text">主題目(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#詳解"><span class="nav-number">1.1.1.</span> <span class="nav-text">詳解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主題目二"><span class="nav-number">1.2.</span> <span class="nav-text">主題目二</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#詳解-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">詳解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第14行"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">第14行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第八行"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">第八行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第九行"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">第九行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#題外話-基本上開發也不會這樣搞"><span class="nav-number">1.3.</span> <span class="nav-text">題外話(基本上開發也不會這樣搞)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函數若定義變量跟自身一樣情況"><span class="nav-number">1.3.1.</span> <span class="nav-text">函數若定義變量跟自身一樣情況</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -808,9 +818,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/30/HTTP-post05/';
-          this.page.identifier = '2020/07/30/HTTP-post05/';
-          this.page.title = 'HTTP代理';
+          this.page.url = 'https://s95050937.github.io/2020/08/05/JS04/';
+          this.page.identifier = '2020/08/05/JS04/';
+          this.page.title = 'JS作用域&值類型與引用類型';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -918,13 +928,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP代理'.length > 0
+      var isPost = 'JS作用域&值類型與引用類型'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP代理'
+        var title = 'JS作用域&值類型與引用類型'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
