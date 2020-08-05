@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="webpack," />
 
 
 
@@ -83,24 +83,18 @@
 
 
 
-<meta name="description" content="JavaScript之類數組完全攻略今天幫大家整理偽數組的概念，我們先來從題目開始分析 先來打造一個很酷的對象如下 1234567var obj &#x3D; &amp;#123;    &#39;0&#39;: &#39;a&#39;,    &#39;1&#39;: &#39;b&#39;,    &#39;2&#39;: &#39;c&#39;,    &#39;length&#39;: 3,    &#39;push&#39;: Array.prototype.push&amp;#125;  這時候來打印obj看會長怎樣">
+<meta name="description" content="webapck 打包出的文件解析原始程式碼12345&#x2F;&#x2F; a.js的內容module.exports &#x3D; &#39;HAHAHA&#39;&#x2F;&#x2F; index.js的內容let aExports  &#x3D; require(&#39;.&#x2F;a&#39;);console.log(&quot;Hello&quot; + aExports);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript偽數組">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/27/JS_post01/index.html">
+<meta property="og:title" content="webapck 打包文件解析">
+<meta property="og:url" content="https://s95050937.github.io/webpack01.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JavaScript之類數組完全攻略今天幫大家整理偽數組的概念，我們先來從題目開始分析 先來打造一個很酷的對象如下 1234567var obj &#x3D; &amp;#123;    &#39;0&#39;: &#39;a&#39;,    &#39;1&#39;: &#39;b&#39;,    &#39;2&#39;: &#39;c&#39;,    &#39;length&#39;: 3,    &#39;push&#39;: Array.prototype.push&amp;#125;  這時候來打印obj看會長怎樣">
+<meta property="og:description" content="webapck 打包出的文件解析原始程式碼12345&#x2F;&#x2F; a.js的內容module.exports &#x3D; &#39;HAHAHA&#39;&#x2F;&#x2F; index.js的內容let aExports  &#x3D; require(&#39;.&#x2F;a&#39;);console.log(&quot;Hello&quot; + aExports);">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/1.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/2.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/3.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/4.jpeg">
-<meta property="og:image" content="https://s95050937.github.io/images/JS01/5.jpeg">
-<meta property="article:published_time" content="2020-07-27T15:56:57.000Z">
-<meta property="article:modified_time" content="2020-07-29T14:28:06.060Z">
+<meta property="article:published_time" content="2020-08-05T15:45:53.000Z">
+<meta property="article:modified_time" content="2020-08-05T15:47:16.170Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/JS01/1.jpeg">
 
 
 
@@ -130,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/27/JS_post01/"/>
+  <link rel="canonical" href="https://s95050937.github.io/webpack01.html"/>
 
 
 
 
 
-  <title>JavaScript偽數組 | 前端技術紀錄</title>
+  <title>webapck 打包文件解析 | 前端技術紀錄</title>
   
 
 
@@ -171,7 +165,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">紀錄前端技術以及筆記的地方</p>
+        <h1 class="site-subtitle" itemprop="description">紀錄前端技術以及筆記的地方</h1>
       
   </div>
 
@@ -263,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/27/JS_post01/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/webpack01.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -280,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript偽數組</h1>
+          <h2 class="post-title" itemprop="name headline">webapck 打包文件解析</h2>
         
 
         <div class="post-meta">
@@ -292,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-27T23:56:57+08:00">
-                2020-07-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T23:45:53+08:00">
+                2020-08-05
               </time>
             
 
@@ -315,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
                   </a>
                 </span>
 
@@ -333,9 +327,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/27/JS_post01/#comments" itemprop="discussionUrl">
+                <a href="/webpack01.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/27/JS_post01/" itemprop="commentCount"></span>
+                        data-disqus-identifier="webpack01.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -368,46 +362,12 @@
       
 
       
-        <h2 id="JavaScript之類數組完全攻略"><a href="#JavaScript之類數組完全攻略" class="headerlink" title="JavaScript之類數組完全攻略"></a>JavaScript之類數組完全攻略</h2><p>今天幫大家整理偽數組的概念，我們先來從題目開始分析</p>
-<p>先來打造一個很酷的對象如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'push'</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="webapck-打包出的文件解析"><a href="#webapck-打包出的文件解析" class="headerlink" title="webapck 打包出的文件解析"></a>webapck 打包出的文件解析</h2><h3 id="原始程式碼"><a href="#原始程式碼" class="headerlink" title="原始程式碼"></a>原始程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js的內容</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="string">'HAHAHA'</span></span><br><span class="line"><span class="comment">// index.js的內容</span></span><br><span class="line"><span class="keyword">let</span> aExports  = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span> + aExports);</span><br></pre></td></tr></table></figure>
 
-<p>這時候來打印obj看會長怎樣</p>
 <a id="more"></a>
-<p><img src="/images/JS01/1.jpeg" alt=""></p>
-<p>乍看之下他還只是一個平常的對象，但其實這個對象這時候已經變成一個類數組了! 我們來對他做以下操作可以更明白</p>
-<p><img src="/images/JS01/2.jpeg" alt=""></p>
-<p>可以發現到這時候他多了一個 3: “d” ，對象原本是不能這樣做的，但是在這邊卻可以實現，因此才對他取名叫做類數組。</p>
-<h3 id="如何打造一個類數組對象"><a href="#如何打造一個類數組對象" class="headerlink" title="如何打造一個類數組對象:"></a>如何打造一個類數組對象:</h3><p>要打造出一個類數組有要打造出一個類數組有幾個條件</p>
-<ol>
-<li>他必須要是一個對象</li>
-<li>屬性要為索引(數字)值</li>
-<li>一定要有length存在</li>
-<li>最好可以加push</li>
-<li>附註: 如果想讓它變得更像數組可以加上splice，如下圖</li>
-</ol>
-<p><img src="/images/JS01/3.jpeg" alt=""></p>
-<h3 id="出問題考考大家"><a href="#出問題考考大家" class="headerlink" title="出問題考考大家"></a>出問題考考大家</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"2"</span>: <span class="string">"c"</span>,</span><br><span class="line">    <span class="string">"3"</span>: <span class="string">"d"</span>,</span><br><span class="line">    <span class="string">"length"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"push"</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.push(<span class="string">"f"</span>)</span><br><span class="line">obj.push(<span class="string">"g"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
+<h3 id="打包後程式碼"><a href="#打包後程式碼" class="headerlink" title="打包後程式碼"></a>打包後程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></span><br><span class="line">  <span class="comment">// 2.The module cache (定義了一個緩存)</span></span><br><span class="line">  <span class="keyword">var</span> installedModules = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3.the require function 配置了一個require方法(因為瀏覽器不能運行require)</span></span><br><span class="line">  <span class="comment">// 甚麼時候調用呢(27行會return)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123; <span class="comment">// 5."./src/index.js"傳入</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check if module is in cache (6.不在緩存中)</span></span><br><span class="line">    <span class="keyword">if</span> (installedModules[moduleId]) &#123;</span><br><span class="line">      <span class="keyword">return</span> installedModules[moduleId].exports;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Create a new module (and put it into the cache)</span></span><br><span class="line">    <span class="comment">// 7.定義了一個新的module把入口模塊傳進來</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</span><br><span class="line">      i: moduleId,</span><br><span class="line">      l: <span class="literal">false</span>,</span><br><span class="line">      exports: &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// Execute the module function</span></span><br><span class="line">    <span class="comment">// 執行(call)並把下面這些傳入(跑到第39行)</span></span><br><span class="line">    modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</span><br><span class="line">    <span class="comment">// Flag the module as loaded</span></span><br><span class="line">    <span class="built_in">module</span>.l = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// Return the exports of the module</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Load entry module and return exports</span></span><br><span class="line">  <span class="comment">// 4.把index傳進來了</span></span><br><span class="line">  <span class="keyword">return</span> __webpack_require__(__webpack_require__.s = <span class="string">"./src/index.js"</span>); <span class="comment">//入口模塊</span></span><br><span class="line">&#125;)</span><br><span class="line">(&#123;   <span class="comment">// 1. 傳入一個對象給modules</span></span><br><span class="line">  <span class="string">"./src/a.js"</span>:  <span class="comment">// key </span></span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports</span>) </span>&#123;   <span class="comment">//value</span></span><br><span class="line">      <span class="built_in">eval</span>(<span class="string">"module.exports = 'HAHAHA'\r\n\n\n//# sourceURL=webpack:///./src/a.js?"</span>);</span><br><span class="line">      <span class="comment">// 9.最後跑到這的時候發現我們把module.exports 定義成了'HAHAHA'，因此回到第30行回傳了一個module.exports給aExports然後回到8.aExports  = module.exports 就是HAHAHA並執行console.log(\"Hello\" + aExports);n所以生成出HelloHAHAHA</span></span><br><span class="line">    &#125;),</span><br><span class="line">  <span class="string">"./src/index.js"</span>:</span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports, __webpack_require__</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">eval</span>(<span class="string">"let aExports  = __webpack_require__(/*! ./a */ \"./src/a.js\");\r\nconsole.log(\"Hello\" + aExports);\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?"</span>); </span><br><span class="line">      <span class="comment">// 8. __webpack_require__(/*! ./a */ \"./src/a.js\") </span></span><br><span class="line">        <span class="comment">//執行了 __webpack_require__("./src/a.js\")，因為遞歸原因所以又跑了上面跑過的流程</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="答案"><a href="#答案" class="headerlink" title="答案:"></a>答案:</h3><p><img src="/images/JS01/4.jpeg" alt=""></p>
-<p>3的 “d” 居然被 “f” 覆蓋掉了，而且多了一個4 : “g” ，我們來講解一下實現原理!!</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h3><ol>
-<li>在講這個之前我們要先觀察Array.prototype.push的實現方法</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下是push的偽代碼</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ArrayPush</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n = TO_UNIT32(<span class="keyword">this</span>.length) <span class="comment">// 被push的數組長度(類數組採用的length就是這個)</span></span><br><span class="line">  <span class="keyword">var</span> m = %_AraumentsLength() <span class="comment">// push的總長度</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">this</span>[i + n] = %_Arauments(i)  <span class="comment">// 複製給原數組</span></span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">this</span>.length = n + m <span class="comment">// 修正最終數組長度</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.length </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>從第18行可以得知為甚麼Obj一定要有length，再來第20到22行就能知道他push的觀點全是在length上，也就是說在obj對象最該觀察的不是其他元素而是length!</p>
-<ol start="2">
-<li>原題目: </li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"2"</span>: <span class="string">"c"</span>,</span><br><span class="line">    <span class="string">"3"</span>: <span class="string">"d"</span>,</span><br><span class="line">    <span class="string">"length"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"push"</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.push(<span class="string">"f"</span>)</span><br><span class="line">obj.push(<span class="string">"g"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/JS01/5.jpeg" alt=""></p>
-<p>到這邊就能很明瞭，為甚麼 3會變f ，4會變 g</p>
-<h3 id="關鍵代碼"><a href="#關鍵代碼" class="headerlink" title="關鍵代碼"></a>關鍵代碼</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">  <span class="keyword">this</span>[i + n] = %_Arauments(i)  <span class="comment">// 複製給原數組</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>大家可以想一下i = 0 的情況下會發生甚麼事，是不是this[0 + n]會被push的第一個元素取代，那這裡他的n代表的不就是Obj的 length，那就表示說Obj [3] 會被 f 取代，並且length變4 ，然後Obj[4]再被 g取代，length變5!!這就是這題的實現原理。</p>
-<h3 id="感謝觀看-歡迎分享"><a href="#感謝觀看-歡迎分享" class="headerlink" title="感謝觀看~歡迎分享"></a><strong>感謝觀看<del>~</del>歡迎分享</strong></h3>
+<h3 id="自"><a href="#自" class="headerlink" title="自"></a>自</h3>
       
     </div>
     
@@ -424,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
           
         </div>
       
@@ -437,15 +397,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/JS04.html" rel="next" title="JS作用域&值類型與引用類型">
+                <i class="fa fa-chevron-left"></i> JS作用域&值類型與引用類型
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/28/HTTP-post01/" rel="prev" title="HTTP_詳解Cookie與Session">
-                HTTP_詳解Cookie與Session <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript之類數組完全攻略"><span class="nav-number">1.</span> <span class="nav-text">JavaScript之類數組完全攻略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打造一個類數組對象"><span class="nav-number">1.1.</span> <span class="nav-text">如何打造一個類數組對象:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出問題考考大家"><span class="nav-number">1.2.</span> <span class="nav-text">出問題考考大家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案"><span class="nav-number">1.3.</span> <span class="nav-text">答案:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.4.</span> <span class="nav-text">原理:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵代碼"><span class="nav-number">1.5.</span> <span class="nav-text">關鍵代碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感謝觀看-歡迎分享"><span class="nav-number">1.6.</span> <span class="nav-text">感謝觀看~歡迎分享</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webapck-打包出的文件解析"><span class="nav-number">1.</span> <span class="nav-text">webapck 打包出的文件解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始程式碼"><span class="nav-number">1.1.</span> <span class="nav-text">原始程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包後程式碼"><span class="nav-number">1.2.</span> <span class="nav-text">打包後程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自"><span class="nav-number">1.3.</span> <span class="nav-text">自</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -811,9 +771,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/27/JS_post01/';
-          this.page.identifier = '2020/07/27/JS_post01/';
-          this.page.title = 'JavaScript偽數組';
+          this.page.url = 'https://s95050937.github.io/webpack01.html';
+          this.page.identifier = 'webpack01.html';
+          this.page.title = 'webapck 打包文件解析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -921,13 +881,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JavaScript偽數組'.length > 0
+      var isPost = 'webapck 打包文件解析'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JavaScript偽數組'
+        var title = 'webapck 打包文件解析'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -955,6 +915,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

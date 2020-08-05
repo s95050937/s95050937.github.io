@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="HTTP," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta name="description" content="HTTP內容協商機制懶人包 比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制  內容協商方式客戶端驅動 客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求  優點: 容易實現，且較精準 缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS靜態與動態作用域">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/29/JS-post02/index.html">
+<meta property="og:title" content="HTTP內容協商機制">
+<meta property="og:url" content="https://s95050937.github.io/HTTP-post07.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="JS靜態與動態作用域JavaScript使用的是靜態作用域，非動態這件事要先提前知道 靜態作用域 懶人包 :   會主動去尋找函數與變量定義時的狀況   例子: 1234567891011let a &#x3D; &#39;靜態作用域&#39;function foo() &amp;#123;  console.log(a);&amp;#125;function bar() &amp;#123;  let a &#x3D; &#39;動態作用域&#39;  foo()&amp;#">
+<meta property="og:description" content="HTTP內容協商機制懶人包 比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制  內容協商方式客戶端驅動 客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求  優點: 容易實現，且較精準 缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-07-29T14:27:49.000Z">
-<meta property="article:modified_time" content="2020-07-29T14:30:49.851Z">
+<meta property="article:published_time" content="2020-08-03T06:30:36.000Z">
+<meta property="article:modified_time" content="2020-08-03T06:32:01.442Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/JS-post02/"/>
+  <link rel="canonical" href="https://s95050937.github.io/HTTP-post07.html"/>
 
 
 
 
 
-  <title>JS靜態與動態作用域 | 前端技術紀錄</title>
+  <title>HTTP內容協商機制 | 前端技術紀錄</title>
   
 
 
@@ -165,7 +165,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">紀錄前端技術以及筆記的地方</p>
+        <h1 class="site-subtitle" itemprop="description">紀錄前端技術以及筆記的地方</h1>
       
   </div>
 
@@ -257,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/JS-post02/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post07.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -274,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS靜態與動態作用域</h1>
+          <h2 class="post-title" itemprop="name headline">HTTP內容協商機制</h2>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:49+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-03T14:30:36+08:00">
+                2020-08-03
               </time>
             
 
@@ -309,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
                   </a>
                 </span>
 
@@ -327,9 +327,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/29/JS-post02/#comments" itemprop="discussionUrl">
+                <a href="/HTTP-post07.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/29/JS-post02/" itemprop="commentCount"></span>
+                        data-disqus-identifier="HTTP-post07.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,36 +362,50 @@
       
 
       
-        <h2 id="JS靜態與動態作用域"><a href="#JS靜態與動態作用域" class="headerlink" title="JS靜態與動態作用域"></a>JS靜態與動態作用域</h2><p>JavaScript使用的是靜態作用域，非動態這件事要先提前知道</p>
-<h3 id="靜態作用域"><a href="#靜態作用域" class="headerlink" title="靜態作用域"></a>靜態作用域</h3><ol>
-<li><p>懶人包 : </p>
-<blockquote>
-<p>會主動去尋找函數與變量定義時的狀況</p>
+        <h1 id="HTTP內容協商機制"><a href="#HTTP內容協商機制" class="headerlink" title="HTTP內容協商機制"></a>HTTP內容協商機制</h1><h2 id="懶人包"><a href="#懶人包" class="headerlink" title="懶人包"></a>懶人包</h2><blockquote>
+<p>比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制</p>
 </blockquote>
-</li>
-<li><p>例子:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '靜態作用域'</span></span><br></pre></td></tr></table></figure>
+<h2 id="內容協商方式"><a href="#內容協商方式" class="headerlink" title="內容協商方式"></a>內容協商方式</h2><h3 id="客戶端驅動"><a href="#客戶端驅動" class="headerlink" title="客戶端驅動"></a>客戶端驅動</h3><blockquote>
+<p>客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求</p>
+</blockquote>
+<p>優點: 容易實現，且較精準</p>
+<p>缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次</p>
 <a id="more"></a>
-
-<p>分析 :</p>
-<p>如果沒有作用域鏈的概念可以參考下面思維</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a <span class="comment">// 此時所在是第四行</span></span><br><span class="line"><span class="number">6.</span> 因為foo作用域裡面沒有聲明變量a，因此又跑到全局作用域</span><br><span class="line"><span class="number">7.</span> 找到a(靜態作用域)並打印出來</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="動態作用域"><a href="#動態作用域" class="headerlink" title="動態作用域"></a>動態作用域</h3><ol>
-<li><p>懶人包: </p>
-<blockquote>
-<p>會到執行時的環境尋找</p>
+<h3 id="服務器驅動-最廣泛"><a href="#服務器驅動-最廣泛" class="headerlink" title="服務器驅動(最廣泛)"></a>服務器驅動(最廣泛)</h3><blockquote>
+<p>服務器檢查客戶端請求頭來決定提供甚麼資源</p>
 </blockquote>
-</li>
-<li><p>例子(跟靜態相同): </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'靜態作用域'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'動態作用域'</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() <span class="comment">// '動態作用域'</span></span><br></pre></td></tr></table></figure>
-
-<p>分析: </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">前面五點都一模一樣直到第六點</span><br><span class="line"><span class="number">1.</span> 前面都很正常的順順執行下來直到bar()</span><br><span class="line"><span class="number">2.</span> 當執行bar時候，會從全局作用域(因為bar執行的地方在全局作用域)裡面尋找bar聲明的地方</span><br><span class="line"><span class="number">3.</span> 進到bar函數作用域裡面(壓棧) <span class="comment">// 所在第六行</span></span><br><span class="line"><span class="number">4.</span> 在bar函數作用域裡面執行foo()，但在該函數作用域裡面沒有聲明foo，因此跑到上一層尋找，就是全局作用域</span><br><span class="line"><span class="number">5.</span> 找到foo聲明的地方，並進入foo作用域裡面</span><br><span class="line"><span class="number">5.</span> 試圖打印出a </span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 這時候找不到a並不會跑到上一層作用域鏈查找，而是回到執行時的環境也就是第八行所在的作用域查找</span><br><span class="line"><span class="number">7.</span> 這時候就會發現a是動態作用域並打印出</span><br></pre></td></tr></table></figure>
-</li>
+<p>優點: 可以直接查看內容， 具有近似匹配</p>
+<p>缺點: 請求投如果沒有協代可能得用猜的提供資源</p>
+<h3 id="透明協商"><a href="#透明協商" class="headerlink" title="透明協商"></a>透明協商</h3><blockquote>
+<p>中間設備(通常為緩存代理)代表客戶端進行協商</p>
+</blockquote>
+<p>優點: 請求快速</p>
+<p>缺點: 因為非標準HTTP方式，因此沒有標準規範</p>
+<h2 id="服務器驅動"><a href="#服務器驅動" class="headerlink" title="服務器驅動"></a>服務器驅動</h2><h3 id="請求頭"><a href="#請求頭" class="headerlink" title="請求頭"></a>請求頭</h3><ol>
+<li>Accept: 告知服務器發送何種媒體類型(mp3)</li>
+<li>Accept-Language: 告知服務器發送何種語言</li>
+<li>Accept-Charset: 告知服務器發送何種字符集(Unicode)</li>
+<li>Accept-Encoding: 告知服務器發送何種編碼(UTF-8)</li>
 </ol>
+<h3 id="響應頭"><a href="#響應頭" class="headerlink" title="響應頭"></a>響應頭</h3><p>跟請求頭一一對應(跟上面索引一一對應)</p>
+<ol>
+<li>Content-Type</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+<li>Content-Encoding</li>
+</ol>
+<h3 id="近似匹配-Q值"><a href="#近似匹配-Q值" class="headerlink" title="近似匹配(Q值)"></a>近似匹配(Q值)</h3><p>拿Accept-Language(所有都一樣)當例子</p>
+<blockquote>
+<p>Accept-Language: en;q=0.5,fr ;q=0.0, nl;q=1.0,tr;q=0.0</p>
+</blockquote>
+<p>​    註: nl:荷蘭語，en: 英語， fr: 法語, tr: 土耳其語</p>
+<p>看q值大小(從0到1)，不是加起來等於1，只是代表優先級</p>
+<p>比方說上面那個例子按照降冪排列會變下面</p>
+<blockquote>
+<p>Accept-Language: nl;q=1.0, en;q=0.5, fr ;q=0.0, tr;q=0.0</p>
+</blockquote>
+<p>假如客戶端請求西班牙語，但服務器端沒有西班牙語，因此服務器會找Q值最大，在此例優先優先發送荷蘭語(q=1.0)，假如服務器也沒有荷蘭語，則回傳英語(q=0.5) 。</p>
+<p>假如服務器既沒有nl也沒有en會產生問題，所以服務器通常會設置默認回傳，即便沒有沒有上傳任何編號也會給默認的語言</p>
 
       
     </div>
@@ -409,7 +423,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
           
         </div>
       
@@ -422,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/HTTP-post04/" rel="next" title="HTTP的長連接與短連接">
-                <i class="fa fa-chevron-left"></i> HTTP的長連接與短連接
+              <a href="/CSS01.html" rel="next" title="CSS文字波浪特效">
+                <i class="fa fa-chevron-left"></i> CSS文字波浪特效
               </a>
             
           </div>
@@ -432,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/30/HTTP-post05/" rel="prev" title="HTTP代理">
-                HTTP代理 <i class="fa fa-chevron-right"></i>
+              <a href="/HTTP-post08.html" rel="prev" title="HTTP與HTTPS">
+                HTTP與HTTPS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS靜態與動態作用域"><span class="nav-number">1.</span> <span class="nav-text">JS靜態與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#靜態作用域"><span class="nav-number">1.1.</span> <span class="nav-text">靜態作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動態作用域"><span class="nav-number">1.2.</span> <span class="nav-text">動態作用域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP內容協商機制"><span class="nav-number">1.</span> <span class="nav-text">HTTP內容協商機制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#懶人包"><span class="nav-number">1.1.</span> <span class="nav-text">懶人包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#內容協商方式"><span class="nav-number">1.2.</span> <span class="nav-text">內容協商方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客戶端驅動"><span class="nav-number">1.2.1.</span> <span class="nav-text">客戶端驅動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服務器驅動-最廣泛"><span class="nav-number">1.2.2.</span> <span class="nav-text">服務器驅動(最廣泛)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明協商"><span class="nav-number">1.2.3.</span> <span class="nav-text">透明協商</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服務器驅動"><span class="nav-number">1.3.</span> <span class="nav-text">服務器驅動</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#請求頭"><span class="nav-number">1.3.1.</span> <span class="nav-text">請求頭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#響應頭"><span class="nav-number">1.3.2.</span> <span class="nav-text">響應頭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近似匹配-Q值"><span class="nav-number">1.3.3.</span> <span class="nav-text">近似匹配(Q值)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -800,9 +814,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/29/JS-post02/';
-          this.page.identifier = '2020/07/29/JS-post02/';
-          this.page.title = 'JS靜態與動態作用域';
+          this.page.url = 'https://s95050937.github.io/HTTP-post07.html';
+          this.page.identifier = 'HTTP-post07.html';
+          this.page.title = 'HTTP內容協商機制';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -910,13 +924,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JS靜態與動態作用域'.length > 0
+      var isPost = 'HTTP內容協商機制'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JS靜態與動態作用域'
+        var title = 'HTTP內容協商機制'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -944,6 +958,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

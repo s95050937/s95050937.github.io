@@ -83,29 +83,21 @@
 
 
 
-<meta name="description" content="HTTP與HTTPSHTTPS較安全因為HTTP並未進行加密，在網路上形同裸體，有人心懷不軌很容易被竊取或竄改 情況一假如今天小明以及小美在聊天，假如甚麼密碼都不設的話，訊息可能會被竄改">
+<meta name="description" content="HTTP協議編碼與解碼在講解編碼之前我們率先了解一下甚麼是碼 字符集與編碼計算機如何顯示文字有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面 示意圖">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP與HTTPS">
-<meta property="og:url" content="https://s95050937.github.io/2020/08/03/HTTP-post08/index.html">
+<meta property="og:title" content="HTTP協議編碼與解碼">
+<meta property="og:url" content="https://s95050937.github.io/HTTP-post02.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP與HTTPSHTTPS較安全因為HTTP並未進行加密，在網路上形同裸體，有人心懷不軌很容易被竊取或竄改 情況一假如今天小明以及小美在聊天，假如甚麼密碼都不設的話，訊息可能會被竄改">
+<meta property="og:description" content="HTTP協議編碼與解碼在講解編碼之前我們率先了解一下甚麼是碼 字符集與編碼計算機如何顯示文字有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面 示意圖">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/1.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/2.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/4.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/5.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/6.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/7.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/8.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/9.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/10.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP08/11.png">
-<meta property="article:published_time" content="2020-08-03T15:57:32.000Z">
-<meta property="article:modified_time" content="2020-08-03T16:03:57.355Z">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP02/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP02/2.png">
+<meta property="article:published_time" content="2020-07-29T10:44:53.000Z">
+<meta property="article:modified_time" content="2020-07-29T10:49:02.301Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP08/1.png">
+<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP02/1.png">
 
 
 
@@ -135,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/08/03/HTTP-post08/"/>
+  <link rel="canonical" href="https://s95050937.github.io/HTTP-post02.html"/>
 
 
 
 
 
-  <title>HTTP與HTTPS | 前端技術紀錄</title>
+  <title>HTTP協議編碼與解碼 | 前端技術紀錄</title>
   
 
 
@@ -176,7 +168,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">紀錄前端技術以及筆記的地方</p>
+        <h1 class="site-subtitle" itemprop="description">紀錄前端技術以及筆記的地方</h1>
       
   </div>
 
@@ -268,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/08/03/HTTP-post08/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post02.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -285,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP與HTTPS</h1>
+          <h2 class="post-title" itemprop="name headline">HTTP協議編碼與解碼</h2>
         
 
         <div class="post-meta">
@@ -297,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-03T23:57:32+08:00">
-                2020-08-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T18:44:53+08:00">
+                2020-07-29
               </time>
             
 
@@ -338,9 +330,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/08/03/HTTP-post08/#comments" itemprop="discussionUrl">
+                <a href="/HTTP-post02.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/08/03/HTTP-post08/" itemprop="commentCount"></span>
+                        data-disqus-identifier="HTTP-post02.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,48 +365,36 @@
       
 
       
-        <h1 id="HTTP與HTTPS"><a href="#HTTP與HTTPS" class="headerlink" title="HTTP與HTTPS"></a>HTTP與HTTPS</h1><h2 id="HTTPS較安全"><a href="#HTTPS較安全" class="headerlink" title="HTTPS較安全"></a>HTTPS較安全</h2><p>因為HTTP並未進行加密，在網路上形同裸體，有人心懷不軌很容易被竊取或竄改</p>
-<h3 id="情況一"><a href="#情況一" class="headerlink" title="情況一"></a>情況一</h3><p>假如今天小明以及小美在聊天，假如甚麼密碼都不設的話，訊息可能會被竄改</p>
-<p><img src="/images/HTTP08/1.png" alt=""></p>
+        <h1 id="HTTP協議編碼與解碼"><a href="#HTTP協議編碼與解碼" class="headerlink" title="HTTP協議編碼與解碼"></a>HTTP協議編碼與解碼</h1><p>在講解編碼之前我們率先了解一下甚麼是碼</p>
+<h2 id="字符集與編碼"><a href="#字符集與編碼" class="headerlink" title="字符集與編碼"></a>字符集與編碼</h2><h3 id="計算機如何顯示文字"><a href="#計算機如何顯示文字" class="headerlink" title="計算機如何顯示文字"></a>計算機如何顯示文字</h3><p>有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面</p>
+<h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP02/1.png" alt=""></p>
 <a id="more"></a>
-<h3 id="情況二"><a href="#情況二" class="headerlink" title="情況二"></a>情況二</h3><p>這次小名跟小美學聰明了，他們學會加密，討論出一個加密方式(比方說AES)並有一個密鑰可以解密，所以現在他們聊天變成這樣(對稱加密)</p>
-<p><img src="/images/HTTP08/2.png" alt=""></p>
-<p>但駭客當然也不是省油的燈，但是假如第一次通信就被攔截，則壞分子還是可以獲得密鑰</p>
-<p><img src="/images/HTTP08/4.png" alt=""></p>
-<h3 id="情況三"><a href="#情況三" class="headerlink" title="情況三"></a>情況三</h3><p>小美跟小明又變更聰明了，選擇了不對稱加密(有公鑰有私鑰，私鑰可以解開公鑰)</p>
+
+<p>現在想像計算機是一個人，如果我們今天想要找水壺的英文，那我們是不是會打開字典開始尋找。對計算機來說字符集就是他看得懂的語言，而字庫表就是他查找水壺這個英文的字典</p>
 <ol>
-<li><p>小美先把公鑰傳遞給小明</p>
-<p><img src="/images/HTTP08/5.png" alt=""></p>
-</li>
-<li><p>將之後進行對稱加密的keyB用公鑰keyA加密傳給小美，小美再通過自己的私鑰解密獲得key2，接下來就能和上次一樣用key2加密聊天</p>
-<p><img src="/images/HTTP08/6.png" alt=""></p>
-</li>
-<li><p>結論: </p>
-<blockquote>
-<p>這樣假如壞分子獲得公鑰也沒有私鑰解密獲得key2</p>
+<li>字符集: 某一個電腦看得懂的二進制代碼(地址的集合)</li>
+<li>字庫表: 儲存所有二進制代碼的具體內容(那一本字典)</li>
+<li>編碼方式: 算法，因為二進制樹又臭又長很難搞</li>
+</ol>
+<h3 id="具體流程"><a href="#具體流程" class="headerlink" title="具體流程"></a>具體流程</h3><blockquote>
+<p>一個二進制樹經過一個編碼方式得到字符集對應的地址，在字庫表找到對應的字符，最後顯示給用戶</p>
 </blockquote>
+<h2 id="常見編碼規範"><a href="#常見編碼規範" class="headerlink" title="常見編碼規範"></a>常見編碼規範</h2><p><img src="/images/HTTP02/2.png" alt=""></p>
+<h2 id="為何會亂碼"><a href="#為何會亂碼" class="headerlink" title="為何會亂碼"></a>為何會亂碼</h2><p>不管是在編碼或者解碼的過程中，假如我們解析的過程沒有找到一一對應的字符集或者字符表，就會產生亂碼。比方說ASCII不支持中文，如果我們在解碼過程發現中文字就會產生亂碼。</p>
+<h2 id="URL的編碼以及解碼"><a href="#URL的編碼以及解碼" class="headerlink" title="URL的編碼以及解碼"></a>URL的編碼以及解碼</h2><ol>
+<li><p>採用ASCII字符集進行編碼，假如有非ASCII的字符要對其進行編碼</p>
 </li>
-<li><p>但壞分子也不是省油的燈他想到下面這個方法</p>
-<ol>
-<li><p>獲得公鑰之後把它掉包成自己的公鑰<br><img src="/images/HTTP08/7.png" alt=""></p>
-</li>
-<li><p>之後小明利用key1加密keyB傳給小美val4，被壞分子攔截用key1的私鑰解密獲取keyB再用第一從小美獲取的公鑰keyA加密回傳給小美<br><img src="/images/HTTP08/8.png" alt=""></p>
-</li>
-</ol>
+<li><p>URL 有一些保留字(比如&amp;)，如果要在URL使用也要進行編碼</p>
 </li>
 </ol>
-<h3 id="開大招"><a href="#開大招" class="headerlink" title="開大招"></a>開大招</h3><p>透過權威機構獲得認證</p>
-<ol>
-<li><p>小美(服務端)先向權威機構申請證書<br><img src="/images/HTTP08/9.png" alt=""></p>
-</li>
-<li><p>小明之後想像小美聊天，小美就會給他證書並他會交給權威機構解密獲得證書<br><img src="/images/HTTP08/10.png" alt=""></p>
-</li>
-<li><p>獲得公鑰A的小明跟情況三一樣(第二點: 將之後進行對稱加密的keyB用公鑰keyA加密傳給小美，小美再通過自己的私鑰解密獲得key2，接下來就能和上次一樣用key2加密聊天)<br><img src="/images/HTTP08/11.png" alt=""></p>
-</li>
-<li><p>就算今天壞分子自行向權威機構獲取證，然後把證書掉包成自己的傳給小明，然而小明再向權威機構驗證證書的時候會發現，請求證書時的人並非小美(權威機構會自行認證)，理所當然不會通過</p>
-<p>附註: 申請人並不能改寫，在申請時就會附上</p>
-</li>
+<h3 id="百分號編碼規範"><a href="#百分號編碼規範" class="headerlink" title="百分號編碼規範"></a>百分號編碼規範</h3><ol>
+<li>屬於ASCII字符集的非保留字不做編碼</li>
+<li>屬於ASCII字符集的保留字取得ASCII的內碼，再加上%前綴後進行編碼</li>
+<li>非ASCII則取Unicode內碼，加上%前綴後進行編碼</li>
 </ol>
+<blockquote>
+<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
+</blockquote>
 
       
     </div>
@@ -445,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/03/HTTP-post07/" rel="next" title="HTTP內容協商機制">
-                <i class="fa fa-chevron-left"></i> HTTP內容協商機制
+              <a href="/HTTP-post01.html" rel="next" title="HTTP_詳解Cookie與Session">
+                <i class="fa fa-chevron-left"></i> HTTP_詳解Cookie與Session
               </a>
             
           </div>
@@ -455,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/04/CSS02/" rel="prev" title="CSS文字懸停">
-                CSS文字懸停 <i class="fa fa-chevron-right"></i>
+              <a href="/HTTP-post03.html" rel="prev" title="HTTP之身分認證">
+                HTTP之身分認證 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP與HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTP與HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS較安全"><span class="nav-number">1.1.</span> <span class="nav-text">HTTPS較安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#情況一"><span class="nav-number">1.1.1.</span> <span class="nav-text">情況一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情況二"><span class="nav-number">1.1.2.</span> <span class="nav-text">情況二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情況三"><span class="nav-number">1.1.3.</span> <span class="nav-text">情況三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#開大招"><span class="nav-number">1.1.4.</span> <span class="nav-text">開大招</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP協議編碼與解碼"><span class="nav-number">1.</span> <span class="nav-text">HTTP協議編碼與解碼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符集與編碼"><span class="nav-number">1.1.</span> <span class="nav-text">字符集與編碼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#計算機如何顯示文字"><span class="nav-number">1.1.1.</span> <span class="nav-text">計算機如何顯示文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.2.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具體流程"><span class="nav-number">1.1.3.</span> <span class="nav-text">具體流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常見編碼規範"><span class="nav-number">1.2.</span> <span class="nav-text">常見編碼規範</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為何會亂碼"><span class="nav-number">1.3.</span> <span class="nav-text">為何會亂碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL的編碼以及解碼"><span class="nav-number">1.4.</span> <span class="nav-text">URL的編碼以及解碼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百分號編碼規範"><span class="nav-number">1.4.1.</span> <span class="nav-text">百分號編碼規範</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -823,9 +803,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/08/03/HTTP-post08/';
-          this.page.identifier = '2020/08/03/HTTP-post08/';
-          this.page.title = 'HTTP與HTTPS';
+          this.page.url = 'https://s95050937.github.io/HTTP-post02.html';
+          this.page.identifier = 'HTTP-post02.html';
+          this.page.title = 'HTTP協議編碼與解碼';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -933,13 +913,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP與HTTPS'.length > 0
+      var isPost = 'HTTP協議編碼與解碼'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP與HTTPS'
+        var title = 'HTTP協議編碼與解碼'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -967,6 +947,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

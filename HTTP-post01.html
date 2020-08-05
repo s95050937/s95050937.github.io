@@ -83,21 +83,22 @@
 
 
 
-<meta name="description" content="HTTP協議編碼與解碼在講解編碼之前我們率先了解一下甚麼是碼 字符集與編碼計算機如何顯示文字有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面 示意圖">
+<meta name="description" content="HTTP 狀態管理: cookie與session大家先來想想一個例子，如果我今天要開一間咖啡館，然後有一個滿10點送50元飲料，我該怎麼去紀錄?  集點蓋章 老闆自備簽名章  一般人可能會講上面那兩點，但事實上上面那兩個方法有點問題，我們無法知道雙方會部會造假，因此得出了第三個方法，你有自己的會員蓋章，老闆也準備自己的系統紀錄，假如要兌換，就核對一下即可頒發。cookie與session就是為了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP協議編碼與解碼">
-<meta property="og:url" content="https://s95050937.github.io/2020/07/29/HTTP-post02/index.html">
+<meta property="og:title" content="HTTP_詳解Cookie與Session">
+<meta property="og:url" content="https://s95050937.github.io/HTTP-post01.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP協議編碼與解碼在講解編碼之前我們率先了解一下甚麼是碼 字符集與編碼計算機如何顯示文字有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面 示意圖">
+<meta property="og:description" content="HTTP 狀態管理: cookie與session大家先來想想一個例子，如果我今天要開一間咖啡館，然後有一個滿10點送50元飲料，我該怎麼去紀錄?  集點蓋章 老闆自備簽名章  一般人可能會講上面那兩點，但事實上上面那兩個方法有點問題，我們無法知道雙方會部會造假，因此得出了第三個方法，你有自己的會員蓋章，老闆也準備自己的系統紀錄，假如要兌換，就核對一下即可頒發。cookie與session就是為了">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP02/1.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP02/2.png">
-<meta property="article:published_time" content="2020-07-29T10:44:53.000Z">
-<meta property="article:modified_time" content="2020-07-29T10:49:02.301Z">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP01/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP01/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP01/3.png">
+<meta property="article:published_time" content="2020-07-28T15:20:15.000Z">
+<meta property="article:modified_time" content="2020-07-29T10:42:56.689Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP02/1.png">
+<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP01/1.png">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/07/29/HTTP-post02/"/>
+  <link rel="canonical" href="https://s95050937.github.io/HTTP-post01.html"/>
 
 
 
 
 
-  <title>HTTP協議編碼與解碼 | 前端技術紀錄</title>
+  <title>HTTP_詳解Cookie與Session | 前端技術紀錄</title>
   
 
 
@@ -168,7 +169,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">紀錄前端技術以及筆記的地方</p>
+        <h1 class="site-subtitle" itemprop="description">紀錄前端技術以及筆記的地方</h1>
       
   </div>
 
@@ -260,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/07/29/HTTP-post02/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post01.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -277,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP協議編碼與解碼</h1>
+          <h2 class="post-title" itemprop="name headline">HTTP_詳解Cookie與Session</h2>
         
 
         <div class="post-meta">
@@ -289,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T18:44:53+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-28T23:20:15+08:00">
+                2020-07-28
               </time>
             
 
@@ -330,9 +331,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/07/29/HTTP-post02/#comments" itemprop="discussionUrl">
+                <a href="/HTTP-post01.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/07/29/HTTP-post02/" itemprop="commentCount"></span>
+                        data-disqus-identifier="HTTP-post01.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,32 +366,37 @@
       
 
       
-        <h1 id="HTTP協議編碼與解碼"><a href="#HTTP協議編碼與解碼" class="headerlink" title="HTTP協議編碼與解碼"></a>HTTP協議編碼與解碼</h1><p>在講解編碼之前我們率先了解一下甚麼是碼</p>
-<h2 id="字符集與編碼"><a href="#字符集與編碼" class="headerlink" title="字符集與編碼"></a>字符集與編碼</h2><h3 id="計算機如何顯示文字"><a href="#計算機如何顯示文字" class="headerlink" title="計算機如何顯示文字"></a>計算機如何顯示文字</h3><p>有些人應該已經知道計算機系統是利用二進制保存操作，那我們就要思考如何把這種二進制系統轉換成我們的畫面</p>
-<h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP02/1.png" alt=""></p>
-<a id="more"></a>
-
-<p>現在想像計算機是一個人，如果我們今天想要找水壺的英文，那我們是不是會打開字典開始尋找。對計算機來說字符集就是他看得懂的語言，而字庫表就是他查找水壺這個英文的字典</p>
+        <h1 id="HTTP-狀態管理-cookie與session"><a href="#HTTP-狀態管理-cookie與session" class="headerlink" title="HTTP 狀態管理: cookie與session"></a>HTTP 狀態管理: cookie與session</h1><p>大家先來想想一個例子，如果我今天要開一間咖啡館，然後有一個滿10點送50元飲料，我該怎麼去紀錄?</p>
 <ol>
-<li>字符集: 某一個電腦看得懂的二進制代碼(地址的集合)</li>
-<li>字庫表: 儲存所有二進制代碼的具體內容(那一本字典)</li>
-<li>編碼方式: 算法，因為二進制樹又臭又長很難搞</li>
+<li>集點蓋章</li>
+<li>老闆自備簽名章</li>
 </ol>
-<h3 id="具體流程"><a href="#具體流程" class="headerlink" title="具體流程"></a>具體流程</h3><blockquote>
-<p>一個二進制樹經過一個編碼方式得到字符集對應的地址，在字庫表找到對應的字符，最後顯示給用戶</p>
+<p>一般人可能會講上面那兩點，但事實上上面那兩個方法有點問題，我們無法知道雙方會部會造假，因此得出了第三個方法，你有自己的會員蓋章，老闆也準備自己的系統紀錄，假如要兌換，就核對一下即可頒發。cookie與session就是為了解決第三個辦法的蓋章卡以及老闆的系統。</p>
+<a id="more"></a>
+<h2 id="COOKIE"><a href="#COOKIE" class="headerlink" title="COOKIE"></a>COOKIE</h2><h3 id="是甚麼"><a href="#是甚麼" class="headerlink" title="是甚麼"></a>是甚麼</h3><p>一小段文本訊息，客戶端請求服務器，服務器就頒發一個cookie給客戶端瀏覽器(蓋章卡) ， 客戶端瀏覽器就把它保留下來，假設下次再請求，瀏覽器會把cookie跟網址提交給服務器，讓服務器辨別用戶狀態。</p>
+<h3 id="流程圖"><a href="#流程圖" class="headerlink" title="流程圖"></a>流程圖</h3><p><img src="/images/HTTP01/1.png" alt=""></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p><img src="/images/HTTP01/2.png" alt=""></p>
+<h2 id="如何獲取"><a href="#如何獲取" class="headerlink" title="如何獲取"></a>如何獲取</h2><blockquote>
+<p>可以在瀏覽器打網址的地方輸入下面這行javascript:alert(document.cookie)</p>
 </blockquote>
-<h2 id="常見編碼規範"><a href="#常見編碼規範" class="headerlink" title="常見編碼規範"></a>常見編碼規範</h2><p><img src="/images/HTTP02/2.png" alt=""></p>
-<h2 id="為何會亂碼"><a href="#為何會亂碼" class="headerlink" title="為何會亂碼"></a>為何會亂碼</h2><p>不管是在編碼或者解碼的過程中，假如我們解析的過程沒有找到一一對應的字符集或者字符表，就會產生亂碼。比方說ASCII不支持中文，如果我們在解碼過程發現中文字就會產生亂碼。</p>
-<h2 id="URL的編碼以及解碼"><a href="#URL的編碼以及解碼" class="headerlink" title="URL的編碼以及解碼"></a>URL的編碼以及解碼</h2><ol>
-<li><p>採用ASCII字符集進行編碼，假如有非ASCII的字符要對其進行編碼</p>
-</li>
-<li><p>URL 有一些保留字(比如&amp;)，如果要在URL使用也要進行編碼</p>
-</li>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="是甚麼-1"><a href="#是甚麼-1" class="headerlink" title="是甚麼"></a>是甚麼</h3><blockquote>
+<p>服務器端紀錄用戶訊息的機制(老闆的紀錄器)</p>
+</blockquote>
+<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p><img src="/images/HTTP01/3.png" alt=""></p>
+<h3 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h3><p>基本上cookie有效時間會非常非常久，而session因為視服務端，會有大量的session紀錄，可能會內存溢出，因此會有失效，又分成下面幾種</p>
+<ol>
+<li>自動失效: session超時</li>
+<li>主動失效: 調用HttpSession.invalidate( ) </li>
+<li>服務器進程被停止</li>
 </ol>
-<h3 id="百分號編碼規範"><a href="#百分號編碼規範" class="headerlink" title="百分號編碼規範"></a>百分號編碼規範</h3><ol>
-<li>屬於ASCII字符集的非保留字不做編碼</li>
-<li>屬於ASCII字符集的保留字取得ASCII的內碼，再加上%前綴後進行編碼</li>
-<li>非ASCII則取Unicode內碼，加上%前綴後進行編碼</li>
+<h2 id="兩者比較"><a href="#兩者比較" class="headerlink" title="兩者比較"></a>兩者比較</h2><ol>
+<li><p>存放位置不同 (一個存在服務器，一個存在客戶端)</p>
+</li>
+<li><p>安全性不同 </p>
+<p>cookie可能會被其他程式窺視，因此cookie盡量不要放帳號密碼</p>
+</li>
+<li><p>有效期不同 (session會自動清理，cookie基本上不會消失因為通常沒有像session有內存溢出的問題)</p>
+</li>
 </ol>
 <blockquote>
 <p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
@@ -425,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/28/HTTP-post01/" rel="next" title="HTTP_詳解Cookie與Session">
-                <i class="fa fa-chevron-left"></i> HTTP_詳解Cookie與Session
+              <a href="/JS_post01.html" rel="next" title="JavaScript偽數組">
+                <i class="fa fa-chevron-left"></i> JavaScript偽數組
               </a>
             
           </div>
@@ -435,8 +441,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/29/HTTP-post03/" rel="prev" title="HTTP之身分認證">
-                HTTP之身分認證 <i class="fa fa-chevron-right"></i>
+              <a href="/HTTP-post02.html" rel="prev" title="HTTP協議編碼與解碼">
+                HTTP協議編碼與解碼 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP協議編碼與解碼"><span class="nav-number">1.</span> <span class="nav-text">HTTP協議編碼與解碼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符集與編碼"><span class="nav-number">1.1.</span> <span class="nav-text">字符集與編碼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#計算機如何顯示文字"><span class="nav-number">1.1.1.</span> <span class="nav-text">計算機如何顯示文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.2.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具體流程"><span class="nav-number">1.1.3.</span> <span class="nav-text">具體流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常見編碼規範"><span class="nav-number">1.2.</span> <span class="nav-text">常見編碼規範</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為何會亂碼"><span class="nav-number">1.3.</span> <span class="nav-text">為何會亂碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL的編碼以及解碼"><span class="nav-number">1.4.</span> <span class="nav-text">URL的編碼以及解碼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百分號編碼規範"><span class="nav-number">1.4.1.</span> <span class="nav-text">百分號編碼規範</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-狀態管理-cookie與session"><span class="nav-number">1.</span> <span class="nav-text">HTTP 狀態管理: cookie與session</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#COOKIE"><span class="nav-number">1.1.</span> <span class="nav-text">COOKIE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是甚麼"><span class="nav-number">1.1.1.</span> <span class="nav-text">是甚麼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程圖"><span class="nav-number">1.1.2.</span> <span class="nav-text">流程圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.1.3.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何獲取"><span class="nav-number">1.2.</span> <span class="nav-text">如何獲取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session"><span class="nav-number">1.3.</span> <span class="nav-text">Session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是甚麼-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">是甚麼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有效期"><span class="nav-number">1.3.3.</span> <span class="nav-text">有效期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兩者比較"><span class="nav-number">1.4.</span> <span class="nav-text">兩者比較</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -803,9 +809,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/07/29/HTTP-post02/';
-          this.page.identifier = '2020/07/29/HTTP-post02/';
-          this.page.title = 'HTTP協議編碼與解碼';
+          this.page.url = 'https://s95050937.github.io/HTTP-post01.html';
+          this.page.identifier = 'HTTP-post01.html';
+          this.page.title = 'HTTP_詳解Cookie與Session';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -913,13 +919,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP協議編碼與解碼'.length > 0
+      var isPost = 'HTTP_詳解Cookie與Session'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP協議編碼與解碼'
+        var title = 'HTTP_詳解Cookie與Session'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -947,6 +953,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

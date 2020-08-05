@@ -83,18 +83,21 @@
 
 
 
-<meta name="description" content="HTTP內容協商機制懶人包 比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制  內容協商方式客戶端驅動 客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求  優點: 容易實現，且較精準 缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次">
+<meta name="description" content="HTTP之身分認證有以下四種認證  BASIC認證 (基本認證) DIGEST認證 (摘要認證) SSL客戶端認證 FormBase認證 (基於表單驗證)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP內容協商機制">
-<meta property="og:url" content="https://s95050937.github.io/2020/08/03/HTTP-post07/index.html">
+<meta property="og:title" content="HTTP之身分認證">
+<meta property="og:url" content="https://s95050937.github.io/HTTP-post03.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP內容協商機制懶人包 比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制  內容協商方式客戶端驅動 客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求  優點: 容易實現，且較精準 缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次">
+<meta property="og:description" content="HTTP之身分認證有以下四種認證  BASIC認證 (基本認證) DIGEST認證 (摘要認證) SSL客戶端認證 FormBase認證 (基於表單驗證)">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-08-03T06:30:36.000Z">
-<meta property="article:modified_time" content="2020-08-03T06:32:01.442Z">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP03/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/HTTP03/2.png">
+<meta property="article:published_time" content="2020-07-29T11:16:19.000Z">
+<meta property="article:modified_time" content="2020-07-29T11:20:08.839Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP03/1.png">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/2020/08/03/HTTP-post07/"/>
+  <link rel="canonical" href="https://s95050937.github.io/HTTP-post03.html"/>
 
 
 
 
 
-  <title>HTTP內容協商機制 | 前端技術紀錄</title>
+  <title>HTTP之身分認證 | 前端技術紀錄</title>
   
 
 
@@ -165,7 +168,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">紀錄前端技術以及筆記的地方</p>
+        <h1 class="site-subtitle" itemprop="description">紀錄前端技術以及筆記的地方</h1>
       
   </div>
 
@@ -257,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/2020/08/03/HTTP-post07/">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post03.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -274,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP內容協商機制</h1>
+          <h2 class="post-title" itemprop="name headline">HTTP之身分認證</h2>
         
 
         <div class="post-meta">
@@ -286,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-03T14:30:36+08:00">
-                2020-08-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T19:16:19+08:00">
+                2020-07-29
               </time>
             
 
@@ -327,9 +330,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/08/03/HTTP-post07/#comments" itemprop="discussionUrl">
+                <a href="/HTTP-post03.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/08/03/HTTP-post07/" itemprop="commentCount"></span>
+                        data-disqus-identifier="HTTP-post03.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,50 +365,29 @@
       
 
       
-        <h1 id="HTTP內容協商機制"><a href="#HTTP內容協商機制" class="headerlink" title="HTTP內容協商機制"></a>HTTP內容協商機制</h1><h2 id="懶人包"><a href="#懶人包" class="headerlink" title="懶人包"></a>懶人包</h2><blockquote>
-<p>比方說有很多不同的國家訪問同一個URL，法國人瀏覽需要加載法與資源，美國人需要加載英語，而解決這些就是透過內容協商機制</p>
-</blockquote>
-<h2 id="內容協商方式"><a href="#內容協商方式" class="headerlink" title="內容協商方式"></a>內容協商方式</h2><h3 id="客戶端驅動"><a href="#客戶端驅動" class="headerlink" title="客戶端驅動"></a>客戶端驅動</h3><blockquote>
-<p>客戶端發起請求，服務器返回選項提供客戶端選擇後再二次請求</p>
-</blockquote>
-<p>優點: 容易實現，且較精準</p>
-<p>缺點: 使用者初次訪問無法直接查看內容，且需要多請求一次</p>
-<a id="more"></a>
-<h3 id="服務器驅動-最廣泛"><a href="#服務器驅動-最廣泛" class="headerlink" title="服務器驅動(最廣泛)"></a>服務器驅動(最廣泛)</h3><blockquote>
-<p>服務器檢查客戶端請求頭來決定提供甚麼資源</p>
-</blockquote>
-<p>優點: 可以直接查看內容， 具有近似匹配</p>
-<p>缺點: 請求投如果沒有協代可能得用猜的提供資源</p>
-<h3 id="透明協商"><a href="#透明協商" class="headerlink" title="透明協商"></a>透明協商</h3><blockquote>
-<p>中間設備(通常為緩存代理)代表客戶端進行協商</p>
-</blockquote>
-<p>優點: 請求快速</p>
-<p>缺點: 因為非標準HTTP方式，因此沒有標準規範</p>
-<h2 id="服務器驅動"><a href="#服務器驅動" class="headerlink" title="服務器驅動"></a>服務器驅動</h2><h3 id="請求頭"><a href="#請求頭" class="headerlink" title="請求頭"></a>請求頭</h3><ol>
-<li>Accept: 告知服務器發送何種媒體類型(mp3)</li>
-<li>Accept-Language: 告知服務器發送何種語言</li>
-<li>Accept-Charset: 告知服務器發送何種字符集(Unicode)</li>
-<li>Accept-Encoding: 告知服務器發送何種編碼(UTF-8)</li>
-</ol>
-<h3 id="響應頭"><a href="#響應頭" class="headerlink" title="響應頭"></a>響應頭</h3><p>跟請求頭一一對應(跟上面索引一一對應)</p>
+        <h1 id="HTTP之身分認證"><a href="#HTTP之身分認證" class="headerlink" title="HTTP之身分認證"></a>HTTP之身分認證</h1><p>有以下四種認證</p>
 <ol>
-<li>Content-Type</li>
-<li>Content-Language</li>
-<li>Content-Type</li>
-<li>Content-Encoding</li>
+<li>BASIC認證 (基本認證)</li>
+<li>DIGEST認證 (摘要認證)</li>
+<li>SSL客戶端認證</li>
+<li>FormBase認證 (基於表單驗證)</li>
 </ol>
-<h3 id="近似匹配-Q值"><a href="#近似匹配-Q值" class="headerlink" title="近似匹配(Q值)"></a>近似匹配(Q值)</h3><p>拿Accept-Language(所有都一樣)當例子</p>
+<a id="more"></a>
+<h2 id="BASIC認證"><a href="#BASIC認證" class="headerlink" title="BASIC認證"></a>BASIC認證</h2><p>HTTP 1.0 即存在</p>
+<h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/1.png" alt=""></p>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><p>因為沒有加密，如果不小心被其他有心人士獲取，則帳號密碼經Base64解碼即獲得相當不安全，因此又有了DIGEST認證</p>
+<h2 id="DIGEST-認證"><a href="#DIGEST-認證" class="headerlink" title="DIGEST 認證"></a>DIGEST 認證</h2><p>HTTP1.1存在</p>
+<h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/2.png" alt=""></p>
+<p>這種方法雖然解決加密，但沒有解決用戶可能被冒充的問題(只要用戶名與密碼正確就認為你是本人)</p>
+<h2 id="SSL-客戶端認證"><a href="#SSL-客戶端認證" class="headerlink" title="SSL 客戶端認證"></a>SSL 客戶端認證</h2><p>藉由HTTPS 客戶端憑證，服務器可確認訪問是否來自已登入瘩客戶端</p>
+<h2 id="基於表單驗證明"><a href="#基於表單驗證明" class="headerlink" title="基於表單驗證明"></a>基於表單驗證明</h2><ol>
+<li>不是在HTTP協議定義的</li>
+<li>使用web各自實現表單認證方式</li>
+<li>通過cookie與session</li>
+</ol>
 <blockquote>
-<p>Accept-Language: en;q=0.5,fr ;q=0.0, nl;q=1.0,tr;q=0.0</p>
+<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
 </blockquote>
-<p>​    註: nl:荷蘭語，en: 英語， fr: 法語, tr: 土耳其語</p>
-<p>看q值大小(從0到1)，不是加起來等於1，只是代表優先級</p>
-<p>比方說上面那個例子按照降冪排列會變下面</p>
-<blockquote>
-<p>Accept-Language: nl;q=1.0, en;q=0.5, fr ;q=0.0, tr;q=0.0</p>
-</blockquote>
-<p>假如客戶端請求西班牙語，但服務器端沒有西班牙語，因此服務器會找Q值最大，在此例優先優先發送荷蘭語(q=1.0)，假如服務器也沒有荷蘭語，則回傳英語(q=0.5) 。</p>
-<p>假如服務器既沒有nl也沒有en會產生問題，所以服務器通常會設置默認回傳，即便沒有沒有上傳任何編號也會給默認的語言</p>
 
       
     </div>
@@ -436,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/02/CSS01/" rel="next" title="CSS文字波浪特效">
-                <i class="fa fa-chevron-left"></i> CSS文字波浪特效
+              <a href="/HTTP-post02.html" rel="next" title="HTTP協議編碼與解碼">
+                <i class="fa fa-chevron-left"></i> HTTP協議編碼與解碼
               </a>
             
           </div>
@@ -446,8 +428,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/03/HTTP-post08/" rel="prev" title="HTTP與HTTPS">
-                HTTP與HTTPS <i class="fa fa-chevron-right"></i>
+              <a href="/HTTP-post04.html" rel="prev" title="HTTP的長連接與短連接">
+                HTTP的長連接與短連接 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -617,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP內容協商機制"><span class="nav-number">1.</span> <span class="nav-text">HTTP內容協商機制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#懶人包"><span class="nav-number">1.1.</span> <span class="nav-text">懶人包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#內容協商方式"><span class="nav-number">1.2.</span> <span class="nav-text">內容協商方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客戶端驅動"><span class="nav-number">1.2.1.</span> <span class="nav-text">客戶端驅動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服務器驅動-最廣泛"><span class="nav-number">1.2.2.</span> <span class="nav-text">服務器驅動(最廣泛)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明協商"><span class="nav-number">1.2.3.</span> <span class="nav-text">透明協商</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服務器驅動"><span class="nav-number">1.3.</span> <span class="nav-text">服務器驅動</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#請求頭"><span class="nav-number">1.3.1.</span> <span class="nav-text">請求頭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#響應頭"><span class="nav-number">1.3.2.</span> <span class="nav-text">響應頭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近似匹配-Q值"><span class="nav-number">1.3.3.</span> <span class="nav-text">近似匹配(Q值)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP之身分認證"><span class="nav-number">1.</span> <span class="nav-text">HTTP之身分認證</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BASIC認證"><span class="nav-number">1.1.</span> <span class="nav-text">BASIC認證</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺點"><span class="nav-number">1.1.2.</span> <span class="nav-text">缺點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIGEST-認證"><span class="nav-number">1.2.</span> <span class="nav-text">DIGEST 認證</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">示意圖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-客戶端認證"><span class="nav-number">1.3.</span> <span class="nav-text">SSL 客戶端認證</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基於表單驗證明"><span class="nav-number">1.4.</span> <span class="nav-text">基於表單驗證明</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -814,9 +796,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/2020/08/03/HTTP-post07/';
-          this.page.identifier = '2020/08/03/HTTP-post07/';
-          this.page.title = 'HTTP內容協商機制';
+          this.page.url = 'https://s95050937.github.io/HTTP-post03.html';
+          this.page.identifier = 'HTTP-post03.html';
+          this.page.title = 'HTTP之身分認證';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -924,13 +906,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP內容協商機制'.length > 0
+      var isPost = 'HTTP之身分認證'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP內容協商機制'
+        var title = 'HTTP之身分認證'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -958,6 +940,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
