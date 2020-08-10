@@ -262,6 +262,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/juejin01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuuu4280">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端技術紀錄">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/juejin01.html" itemprop="url">juejin_編寫高質量可維護的代碼之優化邏輯判斷</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-10T17:04:22+08:00">
+                2020-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/juejin%E6%96%87%E7%AB%A0%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/" itemprop="url" rel="index">
+                    <span itemprop="name">juejin文章閱讀紀錄</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/juejin01.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="juejin01.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="編寫高質量可維護的代碼之優化邏輯判斷"><a href="#編寫高質量可維護的代碼之優化邏輯判斷" class="headerlink" title="編寫高質量可維護的代碼之優化邏輯判斷"></a>編寫高質量可維護的代碼之優化邏輯判斷</h1><blockquote>
+<p>這篇主要是看不同寫法，不一定真的好</p>
+</blockquote>
+<p>學習自(純紀錄自己學了甚麼)</p>
+<blockquote>
+<p><a href="https://juejin.im/post/6859125809655840776" target="_blank" rel="noopener">https://juejin.im/post/6859125809655840776</a></p>
+</blockquote>
+<h2 id="嵌套優化"><a href="#嵌套優化" class="headerlink" title="嵌套優化"></a>嵌套優化</h2><blockquote>
+<p>製造一個函數當他是紅色水果時打印出紅色水果，如果他是紅色水果數量又大於10打印數量大於10</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supply</span>(<span class="params">fruit, quantity</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> redFruits = [<span class="string">'apple'</span>, <span class="string">'strawberry'</span>, <span class="string">'cherry'</span>, <span class="string">'cranberries'</span>];</span><br><span class="line">    <span class="comment">// 条件 1: 水果存在</span></span><br><span class="line">    <span class="keyword">if</span>(fruit) &#123;</span><br><span class="line">        <span class="comment">// 条件 2: 属于红色水果</span></span><br><span class="line">        <span class="keyword">if</span>(redFruits.includes(fruit)) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'红色水果'</span>);</span><br><span class="line">            <span class="comment">// 条件 3: 水果数量大于 10 个</span></span><br><span class="line">            <span class="keyword">if</span> (quantity &gt; <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'数量大于 10 个'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'没有水果啦!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/juejin01.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/JS05.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1708,164 +1875,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post05.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wuuu4280">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端技術紀錄">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/HTTP-post05.html" itemprop="url">HTTP代理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-30T18:51:45+08:00">
-                2020-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/HTTP-post05.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="HTTP-post05.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="HTTP-代理"><a href="#HTTP-代理" class="headerlink" title="HTTP 代理"></a>HTTP 代理</h1><p>像是中間人的概念，對待裡來說既可以當服務端也可以當客戶端</p>
-<h2 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h2><p><img src="/images/HTTP05/1.png" alt=""></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/HTTP-post05.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1920,7 +1929,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1931,7 +1940,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1942,7 +1951,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2287,7 +2296,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("JS30-D01 JavaScript Drum Kit");titles.push("webapck 打包文件解析");titles.push("JS作用域&值類型與引用類型");titles.push("CSS文字懸停");titles.push("HTTP與HTTPS");titles.push("HTTP內容協商機制");titles.push("CSS文字波浪特效");titles.push("JS之變量如何賦值");titles.push("HTTP緩存");titles.push("HTTP代理");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("juejin_編寫高質量可維護的代碼之優化邏輯判斷");titles.push("JS30-D01 JavaScript Drum Kit");titles.push("webapck 打包文件解析");titles.push("JS作用域&值類型與引用類型");titles.push("CSS文字懸停");titles.push("HTTP與HTTPS");titles.push("HTTP內容協商機制");titles.push("CSS文字波浪特效");titles.push("JS之變量如何賦值");titles.push("HTTP緩存");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
