@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://s95050937.github.io/"/>
-  <updated>2020-08-11T10:28:23.347Z</updated>
+  <updated>2020-08-12T09:18:42.528Z</updated>
   <id>https://s95050937.github.io/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 世界万物诞生记 (原型鍊) (轉載)</title>
+    <link href="https://s95050937.github.io/zhihu02.html"/>
+    <id>https://s95050937.github.io/zhihu02.html</id>
+    <published>2020-08-12T09:11:47.000Z</published>
+    <updated>2020-08-12T09:18:42.528Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaScript-世界万物诞生记-原型鍊-轉載"><a href="#JavaScript-世界万物诞生记-原型鍊-轉載" class="headerlink" title="JavaScript 世界万物诞生记 (原型鍊) (轉載)"></a>JavaScript 世界万物诞生记 (原型鍊) (轉載)</h1><p>學習自(純紀錄自己學了甚麼，非營利)</p><blockquote><p><a href="https://zhuanlan.zhihu.com/p/22989691" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22989691</a></p></blockquote><p>可以把prototype想像成那台機器會幹啥(有點像繼承會做的事情)</p><p>而<strong>proto</strong>(p) 則可以想像特性繼承(有點像繼承個性或是特徵)</p><p>看完全部再回來</p><blockquote><ol><li>比方說Object的prototype會是NO1是因為他在模仿神創造對象</li><li>Function是一台機器所以他被歸類在NO2(繼承NO2是機器的特性)，他會創造機器，因此他的prototype是NO2</li><li>機器會做甚麼是一定是根據prototype(Animal會吃跟移動，魚會游泳)</li><li>靜態特性則是proto(大家都是機器因此proto往上找必定會有NO2)</li></ol></blockquote><h2 id="最終圖"><a href="#最終圖" class="headerlink" title="最終圖"></a>最終圖</h2><p><img src="/images/zhihu02/1.png" alt=""></p><a id="more"></a><ol><li><p>起初JS世界只有null(只存在虛無)</p><p><img src="/images/zhihu02/2.png" alt=""></p></li></ol><ol start="2"><li><p>從無中誕生了神NO1</p><p><img src="/images/zhihu02/3.png" alt=""></p></li><li><p>神創造了Object機器開始生產Object(開始有生物)</p><p><img src="/images/zhihu02/4.png" alt=""></p></li><li><p>久了之後，他覺得只創造一些Object生物好像有點太單調了，於是用特徵分類出了創造String機器的String，創造Number機器的Number…</p><p><img src="/images/zhihu02/5.png" alt=""></p></li><li><p>他覺得這些機器不是也可以統整成一個機器嗎，於是創造了NO2代表了這個東西是機器</p><blockquote><p>題外話: 這些機器當然也像Object一樣也需要各自的模板對象，也就是它们的prototype属性指向的那个对象。显然它们的模板对象应该是继承自No. 1对象的，但後面太麻煩先暫時不記錄</p></blockquote><p><img src="/images/zhihu02/6.png" alt=""></p></li><li><p>造物者HEN滿意，有了Object機器創造Object，有String創造String。但她很快發現他缺少了一個關鍵，就是創造機器的機器！於是他創造了Function</p><blockquote><p>Function 是一台機器所以他的 p 是 NO2，他是根據NO2模板創造的，因此他的prototype也是NO2</p></blockquote><p><img src="/images/zhihu02/7.png" alt=""></p><p>一個很酷的事</p><blockquote><p>Object作为一个机器可以看做是有由Function制造出来的，而Function作为一个对象可以看做是由Object制造出来的。這就是雞生蛋還是蛋生雞</p></blockquote></li><li><p>這時候已經有函數可以創造機器(一個類的概念)，於是將可以創造那個類的機器稱為構造函數，可以讓該類做甚麼事情的稱為普通函數</p><p>比方說以下: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 構造函數</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bird</span>(<span class="params">color</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> redBird = <span class="keyword">new</span> Bird(<span class="string">'#FF0000'</span>);</span><br><span class="line"><span class="comment">// 这是一台通过晃动鸟的翅膀，让鸟飞起来的简陋的机器(普通函數)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeBirdFly</span>(<span class="params">bird</span>) </span>&#123;</span><br><span class="line">    shakeBirdWing(bird);</span><br><span class="line">&#125;</span><br><span class="line">makeBirdFly(redBird);</span><br></pre></td></tr></table></figure></li><li><p>這裡有點複雜</p><ol><li><p>NO1覺得所有機器都都p都是NO2讓這個世界好像有點扁，且他發現機器跟機器有關係不能像之前一樣(第五點的圖片) ，比方說此圖，Fish跟Bird明明都是動物可是如果照圖這樣分看不出關係，而且他們的模板對象有重疊，有夠浪費空間</p><p><img src="/images/zhihu02/8.png" alt=""></p></li><li><p>於是NO1想到那我就讓Bird的模板對象繼承(p)自Animal的模板對象不就得了</p><p><img src="/images/zhihu02/9.png" alt=""></p></li><li><p>現在這樣好多了，世界變得有規律一些了，但發現機器跟機器之間還是沒啥關係(Fish機器，Aniaml機器，Bird機器看似都沒關係)，我們解決的只是他們的行為關係。</p><p><img src="/images/zhihu02/10.png" alt=""></p></li><li><p>其實很簡單用剛剛的方式就好</p><p><img src="/images/zhihu02/11.png" alt=""></p></li></ol></li><li><p>最終樣子</p><p><img src="/images/zhihu02/12.png" alt=""></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JavaScript-世界万物诞生记-原型鍊-轉載&quot;&gt;&lt;a href=&quot;#JavaScript-世界万物诞生记-原型鍊-轉載&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 世界万物诞生记 (原型鍊) (轉載)&quot;&gt;&lt;/a&gt;JavaScript 世界万物诞生记 (原型鍊) (轉載)&lt;/h1&gt;&lt;p&gt;學習自(純紀錄自己學了甚麼，非營利)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/22989691&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zhuanlan.zhihu.com/p/22989691&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以把prototype想像成那台機器會幹啥(有點像繼承會做的事情)&lt;/p&gt;
+&lt;p&gt;而&lt;strong&gt;proto&lt;/strong&gt;(p) 則可以想像特性繼承(有點像繼承個性或是特徵)&lt;/p&gt;
+&lt;p&gt;看完全部再回來&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;比方說Object的prototype會是NO1是因為他在模仿神創造對象&lt;/li&gt;
+&lt;li&gt;Function是一台機器所以他被歸類在NO2(繼承NO2是機器的特性)，他會創造機器，因此他的prototype是NO2&lt;/li&gt;
+&lt;li&gt;機器會做甚麼是一定是根據prototype(Animal會吃跟移動，魚會游泳)&lt;/li&gt;
+&lt;li&gt;靜態特性則是proto(大家都是機器因此proto往上找必定會有NO2)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;最終圖&quot;&gt;&lt;a href=&quot;#最終圖&quot; class=&quot;headerlink&quot; title=&quot;最終圖&quot;&gt;&lt;/a&gt;最終圖&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/zhihu02/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技術文章閱讀紀錄(非營利，僅為自身整理文章之筆記)" scheme="https://s95050937.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E7%AB%A0%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84-%E9%9D%9E%E7%87%9F%E5%88%A9%EF%BC%8C%E5%83%85%E7%82%BA%E8%87%AA%E8%BA%AB%E6%95%B4%E7%90%86%E6%96%87%E7%AB%A0%E4%B9%8B%E7%AD%86%E8%A8%98/"/>
+    
+    
+      <category term="JavaScript" scheme="https://s95050937.github.io/tags/JavaScript/"/>
+    
+      <category term="zhihu" scheme="https://s95050937.github.io/tags/zhihu/"/>
+    
+  </entry>
   
   <entry>
     <title>js隱式轉換相關知識(轉載)</title>

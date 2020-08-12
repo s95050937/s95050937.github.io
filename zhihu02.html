@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="JavaScript,zhihu," />
 
 
 
@@ -83,20 +83,32 @@
 
 
 
-<meta name="description" content="HTTP的長連接與短連接核心概念 其實HTTP的長連接與短連接是在講TCP的長連接與短連接  實際案例打開台大的網站按F12，可以發現有一個Connection: Keep-Alive，那個就是長連結">
+<meta name="description" content="JavaScript 世界万物诞生记 (原型鍊) (轉載)學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;22989691  可以把prototype想像成那台機器會幹啥(有點像繼承會做的事情) 而proto(p) 則可以想像特性繼承(有點像繼承個性或是特徵) 看完全部再回來   比方說Object的prototype會是NO1是因為他在模仿神創造">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP的長連接與短連接">
-<meta property="og:url" content="https://s95050937.github.io/HTTP-post04.html">
+<meta property="og:title" content="JavaScript 世界万物诞生记 (原型鍊) (轉載)">
+<meta property="og:url" content="https://s95050937.github.io/zhihu02.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP的長連接與短連接核心概念 其實HTTP的長連接與短連接是在講TCP的長連接與短連接  實際案例打開台大的網站按F12，可以發現有一個Connection: Keep-Alive，那個就是長連結">
+<meta property="og:description" content="JavaScript 世界万物诞生记 (原型鍊) (轉載)學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;22989691  可以把prototype想像成那台機器會幹啥(有點像繼承會做的事情) 而proto(p) 則可以想像特性繼承(有點像繼承個性或是特徵) 看完全部再回來   比方說Object的prototype會是NO1是因為他在模仿神創造">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP04/1.png">
-<meta property="article:published_time" content="2020-07-29T11:47:18.000Z">
-<meta property="article:modified_time" content="2020-07-29T11:49:46.269Z">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/3.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/4.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/5.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/6.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/7.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/8.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/9.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/10.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/11.png">
+<meta property="og:image" content="https://s95050937.github.io/images/zhihu02/12.png">
+<meta property="article:published_time" content="2020-08-12T09:11:47.000Z">
+<meta property="article:modified_time" content="2020-08-12T09:18:42.528Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="zhihu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP04/1.png">
+<meta name="twitter:image" content="https://s95050937.github.io/images/zhihu02/1.png">
 
 
 
@@ -126,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/HTTP-post04.html"/>
+  <link rel="canonical" href="https://s95050937.github.io/zhihu02.html"/>
 
 
 
 
 
-  <title>HTTP的長連接與短連接 | 前端技術紀錄</title>
+  <title>JavaScript 世界万物诞生记 (原型鍊) (轉載) | 前端技術紀錄</title>
   
 
 
@@ -259,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post04.html">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/zhihu02.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -276,7 +288,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">HTTP的長連接與短連接</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript 世界万物诞生记 (原型鍊) (轉載)</h2>
         
 
         <div class="post-meta">
@@ -288,8 +300,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T19:47:18+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-12T17:11:47+08:00">
+                2020-08-12
               </time>
             
 
@@ -311,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E7%AB%A0%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84-%E9%9D%9E%E7%87%9F%E5%88%A9%EF%BC%8C%E5%83%85%E7%82%BA%E8%87%AA%E8%BA%AB%E6%95%B4%E7%90%86%E6%96%87%E7%AB%A0%E4%B9%8B%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
+                    <span itemprop="name">技術文章閱讀紀錄(非營利，僅為自身整理文章之筆記)</span>
                   </a>
                 </span>
 
@@ -329,9 +341,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/HTTP-post04.html#comments" itemprop="discussionUrl">
+                <a href="/zhihu02.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="HTTP-post04.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="zhihu02.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,25 +376,78 @@
       
 
       
-        <h1 id="HTTP的長連接與短連接"><a href="#HTTP的長連接與短連接" class="headerlink" title="HTTP的長連接與短連接"></a>HTTP的長連接與短連接</h1><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><blockquote>
-<p>其實HTTP的長連接與短連接是在講TCP的長連接與短連接</p>
+        <h1 id="JavaScript-世界万物诞生记-原型鍊-轉載"><a href="#JavaScript-世界万物诞生记-原型鍊-轉載" class="headerlink" title="JavaScript 世界万物诞生记 (原型鍊) (轉載)"></a>JavaScript 世界万物诞生记 (原型鍊) (轉載)</h1><p>學習自(純紀錄自己學了甚麼，非營利)</p>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/22989691" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22989691</a></p>
 </blockquote>
-<h2 id="實際案例"><a href="#實際案例" class="headerlink" title="實際案例"></a>實際案例</h2><p>打開台大的網站按F12，可以發現有一個Connection: Keep-Alive，那個就是長連結</p>
-<p><img src="/images/HTTP04/1.png" alt=""></p>
+<p>可以把prototype想像成那台機器會幹啥(有點像繼承會做的事情)</p>
+<p>而<strong>proto</strong>(p) 則可以想像特性繼承(有點像繼承個性或是特徵)</p>
+<p>看完全部再回來</p>
+<blockquote>
+<ol>
+<li>比方說Object的prototype會是NO1是因為他在模仿神創造對象</li>
+<li>Function是一台機器所以他被歸類在NO2(繼承NO2是機器的特性)，他會創造機器，因此他的prototype是NO2</li>
+<li>機器會做甚麼是一定是根據prototype(Animal會吃跟移動，魚會游泳)</li>
+<li>靜態特性則是proto(大家都是機器因此proto往上找必定會有NO2)</li>
+</ol>
+</blockquote>
+<h2 id="最終圖"><a href="#最終圖" class="headerlink" title="最終圖"></a>最終圖</h2><p><img src="/images/zhihu02/1.png" alt=""></p>
 <a id="more"></a>
-<h2 id="差別"><a href="#差別" class="headerlink" title="差別"></a>差別</h2><p>短連接 </p>
+<ol>
+<li><p>起初JS世界只有null(只存在虛無)</p>
+<p><img src="/images/zhihu02/2.png" alt=""></p>
+</li>
+</ol>
+<ol start="2">
+<li><p>從無中誕生了神NO1</p>
+<p><img src="/images/zhihu02/3.png" alt=""></p>
+</li>
+<li><p>神創造了Object機器開始生產Object(開始有生物)</p>
+<p><img src="/images/zhihu02/4.png" alt=""></p>
+</li>
+<li><p>久了之後，他覺得只創造一些Object生物好像有點太單調了，於是用特徵分類出了創造String機器的String，創造Number機器的Number…</p>
+<p><img src="/images/zhihu02/5.png" alt=""></p>
+</li>
+<li><p>他覺得這些機器不是也可以統整成一個機器嗎，於是創造了NO2代表了這個東西是機器</p>
 <blockquote>
-<p>建立連結 =&gt; 數據傳輸 =&gt; 關閉連結 =&gt; ….  =&gt; 建立連結 =&gt; 數據傳輸 =&gt; 關閉連結 =&gt;</p>
+<p>題外話: 這些機器當然也像Object一樣也需要各自的模板對象，也就是它们的prototype属性指向的那个对象。显然它们的模板对象应该是继承自No. 1对象的，但後面太麻煩先暫時不記錄</p>
 </blockquote>
-<p>長連結(可以省去TCP連接與關閉的時間)</p>
-<p>​    通常關閉連結會是服務端，因為隨著連結的客戶端越來越多，服務端會有撐不下去的時候</p>
+<p><img src="/images/zhihu02/6.png" alt=""></p>
+</li>
+<li><p>造物者HEN滿意，有了Object機器創造Object，有String創造String。但她很快發現他缺少了一個關鍵，就是創造機器的機器！於是他創造了Function</p>
 <blockquote>
-<p>建立連結 =&gt; 數據傳輸 =&gt; …. (保持連結) …. =&gt;  數據傳輸 =&gt; 關閉連結</p>
+<p>Function 是一台機器所以他的 p 是 NO2，他是根據NO2模板創造的，因此他的prototype也是NO2</p>
 </blockquote>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>具體誰好誰壞沒有一定，當然還是要視情況而定</p>
+<p><img src="/images/zhihu02/7.png" alt=""></p>
+<p>一個很酷的事</p>
 <blockquote>
-<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
+<p>Object作为一个机器可以看做是有由Function制造出来的，而Function作为一个对象可以看做是由Object制造出来的。這就是雞生蛋還是蛋生雞</p>
 </blockquote>
+</li>
+<li><p>這時候已經有函數可以創造機器(一個類的概念)，於是將可以創造那個類的機器稱為構造函數，可以讓該類做甚麼事情的稱為普通函數</p>
+<p>比方說以下: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 構造函數</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bird</span>(<span class="params">color</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> redBird = <span class="keyword">new</span> Bird(<span class="string">'#FF0000'</span>);</span><br><span class="line"><span class="comment">// 这是一台通过晃动鸟的翅膀，让鸟飞起来的简陋的机器(普通函數)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeBirdFly</span>(<span class="params">bird</span>) </span>&#123;</span><br><span class="line">    shakeBirdWing(bird);</span><br><span class="line">&#125;</span><br><span class="line">makeBirdFly(redBird);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>這裡有點複雜</p>
+<ol>
+<li><p>NO1覺得所有機器都都p都是NO2讓這個世界好像有點扁，且他發現機器跟機器有關係不能像之前一樣(第五點的圖片) ，比方說此圖，Fish跟Bird明明都是動物可是如果照圖這樣分看不出關係，而且他們的模板對象有重疊，有夠浪費空間</p>
+<p><img src="/images/zhihu02/8.png" alt=""></p>
+</li>
+<li><p>於是NO1想到那我就讓Bird的模板對象繼承(p)自Animal的模板對象不就得了</p>
+<p><img src="/images/zhihu02/9.png" alt=""></p>
+</li>
+<li><p>現在這樣好多了，世界變得有規律一些了，但發現機器跟機器之間還是沒啥關係(Fish機器，Aniaml機器，Bird機器看似都沒關係)，我們解決的只是他們的行為關係。</p>
+<p><img src="/images/zhihu02/10.png" alt=""></p>
+</li>
+<li><p>其實很簡單用剛剛的方式就好</p>
+<p><img src="/images/zhihu02/11.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p>最終樣子</p>
+<p><img src="/images/zhihu02/12.png" alt=""></p>
+</li>
+</ol>
 
       
     </div>
@@ -400,7 +465,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/zhihu/" rel="tag"># zhihu</a>
           
         </div>
       
@@ -413,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/HTTP-post03.html" rel="next" title="HTTP之身分認證">
-                <i class="fa fa-chevron-left"></i> HTTP之身分認證
+              <a href="/zhihu01.html" rel="next" title="js隱式轉換相關知識(轉載)">
+                <i class="fa fa-chevron-left"></i> js隱式轉換相關知識(轉載)
               </a>
             
           </div>
@@ -422,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/JS-post02.html" rel="prev" title="JS靜態與動態作用域">
-                JS靜態與動態作用域 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP的長連接與短連接"><span class="nav-number">1.</span> <span class="nav-text">HTTP的長連接與短連接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心概念"><span class="nav-number">1.1.</span> <span class="nav-text">核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#實際案例"><span class="nav-number">1.2.</span> <span class="nav-text">實際案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差別"><span class="nav-number">1.3.</span> <span class="nav-text">差別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#總結"><span class="nav-number">1.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-世界万物诞生记-原型鍊-轉載"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 世界万物诞生记 (原型鍊) (轉載)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最終圖"><span class="nav-number">1.1.</span> <span class="nav-text">最終圖</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -791,9 +854,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/HTTP-post04.html';
-          this.page.identifier = 'HTTP-post04.html';
-          this.page.title = 'HTTP的長連接與短連接';
+          this.page.url = 'https://s95050937.github.io/zhihu02.html';
+          this.page.identifier = 'zhihu02.html';
+          this.page.title = 'JavaScript 世界万物诞生记 (原型鍊) (轉載)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -901,13 +964,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP的長連接與短連接'.length > 0
+      var isPost = 'JavaScript 世界万物诞生记 (原型鍊) (轉載)'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP的長連接與短連接'
+        var title = 'JavaScript 世界万物诞生记 (原型鍊) (轉載)'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
