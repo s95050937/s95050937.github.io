@@ -86,7 +86,7 @@
 <meta name="description" content="此部落格主要在記錄一些自身前端經驗或是整理的前端筆記，">
 <meta property="og:type" content="website">
 <meta property="og:title" content="前端技術紀錄">
-<meta property="og:url" content="https://s95050937.github.io/tags/CSS%E7%89%B9%E6%95%88/index.html">
+<meta property="og:url" content="https://s95050937.github.io/page/3/index.html">
 <meta property="og:site_name" content="前端技術紀錄">
 <meta property="og:description" content="此部落格主要在記錄一些自身前端經驗或是整理的前端筆記，">
 <meta property="og:locale" content="zh_TW">
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/tags/CSS特效/"/>
+  <link rel="canonical" href="https://s95050937.github.io/page/3/"/>
 
 
 
 
 
-  <title>Tag: CSS特效 | 前端技術紀錄</title>
+  <title>前端技術紀錄 - 紀錄前端技術以及筆記的地方</title>
   
 
 
@@ -162,7 +162,8 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -255,83 +256,176 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
 
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>CSS特效<small>Tag</small>
-        </h2>
-      </div>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/JS_post01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuuu4280">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端技術紀錄">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/JS_post01.html" itemprop="url">JavaScript偽數組</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-27T23:56:57+08:00">
+                2020-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/JS_post01.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="JS_post01.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
 
       
         
+          <h2 id="JavaScript之類數組完全攻略"><a href="#JavaScript之類數組完全攻略" class="headerlink" title="JavaScript之類數組完全攻略"></a>JavaScript之類數組完全攻略</h2><p>今天幫大家整理偽數組的概念，我們先來從題目開始分析</p>
+<p>先來打造一個很酷的對象如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'push'</span>: <span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/CSS02.html" itemprop="url">
-              
-                <span itemprop="name">CSS文字懸停</span>
-              
+<p>這時候來打印obj看會長怎樣</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/JS_post01.html#more" rel="contents">
+              Read more &raquo;
             </a>
+          </div>
+          <!--/noindex-->
         
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-08-04T17:20:51+08:00"
-              content="2020-08-04" >
-          08-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/CSS01.html" itemprop="url">
-              
-                <span itemprop="name">CSS文字波浪特效</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-08-02T18:51:18+08:00"
-              content="2020-08-02" >
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
   
   
+  </article>
+
+
+    
+  </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -746,7 +840,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("CSS文字懸停");titles.push("CSS文字波浪特效");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("JavaScript偽數組");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

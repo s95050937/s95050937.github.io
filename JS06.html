@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="JavaScript,JavaScript面試," />
 
 
 
@@ -83,21 +83,26 @@
 
 
 
-<meta name="description" content="HTTP之身分認證有以下四種認證  BASIC認證 (基本認證) DIGEST認證 (摘要認證) SSL客戶端認證 FormBase認證 (基於表單驗證)">
+<meta name="description" content="JavaScript 閉包先來看一下各個不同地方的閉包說法  你不知道的JavaScript: 當函數可以記住並訪問所在的詞法作用域時及形成閉包，即使不是在該函數的詞法作用域內 JavaScript高级程序设计: 閉包是指有權訪問令一個函數作用域變量的函數 MDN: 閉包（Closure）是函式以及該函式被宣告時所在的作用域環境（lexical environment）的組合。   我自己的理解如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP之身分認證">
-<meta property="og:url" content="https://s95050937.github.io/HTTP-post03.html">
+<meta property="og:title" content="JavaScript 閉包">
+<meta property="og:url" content="https://s95050937.github.io/JS06.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="HTTP之身分認證有以下四種認證  BASIC認證 (基本認證) DIGEST認證 (摘要認證) SSL客戶端認證 FormBase認證 (基於表單驗證)">
+<meta property="og:description" content="JavaScript 閉包先來看一下各個不同地方的閉包說法  你不知道的JavaScript: 當函數可以記住並訪問所在的詞法作用域時及形成閉包，即使不是在該函數的詞法作用域內 JavaScript高级程序设计: 閉包是指有權訪問令一個函數作用域變量的函數 MDN: 閉包（Closure）是函式以及該函式被宣告時所在的作用域環境（lexical environment）的組合。   我自己的理解如">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP03/1.png">
-<meta property="og:image" content="https://s95050937.github.io/images/HTTP03/2.png">
-<meta property="article:published_time" content="2020-07-29T11:16:19.000Z">
-<meta property="article:modified_time" content="2020-07-29T11:20:08.839Z">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/3.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/4.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/5.png">
+<meta property="og:image" content="https://s95050937.github.io/images/JS06/6.png">
+<meta property="article:published_time" content="2020-08-12T12:24:05.000Z">
+<meta property="article:modified_time" content="2020-08-12T12:27:17.848Z">
 <meta property="article:author" content="wuuu4280">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript面試">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s95050937.github.io/images/HTTP03/1.png">
+<meta name="twitter:image" content="https://s95050937.github.io/images/JS06/1.png">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/HTTP-post03.html"/>
+  <link rel="canonical" href="https://s95050937.github.io/JS06.html"/>
 
 
 
 
 
-  <title>HTTP之身分認證 | 前端技術紀錄</title>
+  <title>JavaScript 閉包 | 前端技術紀錄</title>
   
 
 
@@ -269,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post03.html">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/JS06.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -286,7 +291,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">HTTP之身分認證</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript 閉包</h2>
         
 
         <div class="post-meta">
@@ -298,8 +303,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T19:16:19+08:00">
-                2020-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-12T20:24:05+08:00">
+                2020-08-12
               </time>
             
 
@@ -321,8 +326,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -339,9 +344,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/HTTP-post03.html#comments" itemprop="discussionUrl">
+                <a href="/JS06.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="HTTP-post03.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="JS06.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,29 +379,57 @@
       
 
       
-        <h1 id="HTTP之身分認證"><a href="#HTTP之身分認證" class="headerlink" title="HTTP之身分認證"></a>HTTP之身分認證</h1><p>有以下四種認證</p>
+        <h1 id="JavaScript-閉包"><a href="#JavaScript-閉包" class="headerlink" title="JavaScript 閉包"></a>JavaScript 閉包</h1><h2 id="先來看一下各個不同地方的閉包說法"><a href="#先來看一下各個不同地方的閉包說法" class="headerlink" title="先來看一下各個不同地方的閉包說法"></a>先來看一下各個不同地方的閉包說法</h2><blockquote>
 <ol>
-<li>BASIC認證 (基本認證)</li>
-<li>DIGEST認證 (摘要認證)</li>
-<li>SSL客戶端認證</li>
-<li>FormBase認證 (基於表單驗證)</li>
+<li>你不知道的JavaScript: 當函數可以記住並訪問所在的詞法作用域時及形成閉包，即使不是在該函數的詞法作用域內</li>
+<li>JavaScript高级程序设计: 閉包是指有權訪問令一個函數作用域變量的函數</li>
+<li>MDN: 閉包（Closure）是函式以及該函式被宣告時所在的作用域環境（lexical environment）的組合。</li>
 </ol>
-<a id="more"></a>
-<h2 id="BASIC認證"><a href="#BASIC認證" class="headerlink" title="BASIC認證"></a>BASIC認證</h2><p>HTTP 1.0 即存在</p>
-<h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/1.png" alt=""></p>
-<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><p>因為沒有加密，如果不小心被其他有心人士獲取，則帳號密碼經Base64解碼即獲得相當不安全，因此又有了DIGEST認證</p>
-<h2 id="DIGEST-認證"><a href="#DIGEST-認證" class="headerlink" title="DIGEST 認證"></a>DIGEST 認證</h2><p>HTTP1.1存在</p>
-<h3 id="示意圖-1"><a href="#示意圖-1" class="headerlink" title="示意圖"></a>示意圖</h3><p><img src="/images/HTTP03/2.png" alt=""></p>
-<p>這種方法雖然解決加密，但沒有解決用戶可能被冒充的問題(只要用戶名與密碼正確就認為你是本人)</p>
-<h2 id="SSL-客戶端認證"><a href="#SSL-客戶端認證" class="headerlink" title="SSL 客戶端認證"></a>SSL 客戶端認證</h2><p>藉由HTTPS 客戶端憑證，服務器可確認訪問是否來自已登入瘩客戶端</p>
-<h2 id="基於表單驗證明"><a href="#基於表單驗證明" class="headerlink" title="基於表單驗證明"></a>基於表單驗證明</h2><ol>
-<li>不是在HTTP協議定義的</li>
-<li>使用web各自實現表單認證方式</li>
-<li>通過cookie與session</li>
-</ol>
-<blockquote>
-<p>以上為<a href="https://coding.imooc.com/class/395.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/395.html#Anchor</a> 整理下來的筆記</p>
 </blockquote>
+<h2 id="我自己的理解"><a href="#我自己的理解" class="headerlink" title="我自己的理解"></a>我自己的理解</h2><p>如果我們把函數作用域想像成一個書包(從外面是看不到裡面的內容的)，那閉包就很像一個超一流扒手，可以偷窺到你書包的東西。</p>
+<a id="more"></a>
+<h2 id="先來個情境"><a href="#先來個情境" class="headerlink" title="先來個情境"></a>先來個情境</h2><p>聲明一個背包函數</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">package</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pencilCase = &#123;</span><br><span class="line">    <span class="string">'原子筆'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'橡皮擦'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'水壺'</span>: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(pencilCase); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>外界的人看起來會長怎樣(那整個黃黃的一塊講的艱澀一點就是package函數的詞法作用域)</p>
+<p><img src="/images/JS06/1.png" alt=""></p>
+<p>假設今天有一個扒手函數可以調用到鉛筆盒那就形成閉包(如同先前定義的)</p>
+<p>附註: 這裡我對package裡面改寫成這樣:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">package</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pencilCase = &#123;</span><br><span class="line">    <span class="string">'原子筆'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'橡皮擦'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'水壺'</span>: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getPencilCase() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(pencilCase);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之後扒手開扒</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pickpocket = package() <span class="comment">// 通常函數執行完該作用域的東西就該銷毀了</span></span><br><span class="line">pickpocket.getPencilCase()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/JS06/2.png" alt=""><br>可以發現確實成功獲得書包裡面的鉛筆盒!!!!</p>
+<h2 id="其實這跟棧內存有關"><a href="#其實這跟棧內存有關" class="headerlink" title="其實這跟棧內存有關"></a>其實這跟棧內存有關</h2><h3 id="擷取"><a href="#擷取" class="headerlink" title="擷取"></a>擷取</h3><blockquote>
+<p><a href="https://juejin.im/post/6844904099771580423" target="_blank" rel="noopener">https://juejin.im/post/6844904099771580423</a></p>
+</blockquote>
+<blockquote>
+<p>棧內存銷毀：</p>
+<ul>
+<li>全局棧內存：關掉頁面的時候才會銷毀</li>
+<li>私有棧內存：<ul>
+<li>1.一般情況下，函數只要執行完成，形成的私有棧內存就會被銷毀釋放掉（排除出現無限極遞歸、出現死循環的模式）</li>
+<li>2.但是一旦棧內存中的某個東西（一般都是堆地址）被私有作用域以外的事物給佔用了，則當前私有棧內存不能立即被釋放銷毀（特點：私有作用域中的私有變量等信息也保留下來了=&gt;這種函數執行形成不能被釋放的私有棧內存，也叫做閉包）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>從上面兩個可以得出函數作用域裡面確實不會被立即銷毀</p>
+<h3 id="到此我們可以知道"><a href="#到此我們可以知道" class="headerlink" title="到此我們可以知道"></a>到此我們可以知道</h3><blockquote>
+<p>只要外面有任何事物佔據了私有作用域裡面的東西就會產生閉包(保存該函數作用域)</p>
+</blockquote>
+<p>所以其實我們要產生閉包的核心觀念是要讓外界竊聽到函數內部，這才是為何我們在函數內要return函數的原因(讓外界卡住內存)的原因</p>
+<p>所以下面講幾個例子吧!</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="範例一-最基本閉包"><a href="#範例一-最基本閉包" class="headerlink" title="範例一 最基本閉包"></a>範例一 最基本閉包</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++num);    </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> baz</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bar = foo(<span class="number">5</span>) <span class="comment">// bar卡住了內存</span></span><br><span class="line">bar(<span class="number">4</span>) <span class="comment">// 這個4其實啥意義都沒有</span></span><br><span class="line">bar(<span class="number">5</span>) <span class="comment">// 這個5也沒啥意義</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS06/3.png" alt=""></p>
+<h3 id="改一下範例一看會長怎樣"><a href="#改一下範例一看會長怎樣" class="headerlink" title="改一下範例一看會長怎樣"></a>改一下範例一看會長怎樣</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++num);    </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> baz</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bar1 = foo(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">let</span> bar2 = foo(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">bar1()</span><br><span class="line">bar1()</span><br><span class="line"></span><br><span class="line">bar2()</span><br><span class="line">bar2()</span><br></pre></td></tr></table></figure>
+
+<p>可以發現確實可以訪問到num，且我們這邊可以發現會產生不同的值，代表這兩個都會儲存內存，因此我們要小心使用，不然可能會一直浪費內存<br><img src="/images/JS06/4.png" alt=""></p>
+<h3 id="還可以這樣"><a href="#還可以這樣" class="headerlink" title="還可以這樣"></a>還可以這樣</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  spy = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++num);    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">5</span>)</span><br><span class="line">spy()</span><br><span class="line">spy()</span><br><span class="line">spy()</span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS06/5.png" alt=""></p>
+<h3 id="或是這樣"><a href="#或是這樣" class="headerlink" title="或是這樣"></a>或是這樣</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> bar =&#123;</span><br><span class="line">    geta() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(a++);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> baz1 = foo(<span class="number">2</span>)</span><br><span class="line">baz1.geta() </span><br><span class="line">baz1.geta()</span><br><span class="line"><span class="keyword">let</span> baz2 = foo(<span class="number">5</span>)</span><br><span class="line">baz2.geta()</span><br><span class="line">baz2.geta()</span><br></pre></td></tr></table></figure>
+<p><img src="/images/JS06/6.png" alt=""></p>
 
       
     </div>
@@ -414,7 +447,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript%E9%9D%A2%E8%A9%A6/" rel="tag"># JavaScript面試</a>
           
         </div>
       
@@ -427,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/HTTP-post02.html" rel="next" title="HTTP協議編碼與解碼">
-                <i class="fa fa-chevron-left"></i> HTTP協議編碼與解碼
+              <a href="/zhihu02.html" rel="next" title="JavaScript 世界万物诞生记 (原型鍊) (轉載)">
+                <i class="fa fa-chevron-left"></i> JavaScript 世界万物诞生记 (原型鍊) (轉載)
               </a>
             
           </div>
@@ -436,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/HTTP-post04.html" rel="prev" title="HTTP的長連接與短連接">
-                HTTP的長連接與短連接 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP之身分認證"><span class="nav-number">1.</span> <span class="nav-text">HTTP之身分認證</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BASIC認證"><span class="nav-number">1.1.</span> <span class="nav-text">BASIC認證</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖"><span class="nav-number">1.1.1.</span> <span class="nav-text">示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺點"><span class="nav-number">1.1.2.</span> <span class="nav-text">缺點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIGEST-認證"><span class="nav-number">1.2.</span> <span class="nav-text">DIGEST 認證</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示意圖-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">示意圖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-客戶端認證"><span class="nav-number">1.3.</span> <span class="nav-text">SSL 客戶端認證</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基於表單驗證明"><span class="nav-number">1.4.</span> <span class="nav-text">基於表單驗證明</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-閉包"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 閉包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先來看一下各個不同地方的閉包說法"><span class="nav-number">1.1.</span> <span class="nav-text">先來看一下各個不同地方的閉包說法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我自己的理解"><span class="nav-number">1.2.</span> <span class="nav-text">我自己的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先來個情境"><span class="nav-number">1.3.</span> <span class="nav-text">先來個情境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其實這跟棧內存有關"><span class="nav-number">1.4.</span> <span class="nav-text">其實這跟棧內存有關</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#擷取"><span class="nav-number">1.4.1.</span> <span class="nav-text">擷取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#到此我們可以知道"><span class="nav-number">1.4.2.</span> <span class="nav-text">到此我們可以知道</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.5.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#範例一-最基本閉包"><span class="nav-number">1.5.1.</span> <span class="nav-text">範例一 最基本閉包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改一下範例一看會長怎樣"><span class="nav-number">1.5.2.</span> <span class="nav-text">改一下範例一看會長怎樣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#還可以這樣"><span class="nav-number">1.5.3.</span> <span class="nav-text">還可以這樣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#或是這樣"><span class="nav-number">1.5.4.</span> <span class="nav-text">或是這樣</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -805,9 +836,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/HTTP-post03.html';
-          this.page.identifier = 'HTTP-post03.html';
-          this.page.title = 'HTTP之身分認證';
+          this.page.url = 'https://s95050937.github.io/JS06.html';
+          this.page.identifier = 'JS06.html';
+          this.page.title = 'JavaScript 閉包';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -915,13 +946,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'HTTP之身分認證'.length > 0
+      var isPost = 'JavaScript 閉包'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'HTTP之身分認證'
+        var title = 'JavaScript 閉包'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
