@@ -83,19 +83,26 @@
 
 
 
-<meta name="description" content="[译] 送你 43 道 JavaScript 面试题學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;6844903869378461710  第三題12345678910const shape &#x3D; &amp;#123;  radius: 10,  diameter() &amp;#123;    return this.radius * 2;  &amp;#125;,  perime">
+<meta name="description" content="淺談instanceof 和typeof 的實現原理 (轉載)學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;6844903613584654344  typeof一般被用於判斷一個變量的類型，可判斷七種類型  number,string,object,boolean,function,undefined,symbol  但有一個很麻煩的事情，只能知道那個變量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(譯) 送你 43 道 JavaScript 面试题 (轉載)">
-<meta property="og:url" content="https://s95050937.github.io/juejin02.html">
+<meta property="og:title" content="淺談instanceof 和typeof 的實現原理 (轉載)">
+<meta property="og:url" content="https://s95050937.github.io/juejin03.html">
 <meta property="og:site_name" content="前端技術紀錄">
-<meta property="og:description" content="[译] 送你 43 道 JavaScript 面试题學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;6844903869378461710  第三題12345678910const shape &#x3D; &amp;#123;  radius: 10,  diameter() &amp;#123;    return this.radius * 2;  &amp;#125;,  perime">
+<meta property="og:description" content="淺談instanceof 和typeof 的實現原理 (轉載)學習自(純紀錄自己學了甚麼，非營利)  https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;6844903613584654344  typeof一般被用於判斷一個變量的類型，可判斷七種類型  number,string,object,boolean,function,undefined,symbol  但有一個很麻煩的事情，只能知道那個變量">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-08-10T13:14:22.000Z">
-<meta property="article:modified_time" content="2020-08-11T10:27:40.382Z">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/1.png">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/2.png">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/3.png">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/4.png">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/5.png">
+<meta property="og:image" content="https://s95050937.github.io/images/juejin03/6.png">
+<meta property="article:published_time" content="2020-08-13T15:23:49.000Z">
+<meta property="article:modified_time" content="2020-08-13T16:54:34.741Z">
 <meta property="article:author" content="wuuu4280">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="juejin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s95050937.github.io/images/juejin03/1.png">
 
 
 
@@ -125,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://s95050937.github.io/juejin02.html"/>
+  <link rel="canonical" href="https://s95050937.github.io/juejin03.html"/>
 
 
 
 
 
-  <title>(譯) 送你 43 道 JavaScript 面试题 (轉載) | 前端技術紀錄</title>
+  <title>淺談instanceof 和typeof 的實現原理 (轉載) | 前端技術紀錄</title>
   
 
 
@@ -267,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/juejin02.html">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/juejin03.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuuu4280">
@@ -284,7 +291,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">(譯) 送你 43 道 JavaScript 面试题 (轉載)</h2>
+          <h2 class="post-title" itemprop="name headline">淺談instanceof 和typeof 的實現原理 (轉載)</h2>
         
 
         <div class="post-meta">
@@ -296,8 +303,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-10T21:14:22+08:00">
-                2020-08-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-13T23:23:49+08:00">
+                2020-08-13
               </time>
             
 
@@ -337,9 +344,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/juejin02.html#comments" itemprop="discussionUrl">
+                <a href="/juejin03.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="juejin02.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="juejin03.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,68 +379,120 @@
       
 
       
-        <h1 id="译-送你-43-道-JavaScript-面试题"><a href="#译-送你-43-道-JavaScript-面试题" class="headerlink" title="[译] 送你 43 道 JavaScript 面试题"></a>[译] 送你 43 道 JavaScript 面试题</h1><p>學習自(純紀錄自己學了甚麼，非營利)</p>
+        <h1 id="淺談instanceof-和typeof-的實現原理-轉載"><a href="#淺談instanceof-和typeof-的實現原理-轉載" class="headerlink" title="淺談instanceof 和typeof 的實現原理 (轉載)"></a>淺談instanceof 和typeof 的實現原理 (轉載)</h1><p>學習自(純紀錄自己學了甚麼，非營利)</p>
 <blockquote>
-<p><a href="https://juejin.im/post/6844903869378461710" target="_blank" rel="noopener">https://juejin.im/post/6844903869378461710</a></p>
+<p><a href="https://juejin.im/post/6844903613584654344" target="_blank" rel="noopener">https://juejin.im/post/6844903613584654344</a></p>
 </blockquote>
-<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shape = &#123;</span><br><span class="line">  radius: <span class="number">10</span>,</span><br><span class="line">  diameter() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.radius * <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  perimeter: <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * <span class="keyword">this</span>.radius</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">shape.diameter()</span><br><span class="line">shape.perimeter()</span><br></pre></td></tr></table></figure>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>一般被用於判斷一個變量的類型，可判斷七種類型</p>
+<blockquote>
+<p>number<code>,</code>string<code>,</code>object<code>,</code>boolean<code>,</code>function<code>,</code>undefined<code>,</code>symbol</p>
+</blockquote>
+<p>但有一個很麻煩的事情，只能知道那個變量是object不能知道更精確的類型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>); </span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span>  s === <span class="string">'object'</span>  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 還必須靠instanceof</span></span><br><span class="line">s <span class="keyword">instanceof</span> <span class="built_in">String</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
+<p>而且還有一個老梗，就是null也會顯示object (上古bug)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+
+<p>所以typeof通常只被用來檢查基本類型</p>
+<p>附註: 有一個不錯的方法</p>
 <a id="more"></a>
-<p>我的答案: </p>
+
+<h3 id="不錯的方法-Object-prototype-toString-call-element"><a href="#不錯的方法-Object-prototype-toString-call-element" class="headerlink" title="不錯的方法: Object.prototype.toString.call(element)"></a>不錯的方法: Object.prototype.toString.call(element)</h3><p>可以利用這個做出更精銳的判斷</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>) <span class="comment">// "[object Number]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">'hi'</span>) <span class="comment">// "[object String]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;<span class="attr">a</span>:<span class="string">'hi'</span>&#125;) <span class="comment">// "[object Object]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call([<span class="number">1</span>,<span class="string">'a'</span>]) <span class="comment">// "[object Array]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>) <span class="comment">// "[object Boolean]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;) <span class="comment">// "[object Function]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) <span class="comment">// "[object Null]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) <span class="comment">// "[object Undefined]"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Symbol</span>(<span class="number">1</span>)) <span class="comment">// "[object Symbol]"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在此之前要先知道，JS在底層儲存變量的時候時候，會在變量的機器碼的低位1-3位存儲其類型信息(二進制)</p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20 and 62.83185307179586</span><br></pre></td></tr></table></figure>
+<ul>
+<li>000：對象</li>
+<li>010：浮點數</li>
+<li>100：字符串</li>
+<li>110：布爾</li>
+<li>1：整數</li>
+</ul>
 </blockquote>
-<p>正確答案</p>
+<p>那我們也就知道為啥null會跑出object了，因為null的所有機器碼全部都是0</p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>在講這個之前請務必先看以下文章，因為要先建立原型鍊的概念，講解也會用該文的概念去解釋</p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20 and NaN</span><br></pre></td></tr></table></figure>
+<p><a href="https://s95050937.github.io/zhihu02.html#more">https://s95050937.github.io/zhihu02.html#more</a></p>
 </blockquote>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><blockquote>
-<p>对于箭头函数，<code>this</code>关键字指向是它所在上下文（定义时的位置）的环境，与普通函数不同！ 这意味着当我们调用<code>perimeter</code>时，它不是指向<code>shape</code>对象，而是指其定义时的环境（window）。没有值<code>radius</code>属性，返回<code>undefined</code>。</p>
+<h3 id="這做啥用的"><a href="#這做啥用的" class="headerlink" title="這做啥用的"></a>這做啥用的</h3><p>主要的作用是判斷一個實例是否屬於某種類型 (也可以是父類型或者祖先類型)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> nicole = <span class="keyword">new</span> Person()</span><br><span class="line">nicole <span class="keyword">instanceof</span> Person <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Programmer</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">Programmer.prototype = <span class="keyword">new</span> Person()</span><br><span class="line"><span class="keyword">let</span> nicole = <span class="keyword">new</span> Programmer()</span><br><span class="line">nicole <span class="keyword">instanceof</span> person <span class="comment">// true</span></span><br><span class="line">nicole <span class="keyword">instanceof</span> Programmer <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="整理出來的偽代碼"><a href="#整理出來的偽代碼" class="headerlink" title="整理出來的偽代碼"></a>整理出來的偽代碼</h3><blockquote>
+<p>其實就是先找右邊的prototype( 因為機器的prototype會等於實例的__ proto __ )</p>
+<p> 然後跟左邊的p比較如果不相等就再往上找直到取到null 並 return false</p>
 </blockquote>
-<h2 id="第五題-我覺得滿酷的"><a href="#第五題-我覺得滿酷的" class="headerlink" title="第五題 (我覺得滿酷的)"></a>第五題 (我覺得滿酷的)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bird = &#123;</span><br><span class="line">  size: <span class="string">"small"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mouse = &#123;</span><br><span class="line">  name: <span class="string">"Mickey"</span>,</span><br><span class="line">  small: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line">mouse[bird.size] <span class="comment">// true </span></span><br><span class="line">mouse[bird[<span class="string">"size"</span>]] <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>代碼: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不難就上面提到的概念看一下應該就會懂</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">new_instance_of</span>(<span class="params">leftVaule, rightVaule</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">let</span> rightProto = rightVaule.prototype; <span class="comment">// 取右表达式的 prototype 值</span></span><br><span class="line">    leftVaule = leftVaule.__proto__; <span class="comment">// 取左表达式的__proto__值</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (leftVaule === <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;	</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (leftVaule === rightProto) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;	</span><br><span class="line">        &#125; </span><br><span class="line">        leftVaule = leftVaule.__proto__ </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="第七題-不會錯的小概念"><a href="#第七題-不會錯的小概念" class="headerlink" title="第七題(不會錯的小概念)"></a>第七題(不會錯的小概念)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a == b); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(a === b); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(b === c); <span class="comment">// false </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 因為b是對象，用===不會隱式轉型</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="第12題"><a href="#第12題" class="headerlink" title="第12題"></a>第12題</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">firstName, lastName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">  <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> lydia = <span class="keyword">new</span> Person(<span class="string">"Lydia"</span>, <span class="string">"Hallie"</span>);</span><br><span class="line"><span class="keyword">const</span> sarah = Person(<span class="string">"Sarah"</span>, <span class="string">"Smith"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(lydia);</span><br><span class="line"><span class="built_in">console</span>.log(sarah);</span><br></pre></td></tr></table></figure>
-
-<p>答案: </p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>既然知道到底再比較甚麼就好辦啦，直接看例子吧</p>
+<h4 id="Object-instanceof-Object"><a href="#Object-instanceof-Object" class="headerlink" title="Object instanceof Object"></a>Object instanceof Object</h4><p>答案: </p>
 <blockquote>
-<p>Person {firstName: “Lydia”, lastName: “Hallie”}<code>and</code>undefined</p>
+<p>true</p>
 </blockquote>
-<h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><p>new創造構造函數，然後sarah執行函數會定義全局的firstName以及lastName</p>
-<h2 id="第16題"><a href="#第16題" class="headerlink" title="第16題"></a>第16題</h2><p>詭異的用法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPersonInfo</span>(<span class="params">one, two, three</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(one);</span><br><span class="line">  <span class="built_in">console</span>.log(two);</span><br><span class="line">  <span class="built_in">console</span>.log(three);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="string">"Lydia"</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">21</span>;</span><br><span class="line"></span><br><span class="line">getPersonInfo<span class="string">`<span class="subst">$&#123;person&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old`</span>;</span><br></pre></td></tr></table></figure>
-
-<p>答案</p>
+<p>解析: </p>
 <blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">""</span>, <span class="string">"is"</span>, <span class="string">"years old"</span>] </span><br><span class="line">Lydia</span><br><span class="line"><span class="number">21</span></span><br></pre></td></tr></table></figure>
+<p>右邊: Object 的 prototype 是 NO1</p>
+<p>左邊: Object的p往上找會有NO1 </p>
 </blockquote>
-<h2 id="第25題-小概念"><a href="#第25題-小概念" class="headerlink" title="第25題(小概念)"></a>第25題(小概念)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="string">"one"</span>, <span class="attr">b</span>: <span class="string">"two"</span>, <span class="attr">a</span>: <span class="string">"three"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
-
-<p>答案: </p>
+<p>示意圖: </p>
+<p><img src="/images/juejin03/1.png" alt=""></p>
+<h3 id="Function-instanceof-Function"><a href="#Function-instanceof-Function" class="headerlink" title="Function instanceof Function"></a>Function instanceof Function</h3><blockquote>
+<p>true</p>
+</blockquote>
+<p>解析: </p>
 <blockquote>
-<p>{ a: “three”, b: “two” }</p>
+<p>右邊: Function的prototype是NO2</p>
+<p>左邊: Function的p往上就是NO2</p>
 </blockquote>
-<h2 id="第29題"><a href="#第29題" class="headerlink" title="第29題"></a>第29題</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> b = &#123; <span class="attr">key</span>: <span class="string">"b"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> c = &#123; <span class="attr">key</span>: <span class="string">"c"</span> &#125;;</span><br><span class="line"></span><br><span class="line">a[b] = <span class="number">123</span>; </span><br><span class="line">a[c] = <span class="number">456</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure>
-
-<p>答案: </p>
+<p>示意圖: </p>
+<p><img src="/images/juejin03/2.png" alt=""></p>
+<h4 id="Function-instanceof-Object"><a href="#Function-instanceof-Object" class="headerlink" title="Function instanceof Object"></a>Function instanceof Object</h4><p>答案: </p>
 <blockquote>
-<p>456</p>
+<p>true</p>
 </blockquote>
-<h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3><p>利用[??]， 記得裡面要設成字符串</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> b = &#123; <span class="attr">key</span>: <span class="string">"b"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> c = &#123; <span class="attr">key</span>: <span class="string">"c"</span> &#125;;</span><br><span class="line"></span><br><span class="line">a[b] = <span class="number">123</span>; <span class="comment">// 這樣會把他當成變量</span></span><br><span class="line"><span class="comment">// 如果要設定a對象鑑b的值 : a['b']</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;[object Object]: 123&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>所以那一題其實是這樣</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> b = &#123; <span class="attr">key</span>: <span class="string">"b"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> c = &#123; <span class="attr">key</span>: <span class="string">"c"</span> &#125;;</span><br><span class="line"></span><br><span class="line">a[b] = <span class="number">123</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// &#123;[object Object]: 123&#125;</span></span><br><span class="line">a[c] = <span class="number">456</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// &#123;[object Object]: 456&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure>
-
-<h2 id="第35題-小概念"><a href="#第35題-小概念" class="headerlink" title="第35題(小概念)"></a>第35題(小概念)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>); <span class="comment">// 因為是對象所以為真值</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="第43題"><a href="#第43題" class="headerlink" title="第43題"></a>第43題</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([...<span class="string">"Lydia"</span>];)</span><br></pre></td></tr></table></figure>
-
-<p>答案: </p>
+<p>解析: </p>
 <blockquote>
-<p>[“L”, “y”, “d”, “i”, “a”]</p>
+<p>右邊: Object的prototype指向NO1</p>
+<p>左邊: Function的p往上找會有NO1</p>
 </blockquote>
+<p>示意圖(因為右邊只需要prototype是啥，所以我在這裡沒畫Object的proto): </p>
+<p><img src="/images/juejin03/3.png" alt=""></p>
+<h4 id="Foo-instanceof-Foo"><a href="#Foo-instanceof-Foo" class="headerlink" title="Foo instanceof Foo"></a>Foo instanceof Foo</h4><p>答案: </p>
+<blockquote>
+<p>false</p>
+</blockquote>
+<p>解析: </p>
+<blockquote>
+<p>右邊: Foo.prototype 指向某一個prototype</p>
+<p>左邊: 但Foo的p往上找找不到prototype</p>
+</blockquote>
+<p>示意圖:</p>
+<p>附註: </p>
+<p>​    因為右邊僅需要找到prototype所以我沒畫Foo.prototype.__ proto __指向誰(NO1)，從這張圖可以發現從Foo往上找會直接找到根本找不到 Foo.prototype，因此會返回 false</p>
+<p><img src="/images/juejin03/4.png" alt=""></p>
+<h4 id="Foo-instanceof-Object"><a href="#Foo-instanceof-Object" class="headerlink" title="Foo instanceof Object"></a>Foo instanceof Object</h4><p>答案: </p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>解析: </p>
+<blockquote>
+<p>右邊: Object.prototype 指向NO1</p>
+<p>左邊: Foo的p往上找找的到NO1</p>
+</blockquote>
+<p>示意圖: </p>
+<p><img src="/images/juejin03/5.png" alt=""></p>
+<h4 id="Foo-instanceof-Function"><a href="#Foo-instanceof-Function" class="headerlink" title="Foo instanceof Function"></a>Foo instanceof Function</h4><p>答案: </p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>解析: </p>
+<blockquote>
+<p>右邊: Function.prototype 指向NO2</p>
+<p>左邊: 但Foo的p往上找的到NO2</p>
+</blockquote>
+<p>示意圖: </p>
+<p><img src="/images/juejin03/6.png" alt=""></p>
 
       
     </div>
@@ -466,8 +525,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/juejin01.html" rel="next" title="juejin_編寫高質量可維護的代碼之優化邏輯判斷(轉載)">
-                <i class="fa fa-chevron-left"></i> juejin_編寫高質量可維護的代碼之優化邏輯判斷(轉載)
+              <a href="/JS06.html" rel="next" title="JavaScript 閉包">
+                <i class="fa fa-chevron-left"></i> JavaScript 閉包
               </a>
             
           </div>
@@ -475,10 +534,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/zhihu01.html" rel="prev" title="js隱式轉換相關知識(轉載)">
-                js隱式轉換相關知識(轉載) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#译-送你-43-道-JavaScript-面试题"><span class="nav-number">1.</span> <span class="nav-text">[译] 送你 43 道 JavaScript 面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">1.1.</span> <span class="nav-text">第三題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">1.1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題-我覺得滿酷的"><span class="nav-number">1.2.</span> <span class="nav-text">第五題 (我覺得滿酷的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七題-不會錯的小概念"><span class="nav-number">1.3.</span> <span class="nav-text">第七題(不會錯的小概念)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第12題"><span class="nav-number">1.4.</span> <span class="nav-text">第12題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第16題"><span class="nav-number">1.5.</span> <span class="nav-text">第16題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第25題-小概念"><span class="nav-number">1.6.</span> <span class="nav-text">第25題(小概念)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第29題"><span class="nav-number">1.7.</span> <span class="nav-text">第29題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析-2"><span class="nav-number">1.7.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第35題-小概念"><span class="nav-number">1.8.</span> <span class="nav-text">第35題(小概念)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第43題"><span class="nav-number">1.9.</span> <span class="nav-text">第43題</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#淺談instanceof-和typeof-的實現原理-轉載"><span class="nav-number">1.</span> <span class="nav-text">淺談instanceof 和typeof 的實現原理 (轉載)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.1.</span> <span class="nav-text">typeof</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不錯的方法-Object-prototype-toString-call-element"><span class="nav-number">1.1.1.</span> <span class="nav-text">不錯的方法: Object.prototype.toString.call(element)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.1.2.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">1.2.</span> <span class="nav-text">instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#這做啥用的"><span class="nav-number">1.2.1.</span> <span class="nav-text">這做啥用的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整理出來的偽代碼"><span class="nav-number">1.2.2.</span> <span class="nav-text">整理出來的偽代碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例"><span class="nav-number">1.2.3.</span> <span class="nav-text">範例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-instanceof-Object"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Object instanceof Object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-instanceof-Function"><span class="nav-number">1.2.4.</span> <span class="nav-text">Function instanceof Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-instanceof-Object"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Function instanceof Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Foo-instanceof-Foo"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Foo instanceof Foo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Foo-instanceof-Object"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">Foo instanceof Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Foo-instanceof-Function"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">Foo instanceof Function</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -844,9 +899,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://s95050937.github.io/juejin02.html';
-          this.page.identifier = 'juejin02.html';
-          this.page.title = '(譯) 送你 43 道 JavaScript 面试题 (轉載)';
+          this.page.url = 'https://s95050937.github.io/juejin03.html';
+          this.page.identifier = 'juejin03.html';
+          this.page.title = '淺談instanceof 和typeof 的實現原理 (轉載)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://s95050937.disqus.com/embed.js';
@@ -954,13 +1009,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = '(譯) 送你 43 道 JavaScript 面试题 (轉載)'.length > 0
+      var isPost = '淺談instanceof 和typeof 的實現原理 (轉載)'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '(譯) 送你 43 道 JavaScript 面试题 (轉載)'
+        var title = '淺談instanceof 和typeof 的實現原理 (轉載)'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

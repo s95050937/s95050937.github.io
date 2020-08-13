@@ -271,6 +271,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/HTTP-post01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuuu4280">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端技術紀錄">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HTTP-post01.html" itemprop="url">HTTP_詳解Cookie與Session</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-28T23:20:15+08:00">
+                2020-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/HTTP-post01.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="HTTP-post01.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="HTTP-狀態管理-cookie與session"><a href="#HTTP-狀態管理-cookie與session" class="headerlink" title="HTTP 狀態管理: cookie與session"></a>HTTP 狀態管理: cookie與session</h1><p>大家先來想想一個例子，如果我今天要開一間咖啡館，然後有一個滿10點送50元飲料，我該怎麼去紀錄?</p>
+<ol>
+<li>集點蓋章</li>
+<li>老闆自備簽名章</li>
+</ol>
+<p>一般人可能會講上面那兩點，但事實上上面那兩個方法有點問題，我們無法知道雙方會部會造假，因此得出了第三個方法，你有自己的會員蓋章，老闆也準備自己的系統紀錄，假如要兌換，就核對一下即可頒發。cookie與session就是為了解決第三個辦法的蓋章卡以及老闆的系統。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/HTTP-post01.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://s95050937.github.io/JS_post01.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +635,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -840,7 +1002,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("JavaScript偽數組");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("HTTP_詳解Cookie與Session");titles.push("JavaScript偽數組");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
