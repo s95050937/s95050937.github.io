@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://s95050937.github.io/CSS01.html</loc>
+    <lastmod>2021-10-08</lastmod>
+  </url>
+  <url>
     <loc>https://s95050937.github.io/juejin04.html</loc>
     <lastmod>2020-08-14</lastmod>
   </url>
@@ -9,11 +13,11 @@
     <lastmod>2020-08-13</lastmod>
   </url>
   <url>
-    <loc>https://s95050937.github.io/JS06.html</loc>
-    <lastmod>2020-08-12</lastmod>
+    <loc>https://s95050937.github.io/zhihu02.html</loc>
+    <lastmod>2020-08-13</lastmod>
   </url>
   <url>
-    <loc>https://s95050937.github.io/zhihu02.html</loc>
+    <loc>https://s95050937.github.io/JS06.html</loc>
     <lastmod>2020-08-12</lastmod>
   </url>
   <url>
@@ -51,10 +55,6 @@
   <url>
     <loc>https://s95050937.github.io/HTTP-post07.html</loc>
     <lastmod>2020-08-03</lastmod>
-  </url>
-  <url>
-    <loc>https://s95050937.github.io/CSS01.html</loc>
-    <lastmod>2020-08-02</lastmod>
   </url>
   <url>
     <loc>https://s95050937.github.io/JS-post03.html</loc>
