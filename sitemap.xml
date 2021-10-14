@@ -193,6 +193,13 @@
 
   
   <url>
+    <loc>https://s95050937.github.io/tags/HTTP/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://s95050937.github.io/tags/CSS/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -201,13 +208,6 @@
   
   <url>
     <loc>https://s95050937.github.io/tags/CSS%E7%89%B9%E6%95%88/</loc>
-    <lastmod>2021-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://s95050937.github.io/tags/HTTP/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -255,17 +255,31 @@
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://s95050937.github.io/categories/CSS/</loc>
+    <loc>https://s95050937.github.io/tags/%E5%A4%A9%E7%84%B6%E6%B0%A3/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
+    <loc>https://s95050937.github.io/tags/%E5%A4%A9%E7%84%B6%E6%B0%A3%E5%BA%AB%E5%AD%98/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
     <loc>https://s95050937.github.io/categories/HTTP/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://s95050937.github.io/categories/CSS/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -294,6 +308,13 @@
   
   <url>
     <loc>https://s95050937.github.io/categories/webpack/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://s95050937.github.io/categories/%E5%A4%A9%E7%84%B6%E6%B0%A3/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
